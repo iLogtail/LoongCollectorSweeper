@@ -1,136 +1,136 @@
 [
   {
-    "number": 794,
+    "number": 2084,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 794,
+    "number": 2084,
+    "action": "closed",
+    "reason": "重复或已被替代"
+  },
+  {
+    "number": 2124,
+    "action": "review_comment_synced",
+    "reason": "已更新持久化百炼审查评论"
+  },
+  {
+    "number": 2124,
     "action": "closed",
     "reason": "已在 main 上实现"
   },
   {
-    "number": 893,
+    "number": 2166,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 893,
-    "action": "closed",
-    "reason": "长期停滞且信息不足"
-  },
-  {
-    "number": 900,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 900,
+    "number": 2166,
     "action": "closed",
     "reason": "更适合插件/扩展生态（closeReason 仍为 clawhub）"
   },
   {
-    "number": 1175,
+    "number": 2168,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 1175,
-    "action": "closed",
-    "reason": "已在 main 上实现"
-  },
-  {
-    "number": 1221,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1221,
+    "number": 2168,
     "action": "closed",
     "reason": "长期停滞且信息不足"
   },
   {
-    "number": 1414,
+    "number": 2192,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 1414,
+    "number": 2192,
     "action": "closed",
-    "reason": "长期停滞且信息不足"
+    "reason": "本仓库内无法落地"
   },
   {
-    "number": 1439,
+    "number": 2218,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 1439,
+    "number": 2218,
     "action": "closed",
-    "reason": "已在 main 上实现"
+    "reason": "更适合插件/扩展生态（closeReason 仍为 clawhub）"
   },
   {
-    "number": 204,
+    "number": 2303,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 553,
+    "number": 2303,
+    "action": "closed",
+    "reason": "本仓库内无法落地"
+  },
+  {
+    "number": 1585,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 557,
+    "number": 1603,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 754,
+    "number": 1640,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 793,
+    "number": 1767,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 842,
+    "number": 1805,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 910,
+    "number": 1810,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 911,
+    "number": 2179,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 918,
+    "number": 2182,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 1236,
+    "number": 2186,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 1273,
+    "number": 2207,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 2522,
+    "number": 2221,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   },
   {
-    "number": 2547,
+    "number": 2223,
+    "action": "review_comment_synced",
+    "reason": "已更新持久化百炼审查评论"
+  },
+  {
+    "number": 2257,
     "action": "review_comment_synced",
     "reason": "已更新持久化百炼审查评论"
   }
