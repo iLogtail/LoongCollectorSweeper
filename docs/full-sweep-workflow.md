@@ -23,6 +23,33 @@
 
 ---
 
+## 一键脚本（推荐）
+
+仓库提供 **`scripts/full-sweep.sh`**，在根目录自动执行：**`plan` → 各分片 `review`（串行）→ 合并 `*.md` → `apply-artifacts`**（含 reconcile 与 README 仪表盘）。脚本会 **`source .env`**（若存在），请事先配置 **`DASHSCOPE_API_KEY`**。
+
+```bash
+npm install
+# 先演练（只跑 plan，打印将执行的 review 命令）：
+npm run sweep:local -- --dry-run --max-pages 3
+
+# 正式跑一小批页数试通路：
+npm run sweep:local -- --max-pages 3 --shard-count 2
+
+# 默认参数全量（慎用：耗时长、占配额）：
+npm run sweep:local
+```
+
+常用参数：`--hot-intake`、`--batch-size`、`--shard-count`、`--max-pages`、`--bailian-timeout-ms`、`--skip-build`。  
+**对上游写 GitHub** 默认关闭；必须显式加 **`--apply-remote`**（可选 **`--apply-sync-only`** 只同步评论不关单、**`--apply-limit N`**）。详见脚本内 `usage` 或执行：
+
+```bash
+bash scripts/full-sweep.sh --help
+```
+
+等价环境变量：`SWEEP_BATCH_SIZE`、`SWEEP_SHARD_COUNT`、`SWEEP_MAX_PAGES`、`SWEEP_HOT_INTAKE=1`、`SWEEP_DRY_RUN=1`、`SWEEP_APPLY_REMOTE=1`、`SWEEP_APPLY_LIMIT`、`SWEEP_APPLY_SYNC_ONLY=1`。
+
+---
+
 ## 1. 规划：看清要审多少、怎么分片
 
 用 `plan` 看本轮会选中多少条、分几个 shard（与 CI 一致，输出含 `matrix`）：

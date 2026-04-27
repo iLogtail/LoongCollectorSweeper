@@ -192,4 +192,4 @@ npm run audit -- --strict   # 严格失败时非零退出
 
 更细的实现以 [`src/clawsweeper.ts`](../src/clawsweeper.ts) 中各 `*Command` 函数为准。
 
-**相关：** 希望「规划 → 多片审查 → 合并进本仓库 → 可选对上游关单/评论」的**完整顺序**，见 [**全量工作流**](full-sweep-workflow.md)。
+**相关：** 希望「规划 → 多片审查 → 合并进本仓库 → 可选对上游关单/评论」的**完整顺序**，见 [**全量工作流**](full-sweep-workflow.md)（含 **`npm run sweep:local`** 一键脚本）。

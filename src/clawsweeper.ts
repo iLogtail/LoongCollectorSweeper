@@ -830,6 +830,139 @@ function parseEvidence(value: unknown, path: string): Evidence {
   };
 }
 
+function normalizeEvidenceLineField(value: unknown): number | null {
+  if (value === null) return null;
+  if (typeof value === "number" && Number.isInteger(value)) return value;
+  if (typeof value === "string" && /^\d+$/.test(value.trim())) return Number(value.trim());
+  return null;
+}
+
+/**
+ * 将百炼/模型常见漂移（closeReason 为 null、closeComment 为 null、缺 summary、
+ * evidence 使用 type/summary 等）规整为符合 schema 的形状，再交给 parseDecision。
+ */
+function normalizeDecisionEnumAlias(value: unknown): unknown {
+  if (typeof value !== "string") return value;
+  const d = value
+    .trim()
+    .toLowerCase()
+    .replace(/[\s-]+/g, "_");
+  if (d === "close" || d === "keep_open") return d;
+  // 模型常把「保持开放」写成 open，与 schema 的 keep_open 对齐
+  if (d === "open" || d === "stay_open" || d === "leave_open" || d === "kept_open")
+    return "keep_open";
+  return value;
+}
+
+export function normalizeLlmDecisionPayload(value: unknown): unknown {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const record = value as Record<string, unknown>;
+  const decision = normalizeDecisionEnumAlias(record.decision);
+  if (decision !== "close" && decision !== "keep_open") return value;
+
+  let closeReason: unknown = record.closeReason;
+  if (closeReason === null || closeReason === undefined || closeReason === "") {
+    closeReason = "none";
+  } else if (typeof closeReason === "string") {
+    const trimmed = closeReason.trim();
+    if (!ALL_REASONS.has(trimmed as CloseReason)) closeReason = "none";
+    else closeReason = trimmed;
+  } else {
+    closeReason = "none";
+  }
+
+  const closeComment =
+    record.closeComment === null || record.closeComment === undefined
+      ? ""
+      : typeof record.closeComment === "string"
+        ? record.closeComment
+        : String(record.closeComment);
+
+  let summary =
+    typeof record.summary === "string" && record.summary.trim()
+      ? record.summary.trim()
+      : typeof record.bestSolution === "string" && record.bestSolution.trim()
+        ? record.bestSolution.trim().slice(0, 2000)
+        : "";
+  if (!summary) summary = "（模型未提供 summary）";
+
+  const confidenceRaw = record.confidence;
+  const confidence =
+    typeof confidenceRaw === "string" && CONFIDENCES.has(confidenceRaw as Confidence)
+      ? confidenceRaw
+      : "medium";
+
+  const risks = Array.isArray(record.risks)
+    ? record.risks.filter((r): r is string => typeof r === "string")
+    : [];
+
+  const bestSolution =
+    typeof record.bestSolution === "string"
+      ? record.bestSolution
+      : String(record.bestSolution ?? "").trim() || "（模型未提供 bestSolution）";
+
+  const fixedRelease = record.fixedRelease === undefined ? null : record.fixedRelease;
+  const fixedSha = record.fixedSha === undefined ? null : record.fixedSha;
+
+  const evidenceRaw = Array.isArray(record.evidence) ? record.evidence : [];
+  const evidence = evidenceRaw.map((entry, index) => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
+      return {
+        label: "证据",
+        detail: typeof entry === "string" ? entry : `（非对象证据 ${index}）`,
+        file: null,
+        line: null,
+        command: null,
+        sha: null,
+      };
+    }
+    const e = entry as Record<string, unknown>;
+    const hasLabel = typeof e.label === "string" && e.label.trim();
+    const hasDetail = typeof e.detail === "string" && e.detail.trim();
+    let label: string;
+    let detail: string;
+    if (hasLabel && hasDetail) {
+      label = (e.label as string).trim();
+      detail = (e.detail as string).trim();
+    } else {
+      const typePart = typeof e.type === "string" && e.type.trim() ? e.type.trim() : "证据";
+      const summaryPart =
+        typeof e.summary === "string" && e.summary.trim()
+          ? e.summary.trim()
+          : typeof e.detail === "string" && e.detail.trim()
+            ? (e.detail as string).trim()
+            : typeof e.label === "string" && e.label.trim()
+              ? (e.label as string).trim()
+              : "";
+      label = hasLabel ? (e.label as string).trim() : typePart;
+      detail = hasDetail
+        ? (e.detail as string).trim()
+        : summaryPart || `（证据 ${index + 1} 无正文）`;
+    }
+    return {
+      label,
+      detail,
+      file: e.file === null || typeof e.file === "string" ? e.file : null,
+      line: normalizeEvidenceLineField(e.line),
+      command: e.command === null || typeof e.command === "string" ? e.command : null,
+      sha: e.sha === null || typeof e.sha === "string" ? e.sha : null,
+    };
+  });
+
+  return {
+    decision,
+    closeReason,
+    confidence,
+    summary,
+    evidence,
+    risks,
+    bestSolution,
+    fixedRelease,
+    fixedSha,
+    closeComment,
+  };
+}
+
 function requireEnum<T extends string>(value: unknown, allowed: Set<T>, path: string): T {
   if (typeof value === "string" && allowed.has(value as T)) return value as T;
   throw new Error(`${path} has invalid value`);
@@ -2237,6 +2370,8 @@ function makeTreeReadOnly(path: string): void {
   for (const entry of readdirSync(path, { withFileTypes: true })) {
     const child = join(path, entry.name);
     if (entry.isSymbolicLink()) continue;
+    // 勿 chmod .git：否则下次审查前 git fetch 无法写 FETCH_HEAD（表现为 Permission denied）
+    if (entry.isDirectory() && entry.name === ".git") continue;
     if (entry.isDirectory()) makeTreeReadOnly(child);
     else chmodSync(child, statSync(child).mode & 0o111 ? 0o555 : 0o444);
   }
@@ -2353,7 +2488,7 @@ function runBailian(options: {
   }
   try {
     const jsonText = extractJsonObjectFromText(content);
-    return parseDecision(JSON.parse(jsonText));
+    return parseDecision(normalizeLlmDecisionPayload(JSON.parse(jsonText)));
   } catch (error) {
     return llmFailureDecision(
       null,

@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：（由 `npm run dashboard` 或 Actions 写入）
+上次仪表盘更新：2026年4月27日 UTC 07:15
 
 ### 当前运行
 
@@ -26,37 +26,37 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [`alibaba/loongcollector`](https://github.com/alibaba/loongcollector) 开放 Issue | — |
-| [`alibaba/loongcollector`](https://github.com/alibaba/loongcollector) 开放 PR | — |
-| 开放条目合计 | — |
-| 已审查文件 | — |
-| 尚未审查的开放条目 | — |
-| 归档的 closed 文件 | — |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 65 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 71 |
+| 开放条目合计 | 136 |
+| 已审查文件 | 17 |
+| 尚未审查的开放条目 | 119 |
+| 归档的 closed 文件 | 3 |
 
 ### 审查结果
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | — |
-| 提议关闭 Issue | — |
-| 近 7 天新审查 PR | — |
-| 提议关闭 PR | — |
-| 近 7 天已验证审查 | — |
-| 待 apply 的提议关闭 | — |
-| 已由 apply 关闭 | — |
-| 失败或陈旧审查 | — |
+| 近 7 天新审查 Issue | 0 |
+| 提议关闭 Issue | 0（占已审查 Issue 的 -） |
+| 近 7 天新审查 PR | 16 |
+| 提议关闭 PR | 0（占已审查 PR 的 0%） |
+| 近 7 天已验证审查 | 16 |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
+| 已由 apply 关闭 | 3 |
+| 失败或陈旧审查 | 1 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | — |
-| 热点每小时节奏（<7 天） | — |
-| 每日节奏 | — |
-| 每日 PR 节奏 | — |
-| 每日新 Issue 节奏（<30 天） | — |
-| 每周陈旧 Issue 节奏 | — |
-| 节奏维度待办合计 | — |
+| 每小时节奏 | 0/0 当前（0 待办，-） |
+| 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
+| 每日节奏 | 16/17 当前（1 待办，94.1%） |
+| 每日 PR 节奏 | 16/17 当前（1 待办，94.1%） |
+| 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
+| 每周陈旧 Issue 节奏 | 0/0 当前（0 待办，-） |
+| 节奏维度待办合计 | 120 |
 
 ### 审计健康
 
@@ -66,13 +66,21 @@
 
 ### 最近运行动态
 
-（由 Actions 更新）
+最近审查：2026年4月27日 UTC 07:13。最近关闭：2026年4月27日 UTC 07:14。最近评论同步：2026年4月27日 UTC 07:15。
+
+| 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 最近 15 分钟 | 8 | 0 | 8 | 0 | 3 | 20 | 0 |
+| 最近 1 小时 | 20 | 3 | 17 | 1 | 3 | 20 | 0 |
+| 最近 24 小时 | 20 | 3 | 17 | 1 | 3 | 20 | 0 |
 
 ### 最近关闭
 
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
-| _无_ |  |  |  |  |
+| [#1792](https://github.com/alibaba/loongcollector/pull/1792) | config server implement elasticsearch store mode | 重复或已被替代 | 2026年4月27日 UTC 07:14 | [closed/1792.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/1792.md) |
+| [#1546](https://github.com/alibaba/loongcollector/pull/1546) | feat: add self-monitor metrics for flusher_http | 重复或已被替代 | 2026年4月27日 UTC 07:14 | [closed/1546.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/1546.md) |
+| [#1515](https://github.com/alibaba/loongcollector/pull/1515) | set flusher flag first in case of logschain/aggregator queue full and flusher isready is always false | 已在 main 上实现 | 2026年4月27日 UTC 07:13 | [closed/1515.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/1515.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
@@ -81,7 +89,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| _无_ |  |  |  |  |
+| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年4月27日 UTC 07:13 |
+| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年4月27日 UTC 07:12 |
+| [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年4月27日 UTC 07:10 |
+| [#1710](https://github.com/alibaba/loongcollector/pull/1710) | Support config server v2 provider(HeartBeat、FetchPipelineConfig、FetchProcessConfig) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1710.md) | complete | 2026年4月27日 UTC 07:08 |
+| [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年4月27日 UTC 07:07 |
+| [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年4月27日 UTC 07:05 |
+| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年4月27日 UTC 07:04 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年4月27日 UTC 07:02 |
+| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | failed | 2026年4月27日 UTC 07:00 |
+| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年4月27日 UTC 06:58 |
 
 </details>
 
@@ -111,7 +128,8 @@ npm run check
 ```
 
 **子命令、环境变量与传参说明**（含 `npm run … -- --参数` 写法）见：**[本地运行指南](docs/local-run.md)**。  
-**全量审查、合并产物、更新本仓库并可选对上游关单/评论的推荐顺序**见：**[全量工作流](docs/full-sweep-workflow.md)**。
+**全量审查、合并产物、更新本仓库并可选对上游关单/评论的推荐顺序**见：**[全量工作流](docs/full-sweep-workflow.md)**。  
+一键执行：`npm run sweep:local`（可加 `-- --dry-run` 等，见该文档「一键脚本」）。
 
 审查需本地克隆 `alibaba/loongcollector` 至默认路径 `../loongcollector`，或使用 `--loongcollector-dir` / `--target-repo-dir` / `--openclaw-dir`（兼容旧参数）。
 

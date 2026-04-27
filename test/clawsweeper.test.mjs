@@ -14,6 +14,7 @@ import {
   itemNumbersArg,
   lockedConversationApplyReason,
   openClosingPullRequestApplyReason,
+  normalizeLlmDecisionPayload,
   parseDecision,
   protectedLabels,
   relatedTitleSearchTerms,
@@ -508,6 +509,68 @@ test("decision parser enforces required schema-shaped evidence", () => {
       }),
     /decision\.evidence\[0\]\.file/,
   );
+});
+
+test("normalizeLlmDecisionPayload maps null closeReason, null closeComment, and type/summary evidence", () => {
+  const raw = {
+    decision: "keep_open",
+    confidence: "high",
+    closeReason: null,
+    closeComment: null,
+    bestSolution: "保持开启并跟进评审意见。",
+    evidence: [
+      {
+        type: "context",
+        summary: "第一条说明",
+        file: "plugins/flusher/oss/flusher_oss.go",
+        line: null,
+        sha: "96887e7fedafc95e04c58be67bdea9fe8abbbff7",
+      },
+    ],
+  };
+  const d = parseDecision(normalizeLlmDecisionPayload(raw));
+  assert.equal(d.decision, "keep_open");
+  assert.equal(d.closeReason, "none");
+  assert.equal(d.closeComment, "");
+  assert.ok(d.summary.includes("保持开启"));
+  assert.equal(d.evidence[0].label, "context");
+  assert.equal(d.evidence[0].detail, "第一条说明");
+  assert.equal(d.evidence[0].file, "plugins/flusher/oss/flusher_oss.go");
+  assert.equal(d.evidence[0].sha, "96887e7fedafc95e04c58be67bdea9fe8abbbff7");
+});
+
+test("normalizeLlmDecisionPayload maps decision open to keep_open", () => {
+  const raw = {
+    decision: "open",
+    confidence: "high",
+    closeReason: "none",
+    closeComment: "",
+    summary: "保持开启。",
+    bestSolution: "下一步。",
+    evidence: [],
+    risks: [],
+    fixedRelease: null,
+    fixedSha: null,
+  };
+  const d = parseDecision(normalizeLlmDecisionPayload(raw));
+  assert.equal(d.decision, "keep_open");
+});
+
+test("normalizeLlmDecisionPayload fills summary from bestSolution when summary missing", () => {
+  const raw = {
+    decision: "keep_open",
+    confidence: "high",
+    closeReason: null,
+    closeComment: null,
+    bestSolution: "下一步 rebase 并修 CI。",
+    evidence: [],
+    risks: [],
+    fixedRelease: null,
+    fixedSha: null,
+  };
+  const d = parseDecision(normalizeLlmDecisionPayload(raw));
+  assert.equal(d.closeReason, "none");
+  assert.ok(d.summary.includes("rebase"));
 });
 
 test("review parser strips environment access caveats from risks", () => {
