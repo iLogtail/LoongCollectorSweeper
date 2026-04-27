@@ -1659,9 +1659,70 @@ function reviewedAtMs(review: ExistingReview | null): number | null {
   return Number.isFinite(reviewedAt) ? reviewedAt : null;
 }
 
+const SWEEPER_COMMENT_DRIFT_TOLERANCE_MS = 60_000;
+
+function timestampsWithinMs(
+  left: string | undefined,
+  right: string | undefined,
+  ms: number,
+): boolean {
+  if (!left || !right) return false;
+  if (left === right) return true;
+  const a = Date.parse(left);
+  const b = Date.parse(right);
+  return Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) <= ms;
+}
+
+/**
+ * 当本地报告里的 item_updated_at 尚未随「持久化审查评论」同步更新时，GitHub 上 issue/PR 的
+ * updated_at 会被我们自己的评论（发布/编辑）顶高；这不应算作「审查后的新活动」去触发 Hourly。
+ *
+ * 判定条件（必须全部成立）：
+ * - 本地 review 后我们已写过 review_comment_synced_at（即此前确实做过评论同步）；
+ * - 同步时间不早于上一次完成审查的时间；
+ * - GitHub 上识别得到的 sweeper 评论 updated_at 与当前 issue updated_at 几乎同时（容忍亚秒/几秒级精度差）。
+ */
+export function isSweeperSyncedCommentOnlyItemUpdatedDrift(
+  liveItemUpdatedAt: string,
+  review: ExistingReview,
+  sweeperComment: Record<string, unknown> | undefined,
+): boolean {
+  if (!review.itemUpdatedAt || liveItemUpdatedAt === review.itemUpdatedAt) return false;
+  const reviewedMs = review.reviewedAt ? Date.parse(review.reviewedAt) : NaN;
+  const syncedAtRaw = frontMatterValue(review.markdown, "review_comment_synced_at");
+  const syncedMs = syncedAtRaw ? Date.parse(syncedAtRaw) : NaN;
+  if (!Number.isFinite(reviewedMs) || !Number.isFinite(syncedMs) || syncedMs < reviewedMs)
+    return false;
+  if (!sweeperComment) return false;
+  const commentAt = commentUpdatedAt(sweeperComment);
+  return timestampsWithinMs(liveItemUpdatedAt, commentAt, SWEEPER_COMMENT_DRIFT_TOLERANCE_MS);
+}
+
+function reconcileSweeperCommentDriftInPlace(item: Item, review: ExistingReview): void {
+  try {
+    const next = replaceFrontMatterValue(review.markdown, "item_updated_at", item.updatedAt);
+    if (next !== review.markdown) {
+      writeFileSync(review.path, next, "utf8");
+      review.markdown = next;
+      review.itemUpdatedAt = item.updatedAt;
+    }
+  } catch {}
+}
+
 function hasActivitySinceReview(item: Item, review: ExistingReview | null): boolean {
   if (!review) return false;
-  if (review.itemUpdatedAt) return item.updatedAt !== review.itemUpdatedAt;
+  if (review.itemUpdatedAt) {
+    if (item.updatedAt === review.itemUpdatedAt) return false;
+    const syncedAtRaw = frontMatterValue(review.markdown, "review_comment_synced_at");
+    if (syncedAtRaw) {
+      const sweeper = issueReviewComment(item.number, []);
+      if (isSweeperSyncedCommentOnlyItemUpdatedDrift(item.updatedAt, review, sweeper)) {
+        reconcileSweeperCommentDriftInPlace(item, review);
+        return false;
+      }
+    }
+    return true;
+  }
   const reviewedAt = reviewedAtMs(review);
   const updatedAt = Date.parse(item.updatedAt);
   return reviewedAt !== null && Number.isFinite(updatedAt) && updatedAt > reviewedAt;
@@ -3565,7 +3626,7 @@ function applyDecisionsCommand(args: Args): void {
     const closeReason = frontMatterValue(markdown, "close_reason") as CloseReason | undefined;
     const action = frontMatterValue(markdown, "action_taken");
     const storedHash = frontMatterValue(markdown, "item_snapshot_hash");
-    const storedUpdatedAt = frontMatterValue(markdown, "item_updated_at");
+    let storedUpdatedAt = frontMatterValue(markdown, "item_updated_at");
     const storedAuthorAssociation = frontMatterValue(markdown, "author_association");
     const archiveClosed = (nextMarkdown: string): void => {
       ensureDir(closedDir);
@@ -3620,6 +3681,27 @@ function applyDecisionsCommand(args: Args): void {
       sectionValue(markdown, "Close Comment"),
     ]);
     const markedReviewComment = markedReviewCommentBody(number, reviewComment);
+    if (
+      storedUpdatedAt &&
+      item.updatedAt !== storedUpdatedAt &&
+      isSweeperSyncedCommentOnlyItemUpdatedDrift(
+        item.updatedAt,
+        {
+          path,
+          markdown,
+          reviewedAt: frontMatterValue(markdown, "reviewed_at"),
+          itemUpdatedAt: storedUpdatedAt,
+          decision: frontMatterValue(markdown, "decision"),
+          reviewStatus: effectiveReviewStatus(markdown),
+          reviewPolicy: frontMatterValue(markdown, "review_policy"),
+        },
+        existingReviewComment,
+      )
+    ) {
+      markdown = replaceFrontMatterValue(markdown, "item_updated_at", item.updatedAt);
+      writeFileSync(path, markdown, "utf8");
+      storedUpdatedAt = item.updatedAt;
+    }
     if (isProtectedItem(item)) {
       if (isCloseProposal) {
         if (markApplySkipped("skipped_protected_label", protectedLabelReason(item.labels))) break;
@@ -3657,7 +3739,11 @@ function applyDecisionsCommand(args: Args): void {
       continue;
     }
     const updatedSinceReview = Boolean(storedUpdatedAt && item.updatedAt !== storedUpdatedAt);
-    const reviewCommentOnlyUpdate = item.updatedAt === commentUpdatedAt(existingReviewComment);
+    const reviewCommentOnlyUpdate = timestampsWithinMs(
+      item.updatedAt,
+      commentUpdatedAt(existingReviewComment),
+      SWEEPER_COMMENT_DRIFT_TOLERANCE_MS,
+    );
     if (state !== "open") {
       if (existingReviewComment) {
         markdown = updateReviewCommentMetadata(
@@ -3794,6 +3880,12 @@ function applyDecisionsCommand(args: Args): void {
         }
       }
       markdown = updateReviewCommentMetadata(markdown, syncedComment, markedReviewComment);
+      const afterCommentSync = fetchItem(number);
+      markdown = replaceFrontMatterValue(
+        markdown,
+        "item_updated_at",
+        afterCommentSync.item.updatedAt,
+      );
       writeFileSync(path, markdown, "utf8");
       results.push({
         number,

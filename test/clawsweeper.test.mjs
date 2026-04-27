@@ -11,6 +11,7 @@ import {
   isCodexReviewCommentBody,
   isLockedConversationCommentError,
   isProtectedItem,
+  isSweeperSyncedCommentOnlyItemUpdatedDrift,
   itemNumbersArg,
   lockedConversationApplyReason,
   openClosingPullRequestApplyReason,
@@ -161,6 +162,58 @@ test("review policy changes force fresh complete reports back into planning", ()
 
   assert.equal(shouldReviewItem(item(), review, now, "new-policy"), true);
   assert.equal(shouldReviewItem(item(), review, now, "old-policy"), false);
+});
+
+test("isSweeperSyncedCommentOnlyItemUpdatedDrift tolerates seconds-level timestamp skew", () => {
+  const md = `---
+reviewed_at: 2026-04-27T06:00:00Z
+review_comment_synced_at: 2026-04-27T07:14:38.008Z
+---
+`;
+  const review = {
+    path: "items/1.md",
+    markdown: md,
+    reviewedAt: "2026-04-27T06:00:00Z",
+    itemUpdatedAt: "2024-07-11T07:27:30Z",
+    decision: "keep_open",
+    reviewStatus: "complete",
+    reviewPolicy: "p",
+  };
+  const sweeper = { updated_at: "2026-04-27T07:14:38.008Z" };
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2026-04-27T07:14:36Z", review, sweeper),
+    true,
+  );
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2026-04-27T07:14:38.008Z", review, sweeper),
+    true,
+  );
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2026-04-27T07:18:00Z", review, sweeper),
+    false,
+  );
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2024-07-11T07:27:30Z", review, sweeper),
+    false,
+  );
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2026-04-27T07:14:36Z", review, undefined),
+    false,
+  );
+  const mdSyncBeforeReview = `---
+reviewed_at: 2026-04-27T08:00:00Z
+review_comment_synced_at: 2026-04-27T07:14:36Z
+---
+`;
+  const review2 = {
+    ...review,
+    markdown: mdSyncBeforeReview,
+    reviewedAt: "2026-04-27T08:00:00Z",
+  };
+  assert.equal(
+    isSweeperSyncedCommentOnlyItemUpdatedDrift("2026-04-27T07:14:36Z", review2, sweeper),
+    false,
+  );
 });
 
 test("hot new items review hourly before falling back to daily or weekly cadence", () => {
