@@ -11,6 +11,7 @@ LoongCollectorSweeper（本仓库）是面向 [`alibaba/loongcollector`](https:/
 - 开放/已审记录：扁平 `items/<编号>.md`
 - 归档：`closed/<编号>.md`
 - 临时产物：`.artifacts/`、`artifacts/`、`apply-report.json`
+- 本地环境变量：根目录 **`.env`**（由 [`.env.example`](.env.example) 复制；已忽略于 Git），启动时由 `dotenv` 加载。
 
 保持 `items/` 与 `closed/` 扁平布局，不要按 Issue/PR 分子目录。
 

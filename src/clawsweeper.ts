@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { config as loadDotenv } from "dotenv";
 import { execFileSync, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
@@ -14,6 +15,8 @@ import {
 } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+loadDotenv({ path: join(dirname(fileURLToPath(import.meta.url)), "..", ".env") });
 
 type ItemKind = "issue" | "pull_request";
 type ApplyKind = ItemKind | "all";
@@ -414,7 +417,11 @@ function resolveRepoDir(args: Args): string {
     (typeof args.target_repo_dir === "string" && args.target_repo_dir.trim()) ||
     (typeof args.openclaw_dir === "string" && args.openclaw_dir.trim()) ||
     "";
-  return resolve(explicit ? explicit : "../loongcollector");
+  const fromEnv =
+    process.env.LOONGSWEEPER_TARGET_REPO_DIR?.trim() ||
+    process.env.LOONGCOLLECTOR_LOCAL_DIR?.trim() ||
+    "";
+  return resolve(explicit ? explicit : fromEnv || "../loongcollector");
 }
 
 function resolveReadonlyRepo(args: Args): boolean {

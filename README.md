@@ -89,12 +89,15 @@
 
 ### 秘钥与配置（GitHub Actions / 本地）
 
+本地可在仓库根目录放 **`.env`**（与 `package.json` 同级，已加入 `.gitignore`）：复制 [`.env.example`](.env.example) 为 `.env` 后填写。程序启动时会从该文件加载环境变量，**无需**每次在 shell 里 `export`（`npm run` 各脚本同样会加载）。
+
 | 名称 | 说明 |
 | --- | --- |
 | `DASHSCOPE_API_KEY` | 百炼/灵积 API Key（**必需**，审查） |
 | `DASHSCOPE_MODEL` | 模型名，默认 `qwen-plus` |
 | `DASHSCOPE_HTTP_BASE_URL` | 可选；完整兼容根，默认 `https://dashscope.aliyuncs.com/compatible-mode/v1` |
 | `LOONGSWEEPER_DOCS_URL` | 可选；公开文档根，默认指向本组织中文文档树 |
+| `LOONGSWEEPER_TARGET_REPO_DIR` / `LOONGCOLLECTOR_LOCAL_DIR` | 可选；本机 `loongcollector` 克隆路径；不设则 `../loongcollector`；命令行 `--loongcollector-dir` 等**优先** |
 | `LOONGCOLLECTOR_GH_READ_TOKEN` | 读上游 Issue/PR |
 | `LOONGCOLLECTOR_GH_WRITE_TOKEN` | 写评论/关闭上游；写本仓库 README/items 需相应权限 |
 
@@ -106,6 +109,9 @@ npm run build
 npm run test:unit
 npm run check
 ```
+
+**子命令、环境变量与传参说明**（含 `npm run … -- --参数` 写法）见：**[本地运行指南](docs/local-run.md)**。  
+**全量审查、合并产物、更新本仓库并可选对上游关单/评论的推荐顺序**见：**[全量工作流](docs/full-sweep-workflow.md)**。
 
 审查需本地克隆 `alibaba/loongcollector` 至默认路径 `../loongcollector`，或使用 `--loongcollector-dir` / `--target-repo-dir` / `--openclaw-dir`（兼容旧参数）。
 
