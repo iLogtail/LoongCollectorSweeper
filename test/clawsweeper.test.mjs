@@ -35,7 +35,7 @@ function item(overrides = {}) {
     number: 123,
     kind: "issue",
     title: "Sample item",
-    url: "https://github.com/openclaw/openclaw/issues/123",
+    url: "https://github.com/alibaba/loongcollector/issues/123",
     createdAt: "2026-01-01T00:00:00Z",
     updatedAt: "2026-01-01T00:00:00Z",
     author: "contributor",
@@ -141,8 +141,8 @@ test("review actions only propose valid closes and never apply directly", () => 
     runtime: { model: "gpt-5.5", reasoningEffort: "high" },
   });
   assert.equal(action.actionTaken, "proposed_close");
-  assert.match(action.closeComment, /Closing this as implemented/);
-  assert.match(action.closeComment, /Codex Review notes: model gpt-5\.5, reasoning high;/);
+  assert.match(action.closeComment, /经百炼自动化审查后，按「已在 main 上实现」关闭本项/);
+  assert.match(action.closeComment, /百炼审查备注：模型 gpt-5\.5，推理强度 high/);
 });
 
 test("review policy changes force fresh complete reports back into planning", () => {
@@ -284,7 +284,7 @@ test("duplicate or superseded closes are allowed with evidence and comment", () 
     git,
   });
   assert.equal(action.actionTaken, "proposed_close");
-  assert.match(action.closeComment, /duplicate or superseded/);
+  assert.match(action.closeComment, /重复或已被替代/);
 });
 
 test("open PRs that close an issue block apply closes", () => {
@@ -363,7 +363,7 @@ test("not-actionable-in-repo closes are allowed with evidence and comment", () =
     git,
   });
   assert.equal(action.actionTaken, "proposed_close");
-  assert.match(action.closeComment, /not actionable in this repository/);
+  assert.match(action.closeComment, /本仓库内无法落地/);
 });
 
 test("public comments avoid self-referencing the current item number", () => {
@@ -393,6 +393,12 @@ test("comment matcher recognizes old and new Codex review comments", () => {
     true,
   );
   assert.equal(isCodexReviewCommentBody("Thanks for the report, I can reproduce this."), false);
+  assert.equal(
+    isCodexReviewCommentBody(
+      "经百炼自动化审查后关闭。\n\n百炼审查备注：模型 qwen-plus；对照提交 abc。",
+    ),
+    true,
+  );
 });
 
 test("item number args merge and sort workflow inputs", () => {
@@ -635,17 +641,20 @@ test("audit health section summarizes strict status and actionable findings", ()
   });
   const section = auditHealthSection(result);
 
-  assert.match(section, /### Audit Health/);
+  assert.match(section, /### 审计健康/);
   assert.match(section, /<!-- clawsweeper-audit:start -->/);
-  assert.match(section, /Status: \*\*Action needed\*\*/);
-  assert.match(section, /\| Missing eligible open records \| 1 \|/);
-  assert.match(section, /\[#10\]\(https:\/\/github\.com\/openclaw\/openclaw\/issues\/10\)/);
-  assert.match(section, /Missing eligible open/);
-  assert.match(section, /\[#13\]\(https:\/\/github\.com\/openclaw\/openclaw\/issues\/13\)/);
-  assert.match(section, /Protected proposed close/);
-  assert.match(section, /\[#11\]\(https:\/\/github\.com\/openclaw\/openclaw\/issues\/11\)/);
-  assert.match(section, /Open archived/);
-  assert.doesNotMatch(section, /\[#12\]\(https:\/\/github\.com\/openclaw\/openclaw\/issues\/12\)/);
+  assert.match(section, /状态：\*\*需处理\*\*/);
+  assert.match(section, /\| 缺少符合条件开放记录 \| 1 \|/);
+  assert.match(section, /\[#10\]\(https:\/\/github\.com\/alibaba\/loongcollector\/issues\/10\)/);
+  assert.match(section, /缺少符合条件开放记录/);
+  assert.match(section, /\[#13\]\(https:\/\/github\.com\/alibaba\/loongcollector\/issues\/13\)/);
+  assert.match(section, /受保护提议关闭/);
+  assert.match(section, /\[#11\]\(https:\/\/github\.com\/alibaba\/loongcollector\/issues\/11\)/);
+  assert.match(section, /归档记录已重新打开/);
+  assert.doesNotMatch(
+    section,
+    /\[#12\]\(https:\/\/github\.com\/alibaba\/loongcollector\/issues\/12\)/,
+  );
 });
 
 test("audit defers stale item drift until the open scan is complete", () => {
@@ -675,14 +684,14 @@ test("recently closed dashboard rows link items and archived reports", () => {
     },
   ]);
 
-  assert.match(rows, /\[#42\]\(https:\/\/github\.com\/openclaw\/openclaw\/pull\/42\)/);
+  assert.match(rows, /\[#42\]\(https:\/\/github\.com\/alibaba\/loongcollector\/pull\/42\)/);
   assert.match(
     rows,
-    /\[closed\/42\.md\]\(https:\/\/github\.com\/openclaw\/clawsweeper\/blob\/main\/closed\/42\.md\)/,
+    /\[closed\/42\.md\]\(https:\/\/github\.com\/iLogtail\/LoongCollectorSweeper\/blob\/main\/closed\/42\.md\)/,
   );
   assert.match(rows, /Fix pipe \\| title/);
-  assert.match(rows, /already implemented on main/);
-  assert.match(rows, /Apr 26, 2026, 20:00 UTC/);
+  assert.match(rows, /已在 main 上实现/);
+  assert.match(rows, /2026年4月26日 UTC 20:00/);
 });
 
 test("GitHub retry classifier distinguishes throttle and transient failures", () => {
@@ -690,9 +699,13 @@ test("GitHub retry classifier distinguishes throttle and transient failures", ()
   assert.equal(ghRetryKind(throttled), "throttle");
   assert.equal(shouldRetryGh(throttled), true);
 
-  const eof = Object.assign(new Error("Command failed: gh api repos/openclaw/openclaw/issues"), {
-    stderr: 'Get "https://api.github.com/repos/openclaw/openclaw/issues?page=54": unexpected EOF\n',
-  });
+  const eof = Object.assign(
+    new Error("Command failed: gh api repos/alibaba/loongcollector/issues"),
+    {
+      stderr:
+        'Get "https://api.github.com/repos/alibaba/loongcollector/issues?page=54": unexpected EOF\n',
+    },
+  );
   assert.equal(ghRetryKind(eof), "transient");
   assert.equal(shouldRetryGh(eof), true);
 
@@ -711,7 +724,7 @@ test("GitHub retry classifier distinguishes throttle and transient failures", ()
   assert.equal(shouldRetryGh(authFailure), false);
 
   const authFailureForIssue502 = Object.assign(
-    new Error("Command failed: gh api repos/openclaw/openclaw/issues/502/comments"),
+    new Error("Command failed: gh api repos/alibaba/loongcollector/issues/502/comments"),
     { stderr: "gh: HTTP 401: Bad credentials" },
   );
   assert.equal(ghRetryKind(authFailureForIssue502), "none");
@@ -719,7 +732,7 @@ test("GitHub retry classifier distinguishes throttle and transient failures", ()
 
 test("locked conversation failures are non-retryable but recognizable apply skips", () => {
   const locked = Object.assign(
-    new Error("Command failed: gh api repos/openclaw/openclaw/issues/40088/comments"),
+    new Error("Command failed: gh api repos/alibaba/loongcollector/issues/40088/comments"),
     {
       stdout:
         '{"message":"Unable to create comment because issue is locked.","documentation_url":"https://docs.github.com/articles/locking-conversations/","status":"403"}',

@@ -355,10 +355,14 @@ interface AuditResult {
 }
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const TARGET_REPO = "openclaw/openclaw";
-const REPORT_REPO = "openclaw/clawsweeper";
-const CLAWHUB_URL = "https://clawhub.ai/";
-const DOCS_URL = "https://docs.openclaw.ai";
+const TARGET_REPO = "alibaba/loongcollector";
+const REPORT_REPO = "iLogtail/LoongCollectorSweeper";
+const DEFAULT_DOCS_URL =
+  "https://github.com/Takuka0311/LoongCollector/tree/xuanyang/update-docs/docs/cn";
+const CLAWHUB_URL =
+  "https://github.com/Takuka0311/LoongCollector/blob/xuanyang/update-docs/docs/cn/plugins/overview.md";
+const DEFAULT_BAILIAN_MODEL = "qwen-plus";
+const DEFAULT_DASHSCOPE_COMPAT_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1";
 const FRESH_DAYS = 7;
 const HOT_REVIEW_DAYS = 7;
 const RECENT_ISSUE_DAYS = 30;
@@ -371,10 +375,7 @@ const STATUS_START = "<!-- clawsweeper-status:start -->";
 const STATUS_END = "<!-- clawsweeper-status:end -->";
 const AUDIT_HEALTH_START = "<!-- clawsweeper-audit:start -->";
 const AUDIT_HEALTH_END = "<!-- clawsweeper-audit:end -->";
-const DEFAULT_CODEX_MODEL = "gpt-5.5";
-const DEFAULT_REASONING_EFFORT = "high";
-const DEFAULT_SERVICE_TIER = "fast";
-const REVIEW_POLICY_VERSION = "2026-04-27-policy-v8";
+const REVIEW_POLICY_VERSION = "2026-04-27-loongcollector-bailian-v1";
 const REVIEW_COMMENT_MARKER_PREFIX = "<!-- clawsweeper-review";
 const PROTECTED_LABELS = new Set(["security", "beta-blocker", "release-blocker", "maintainer"]);
 const ALLOWED_REASONS = new Set<CloseReason>([
@@ -388,6 +389,53 @@ const ALLOWED_REASONS = new Set<CloseReason>([
 ]);
 const ALL_REASONS = new Set<CloseReason>([...ALLOWED_REASONS, "none"]);
 const DECISIONS = new Set<DecisionKind>(["close", "keep_open"]);
+
+function docsBaseUrl(): string {
+  return process.env.LOONGSWEEPER_DOCS_URL?.trim() || DEFAULT_DOCS_URL;
+}
+
+function defaultBailianModel(): string {
+  return process.env.DASHSCOPE_MODEL?.trim() || DEFAULT_BAILIAN_MODEL;
+}
+
+function dashscopeCompatBase(): string {
+  return process.env.DASHSCOPE_HTTP_BASE_URL?.trim() || DEFAULT_DASHSCOPE_COMPAT_BASE;
+}
+
+function dashscopeChatCompletionsUrl(): string {
+  const raw = process.env.DASHSCOPE_HTTP_BASE_URL?.trim() || "";
+  if (raw && /\/chat\/completions\/?$/i.test(raw)) return raw.replace(/\/$/, "");
+  return `${dashscopeCompatBase().replace(/\/$/, "")}/chat/completions`;
+}
+
+function resolveRepoDir(args: Args): string {
+  const explicit =
+    (typeof args.loongcollector_dir === "string" && args.loongcollector_dir.trim()) ||
+    (typeof args.target_repo_dir === "string" && args.target_repo_dir.trim()) ||
+    (typeof args.openclaw_dir === "string" && args.openclaw_dir.trim()) ||
+    "";
+  return resolve(explicit ? explicit : "../loongcollector");
+}
+
+function resolveReadonlyRepo(args: Args): boolean {
+  return boolArg(args.readonly_loongcollector) || boolArg(args.readonly_openclaw);
+}
+
+function resolveBailianModel(args: Args): string {
+  const explicit =
+    (typeof args.bailian_model === "string" && args.bailian_model.trim()) ||
+    (typeof args.llm_model === "string" && args.llm_model.trim()) ||
+    (typeof args.codex_model === "string" && args.codex_model.trim()) ||
+    "";
+  return explicit || defaultBailianModel();
+}
+
+function resolveLlmTimeoutMs(args: Args): number {
+  return numberArg(
+    args.bailian_timeout_ms ?? args.llm_timeout_ms ?? args.codex_timeout_ms,
+    600_000,
+  );
+}
 
 type ReviewArtifactDestination = "items" | "closed" | "skip_closed";
 const CONFIDENCES = new Set<Confidence>(["high", "medium", "low"]);
@@ -702,20 +750,14 @@ function itemSnapshotHash(item: Item, context: ItemContext): string {
   return sha256(stableJson({ item: snapshotItem, context }));
 }
 
-function reviewPolicyHash(options: {
-  model?: string;
-  reasoningEffort?: string;
-  sandboxMode?: string;
-  serviceTier?: string;
-}): string {
+function reviewPolicyHash(options: { model?: string }): string {
   return sha256(
     stableJson({
       version: REVIEW_POLICY_VERSION,
       freshDays: FRESH_DAYS,
-      model: options.model ?? DEFAULT_CODEX_MODEL,
-      reasoningEffort: options.reasoningEffort ?? DEFAULT_REASONING_EFFORT,
-      sandboxMode: options.sandboxMode ?? "read-only",
-      serviceTier: options.serviceTier ?? DEFAULT_SERVICE_TIER,
+      model: options.model ?? defaultBailianModel(),
+      docsUrl: docsBaseUrl(),
+      dashscopeBase: dashscopeCompatBase(),
       prompt: readFileSync(join(ROOT, "prompts", "review-item.md"), "utf8"),
       schema: readFileSync(join(ROOT, "schema", "clawsweeper-decision.schema.json"), "utf8"),
     }),
@@ -763,7 +805,7 @@ function requireStringArray(value: unknown, path: string): string[] {
 }
 
 function isEnvironmentAccessCaveat(value: string): boolean {
-  return /(?:GH_TOKEN|GITHUB_TOKEN|OPENCLAW_GH_TOKEN|authenticated gh|gh (?:was |is )?unavailable|unauthenticated gh|shallow clone|GitHub auth(?:entication)? (?:was |is )?unavailable|could not use authenticated GitHub)/i.test(
+  return /(?:GH_TOKEN|GITHUB_TOKEN|OPENCLAW_GH_TOKEN|LOONGCOLLECTOR_GH_TOKEN|SWEEPER_GH_TOKEN|DASHSCOPE_API_KEY|authenticated gh|gh (?:was |is )?unavailable|unauthenticated gh|shallow clone|GitHub auth(?:entication)? (?:was |is )?unavailable|could not use authenticated GitHub)/i.test(
     value,
   );
 }
@@ -1038,7 +1080,7 @@ function collectRelatedMentions(options: {
   const scanText = (value: unknown, source: string): void => {
     if (typeof value !== "string" || !value.trim()) return;
     const linked = value.matchAll(
-      /github\.com\/openclaw\/openclaw\/(?:issues|pull)\/(\d+)|(?<![\w/])#(\d+)\b/g,
+      /github\.com\/alibaba\/loongcollector\/(?:issues|pull)\/(\d+)|(?<![\w/])#(\d+)\b/g,
     );
     for (const match of linked) add(Number(match[1] ?? match[2]), source);
   };
@@ -1114,7 +1156,8 @@ const RELATED_TITLE_STOP_WORDS = new Set([
   "claw",
   "clawhub",
   "claws",
-  "codex",
+  "ilogtail",
+  "loongcollector",
   "does",
   "doesn",
   "don",
@@ -1131,7 +1174,6 @@ const RELATED_TITLE_STOP_WORDS = new Set([
   "issue",
   "main",
   "not",
-  "openclaw",
   "pr",
   "request",
   "should",
@@ -1423,7 +1465,9 @@ function existingReview(number: number, itemsDir: string): ExistingReview | null
 }
 
 function inferReviewStatus(markdown: string): string {
-  return markdown.includes("Codex review failed") ? "failed" : "complete";
+  return markdown.includes("百炼审查失败") || markdown.includes("Codex review failed")
+    ? "failed"
+    : "complete";
 }
 
 function hasBlockedLocalCheckoutAccess(markdown: string): boolean {
@@ -1752,7 +1796,7 @@ function formatPercent(numerator: number, denominator: number): string {
 
 function formatCadenceBucket(bucket: DashboardCadenceBucket): string {
   const due = bucket.total - bucket.current;
-  return `${bucket.current}/${bucket.total} current (${due} due, ${formatPercent(bucket.current, bucket.total)})`;
+  return `${bucket.current}/${bucket.total} 当前（${due} 待办，${formatPercent(bucket.current, bucket.total)}）`;
 }
 
 function timestampMs(iso: string | undefined): number | null {
@@ -2057,9 +2101,9 @@ function collectItemContext(item: Item): ItemContext {
   return context;
 }
 
-function gitInfo(openclawDir: string): GitInfo {
-  run("git", ["fetch", "origin", "main", "--depth=50"], { cwd: openclawDir });
-  const mainSha = run("git", ["rev-parse", "origin/main"], { cwd: openclawDir });
+function gitInfo(repoDir: string): GitInfo {
+  run("git", ["fetch", "origin", "main", "--depth=50"], { cwd: repoDir });
+  const mainSha = run("git", ["rev-parse", "origin/main"], { cwd: repoDir });
   let latestRelease: LatestRelease | null = null;
   try {
     latestRelease = ghJson<LatestRelease>([
@@ -2074,10 +2118,10 @@ function gitInfo(openclawDir: string): GitInfo {
   if (latestRelease?.tagName) {
     try {
       run("git", ["fetch", "--force", "origin", "tag", latestRelease.tagName, "--depth=1"], {
-        cwd: openclawDir,
+        cwd: repoDir,
       });
       latestRelease.sha = run("git", ["rev-list", "-n", "1", latestRelease.tagName], {
-        cwd: openclawDir,
+        cwd: repoDir,
       });
     } catch {
       latestRelease.sha = null;
@@ -2127,50 +2171,57 @@ export function safeOutputTail(
   return text.slice(-maxLength);
 }
 
-function codexFailureReason(detail: string): string {
-  if (detail.includes("Codex dirtied the OpenClaw checkout")) return "dirty checkout";
-  if (detail.includes("did not produce output")) return "missing structured output";
-  if (detail.includes("invalid JSON")) return "invalid structured output";
+function llmFailureReason(detail: string): string {
+  if (detail.includes("源码目录存在未提交改动")) return "dirty checkout";
+  if (detail.includes("did not produce output") || detail.includes("未产出"))
+    return "missing structured output";
+  if (detail.includes("invalid JSON") || detail.includes("无法解析") || detail.includes("非 JSON"))
+    return "invalid structured output";
   if (detail.includes("ENOBUFS") || detail.includes("maxBuffer")) return "output buffer overflow";
-  if (detail.includes("timed out") || detail.includes("ETIMEDOUT")) return "timeout";
-  return "codex execution failed";
+  if (detail.includes("timed out") || detail.includes("ETIMEDOUT") || detail.includes("超时"))
+    return "timeout";
+  if (detail.includes("DASHSCOPE_API_KEY")) return "missing API key";
+  return "bailian request failed";
 }
 
-function codexFailureDecision(status: number | null, stderr: string, stdout = ""): Decision {
-  const detail = stderr || "No stderr.";
-  const reason = codexFailureReason(detail);
+function llmFailureDecision(status: number | null, stderr: string, stdout = ""): Decision {
+  const detail = stderr || "无错误详情。";
+  const reason = llmFailureReason(detail);
   return {
     decision: "keep_open",
     closeReason: "none",
     confidence: "low",
-    summary: `Codex review failed: ${reason}${status === null ? "" : ` (exit ${status})`}.`,
+    summary: `百炼审查失败：${reason}${status === null ? "" : `（HTTP/退出 ${status}）`}。`,
     evidence: [
-      evidenceEntry({ label: "failure reason", detail: reason }),
-      evidenceEntry({ label: "codex failure detail", detail: trimMiddle(detail, 4000) }),
-      evidenceEntry({ label: "codex stdout", detail: trimMiddle(stdout || "No stdout.", 2000) }),
+      evidenceEntry({ label: "失败原因", detail: reason }),
+      evidenceEntry({ label: "百炼调用详情", detail: trimMiddle(detail, 4000) }),
+      evidenceEntry({ label: "附加输出", detail: trimMiddle(stdout || "无。", 2000) }),
     ],
-    risks: ["No close action taken because the review did not complete."],
-    bestSolution: "Retry the Codex review after fixing the execution failure.",
+    risks: ["审查未完成，因此未执行关闭。"],
+    bestSolution: "请检查 DASHSCOPE_API_KEY、网络、模型名与 DashScope 兼容接口可用性后重试。",
     fixedRelease: null,
     fixedSha: null,
     closeComment: "",
   };
 }
 
-function codexEnv(): NodeJS.ProcessEnv {
+function llmEnv(): NodeJS.ProcessEnv {
   const env = { ...process.env };
   delete env.GH_TOKEN;
   delete env.GITHUB_TOKEN;
   delete env.OPENCLAW_GH_TOKEN;
+  delete env.LOONGCOLLECTOR_GH_TOKEN;
+  delete env.SWEEPER_GH_TOKEN;
   delete env.OPENAI_API_KEY;
   delete env.CODEX_API_KEY;
+  delete env.DASHSCOPE_API_KEY;
   env.GIT_OPTIONAL_LOCKS = "0";
   return env;
 }
 
-function openclawDirtyStatus(openclawDir: string): string {
+function repoCheckoutDirtyStatus(repoDir: string): string {
   return run("git", ["status", "--porcelain=v1", "--untracked-files=all"], {
-    cwd: openclawDir,
+    cwd: repoDir,
     env: { GIT_OPTIONAL_LOCKS: "0" },
   });
 }
@@ -2185,107 +2236,124 @@ function makeTreeReadOnly(path: string): void {
   chmodSync(path, 0o555);
 }
 
-function runCodex(options: {
+function extractJsonObjectFromText(text: string): string {
+  const trimmed = text.trim();
+  const fence = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  const candidate = fence?.[1]?.trim() ?? trimmed;
+  const start = candidate.indexOf("{");
+  const end = candidate.lastIndexOf("}");
+  if (start === -1 || end <= start) throw new Error("模型输出中未找到 JSON 对象");
+  return candidate.slice(start, end + 1);
+}
+
+function runBailian(options: {
   item: Item;
   context: ItemContext;
   git: GitInfo;
   model: string;
-  openclawDir: string;
-  reasoningEffort: string;
-  sandboxMode: string;
-  serviceTier: string;
+  repoDir: string;
   timeoutMs: number;
   workDir: string;
 }): Decision {
   ensureDir(options.workDir);
   const promptPath = join(options.workDir, `${options.item.number}.prompt.md`);
-  const outputPath = join(options.workDir, `${options.item.number}.json`);
+  const requestPath = join(options.workDir, `${options.item.number}.dashscope-request.json`);
+  const responsePath = join(options.workDir, `${options.item.number}.dashscope-response.json`);
   writeFileSync(promptPath, promptFor(options.item, options.context, options.git), "utf8");
-  const dirtyBefore = openclawDirtyStatus(options.openclawDir);
+  const prompt = readFileSync(promptPath, "utf8");
+  const dirtyBefore = repoCheckoutDirtyStatus(options.repoDir);
   if (dirtyBefore) {
     throw new Error(
-      `OpenClaw checkout is dirty before reviewing #${options.item.number}:\n${dirtyBefore}`,
+      `在审查 #${options.item.number} 前，LoongCollector 源码目录存在未提交改动：\n${dirtyBefore}`,
     );
   }
-  const result = spawnSync(
-    "codex",
-    [
-      "exec",
-      "-m",
-      options.model,
-      "-c",
-      `model_reasoning_effort="${options.reasoningEffort}"`,
-      "-c",
-      `service_tier="${options.serviceTier}"`,
-      "-c",
-      'forced_login_method="api"',
-      "-c",
-      'approval_policy="never"',
-      "-C",
-      options.openclawDir,
-      "--output-schema",
-      join(ROOT, "schema", "clawsweeper-decision.schema.json"),
-      "--output-last-message",
-      outputPath,
-      "--sandbox",
-      options.sandboxMode,
-      "-",
+  const apiKey = process.env.DASHSCOPE_API_KEY?.trim();
+  if (!apiKey) {
+    return llmFailureDecision(null, "DASHSCOPE_API_KEY is not set", "");
+  }
+  const body = {
+    model: options.model,
+    messages: [
+      {
+        role: "system",
+        content:
+          "你是保守的开源维护审查助手。用户将给出单个 Issue/PR 的审查要求。你必须只输出一个 JSON 对象，满足约定的字段与枚举；不要 Markdown、不要代码围栏、不要解释性前后文。",
+      },
+      { role: "user", content: prompt },
     ],
-    {
-      cwd: options.openclawDir,
-      encoding: "utf8",
-      env: codexEnv(),
-      input: readFileSync(promptPath, "utf8"),
-      maxBuffer: 128 * 1024 * 1024,
-      timeout: options.timeoutMs,
-    },
-  );
-  const dirtyAfter = openclawDirtyStatus(options.openclawDir);
+  };
+  writeFileSync(requestPath, JSON.stringify(body), "utf8");
+  const url = dashscopeChatCompletionsUrl();
+  const maxTimeSec = Math.max(1, Math.ceil(options.timeoutMs / 1000));
+  try {
+    execFileSync(
+      "curl",
+      [
+        "-sS",
+        "--fail-with-body",
+        "--max-time",
+        String(maxTimeSec),
+        "-X",
+        "POST",
+        url,
+        "-H",
+        `Authorization: Bearer ${apiKey}`,
+        "-H",
+        "Content-Type: application/json",
+        "-d",
+        `@${requestPath}`,
+        "-o",
+        responsePath,
+      ],
+      { encoding: "utf8", maxBuffer: 128 * 1024 * 1024, env: llmEnv() },
+    );
+  } catch (error) {
+    const stderr = ghErrorText(error);
+    const bodyTail = existsSync(responsePath) ? readFileSync(responsePath, "utf8") : "";
+    return llmFailureDecision(null, `${stderr}\n${trimMiddle(bodyTail, 8000)}`, "");
+  }
+  const rawResponse = readFileSync(responsePath, "utf8");
+  let outer: Record<string, unknown>;
+  try {
+    outer = JSON.parse(rawResponse) as Record<string, unknown>;
+  } catch (error) {
+    return llmFailureDecision(
+      null,
+      `DashScope 返回非 JSON：${
+        error instanceof Error ? error.message : String(error)
+      }\n${trimMiddle(rawResponse, 4000)}`,
+      "",
+    );
+  }
+  const choices = outer.choices;
+  const first = Array.isArray(choices)
+    ? (choices[0] as Record<string, unknown> | undefined)
+    : undefined;
+  const message = first?.message as Record<string, unknown> | undefined;
+  const content = message?.content;
+  if (typeof content !== "string") {
+    return llmFailureDecision(
+      null,
+      `DashScope 响应缺少 choices[0].message.content：\n${trimMiddle(rawResponse, 4000)}`,
+      "",
+    );
+  }
+  const dirtyAfter = repoCheckoutDirtyStatus(options.repoDir);
   if (dirtyAfter) {
     throw new Error(
-      `Codex dirtied the OpenClaw checkout while reviewing #${options.item.number}:\n${dirtyAfter}`,
-    );
-  }
-  if (result.error) {
-    throw new Error(
-      `Codex review failed for #${options.item.number}: ${result.error.message}\n${
-        safeOutputTail(result.stderr) || safeOutputTail(result.stdout) || "No output."
-      }`,
-    );
-  }
-  if (result.status !== 0) {
-    throw new Error(
-      `Codex review failed for #${options.item.number} with exit ${
-        result.status ?? "unknown"
-      }.\n${safeOutputTail(result.stderr) || safeOutputTail(result.stdout) || "No output."}`,
-    );
-  }
-  if (!existsSync(outputPath)) {
-    const decision = codexFailureDecision(
-      result.status,
-      `Codex exited successfully but did not write ${outputPath}.`,
-      result.stdout,
-    );
-    throw new Error(
-      `Codex review did not produce output for #${options.item.number}: ${decision.evidence
-        .map((entry) => entry.detail)
-        .join("\n")}`,
+      `审查 #${options.item.number} 后，LoongCollector 源码目录不应被改动，但检测到：\n${dirtyAfter}`,
     );
   }
   try {
-    return parseDecision(JSON.parse(readFileSync(outputPath, "utf8").trim()));
+    const jsonText = extractJsonObjectFromText(content);
+    return parseDecision(JSON.parse(jsonText));
   } catch (error) {
-    const decision = codexFailureDecision(
-      result.status,
-      `Codex wrote invalid JSON or schema-invalid output to ${outputPath}: ${
+    return llmFailureDecision(
+      null,
+      `无法解析百炼输出为有效决策 JSON：${
         error instanceof Error ? error.message : String(error)
-      }`,
-      result.stdout,
-    );
-    throw new Error(
-      `Codex review wrote invalid JSON for #${options.item.number}: ${decision.evidence
-        .map((entry) => entry.detail)
-        .join("\n")}`,
+      }\n${trimMiddle(content, 4000)}`,
+      "",
     );
   }
 }
@@ -2293,21 +2361,21 @@ function runCodex(options: {
 function closeReasonText(reason: CloseReason): string {
   switch (reason) {
     case "implemented_on_main":
-      return "already implemented on main";
+      return "已在 main 上实现";
     case "cannot_reproduce":
-      return "cannot reproduce on current main";
+      return "当前 main 上无法复现";
     case "clawhub":
-      return "belongs on ClawHub";
+      return "更适合插件/扩展生态（closeReason 仍为 clawhub）";
     case "duplicate_or_superseded":
-      return "duplicate or superseded";
+      return "重复或已被替代";
     case "not_actionable_in_repo":
-      return "not actionable in this repository";
+      return "本仓库内无法落地";
     case "incoherent":
-      return "not actionable";
+      return "信息不足或无法执行";
     case "stale_insufficient_info":
-      return "stale with insufficient information";
+      return "长期停滞且信息不足";
     case "none":
-      return "kept open";
+      return "保持开启";
   }
 }
 
@@ -2366,11 +2434,20 @@ function latestFileUrl(file: string): string {
 
 function docsPageUrl(file: string): string | null {
   if (!file.startsWith("docs/")) return null;
+  const base = docsBaseUrl().replace(/\/$/, "");
+  if (base.includes("github.com") && base.includes("/tree/")) {
+    const relative = file
+      .replace(/^docs\/cn\//, "")
+      .replace(/^docs\//, "")
+      .replace(/\/index\.mdx?$/, "")
+      .replace(/\.mdx?$/, "");
+    return `${base}/${relative}`;
+  }
   const page = file
     .replace(/^docs\//, "")
     .replace(/\/index\.mdx?$/, "")
     .replace(/\.mdx?$/, "");
-  return `${DOCS_URL}/${page}`;
+  return `${base}/${page}`;
 }
 
 function markdownLink(label: string, url: string): string {
@@ -2389,10 +2466,10 @@ function formatTimestamp(iso: string | undefined): string {
   if (!iso) return "unknown";
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) return iso;
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
     month: "short",
     day: "numeric",
-    year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
@@ -2408,15 +2485,17 @@ function workflowStatusBlock(options?: {
   updatedAt?: string;
 }): string {
   const updatedAt = formatTimestamp(options?.updatedAt ?? new Date().toISOString());
-  const state = options?.state ?? "Idle";
-  const detail = options?.detail ?? "No workflow status has been published yet.";
-  const runLine = options?.runUrl ? `\nRun: ${markdownLink(options.runUrl, options.runUrl)}` : "";
+  const state = options?.state ?? "空闲";
+  const detail = options?.detail ?? "尚未发布工作流状态。";
+  const runLine = options?.runUrl
+    ? `\n运行链接：${markdownLink(options.runUrl, options.runUrl)}`
+    : "";
   return `${STATUS_START}
-**Workflow status**
+**工作流状态**
 
-Updated: ${updatedAt}
+更新时间：${updatedAt}
 
-State: ${state}
+状态：${state}
 
 ${detail}${runLine}
 ${STATUS_END}`;
@@ -2439,19 +2518,18 @@ function displayTitle(title: string): string {
 
 function fixedInText(decision: Decision): string {
   const parts: string[] = [];
-  if (decision.fixedRelease) parts.push(`release ${linkedRelease(decision.fixedRelease)}`);
-  if (decision.fixedSha) parts.push(`commit ${linkedSha(decision.fixedSha)}`);
-  return parts.length ? parts.join(", ") : "not determined";
+  if (decision.fixedRelease) parts.push(`发布 ${linkedRelease(decision.fixedRelease)}`);
+  if (decision.fixedSha) parts.push(`提交 ${linkedSha(decision.fixedSha)}`);
+  return parts.length ? parts.join("，") : "未确定";
 }
 
 function fixedInReportText(markdown: string): string {
   const parts: string[] = [];
   const fixedRelease = frontMatterValue(markdown, "fixed_release");
   const fixedSha = frontMatterValue(markdown, "fixed_sha");
-  if (fixedRelease && fixedRelease !== "unknown")
-    parts.push(`release ${linkedRelease(fixedRelease)}`);
-  if (fixedSha && fixedSha !== "unknown") parts.push(`commit ${linkedSha(fixedSha)}`);
-  return parts.length ? parts.join(", ") : "not determined";
+  if (fixedRelease && fixedRelease !== "unknown") parts.push(`发布 ${linkedRelease(fixedRelease)}`);
+  if (fixedSha && fixedSha !== "unknown") parts.push(`提交 ${linkedSha(fixedSha)}`);
+  return parts.length ? parts.join("，") : "未确定";
 }
 
 function sentence(value: string): string {
@@ -2462,7 +2540,7 @@ function sentence(value: string): string {
 
 function isLinkableSourceRef(file: string): boolean {
   if (file.includes("/")) return true;
-  return ["AGENTS.md", "CHANGELOG.md", "README.md", "VISION.md"].includes(file);
+  return ["AGENTS.md", "CHANGELOG.md", "README.md", "VISION.md", "CONTRIBUTING.md"].includes(file);
 }
 
 function linkInlineSourceRefs(value: string, sha?: string | null): string {
@@ -2474,7 +2552,10 @@ function linkInlineSourceRefs(value: string, sha?: string | null): string {
       if (!isLinkableSourceRef(file)) return match;
       const docsUrl = docsPageUrl(file);
       const url =
-        docsUrl ?? (file === "VISION.md" && !line ? latestFileUrl(file) : fileUrl(file, sha, line));
+        docsUrl ??
+        ((file === "README.md" || file === "VISION.md") && !line
+          ? latestFileUrl(file)
+          : fileUrl(file, sha, line));
       return markdownLink(`\`${ref}\``, url);
     },
   );
@@ -2484,15 +2565,15 @@ function linkPrimaryEvidenceFile(value: string, evidence: Evidence): string {
   if (!evidence.file || !evidence.sha) return value;
   const docsUrl = docsPageUrl(evidence.file);
   if (docsUrl && !value.includes(docsUrl)) {
-    return `${value} Public docs: ${markdownLink(`\`${evidence.file}\``, docsUrl)}.`;
+    return `${value} 公开文档：${markdownLink(`\`${evidence.file}\``, docsUrl)}。`;
   }
-  if (evidence.file !== "VISION.md" || value.includes("VISION.md")) return value;
-  const link = markdownLink("`VISION.md`", latestFileUrl(evidence.file));
+  if (evidence.file !== "README.md" || value.includes("README.md")) return value;
+  const link = markdownLink("`README.md`", latestFileUrl(evidence.file));
   const linked = value
-    .replace(/\b(?:the project vision|project vision|the vision|VISION)\b/i, link)
-    .replace(/^Current main says\b/, `${link} says`)
-    .replace(/^The roadmap guardrails explicitly list\b/, `${link} guardrails explicitly list`);
-  return linked === value ? `${link}: ${value}` : linked;
+    .replace(/\b(?:the project vision|project vision|the vision|README)\b/i, link)
+    .replace(/^Current main says\b/, `${link} 指出`)
+    .replace(/^The roadmap guardrails explicitly list\b/, `${link} 中的边界明确列出`);
+  return linked === value ? `${link}：${value}` : linked;
 }
 
 function evidenceLocation(evidence: Evidence): string {
@@ -2523,34 +2604,34 @@ function closeEvidenceLine(evidence: Evidence): string {
 function closeIntro(reason: CloseReason): string {
   switch (reason) {
     case "implemented_on_main":
-      return "Closing this as implemented after Codex automated review.";
+      return "经百炼自动化审查后，按「已在 main 上实现」关闭本项。";
     case "cannot_reproduce":
-      return "Closing this as not reproducible on current `main` after Codex automated review.";
+      return "经百炼自动化审查后，按「当前 main 无法复现」关闭本项。";
     case "clawhub":
-      return `Closing this as better suited for ${markdownLink("ClawHub", CLAWHUB_URL)}/community plugin work after Codex automated review.`;
+      return `经百炼自动化审查后，按「更适合以插件/扩展承载」关闭本项；生态说明见 ${markdownLink("插件概览", CLAWHUB_URL)}。`;
     case "duplicate_or_superseded":
-      return "Closing this as duplicate or superseded after Codex automated review.";
+      return "经百炼自动化审查后，按「重复或已被替代」关闭本项。";
     case "not_actionable_in_repo":
-      return "Closing this as not actionable in this repository after Codex automated review.";
+      return "经百炼自动化审查后，按「本仓库内无法落地」关闭本项。";
     case "incoherent":
-      return "Closing this as not actionable after Codex automated review.";
+      return "经百炼自动化审查后，按「信息不足或无法执行」关闭本项。";
     case "stale_insufficient_info":
-      return "Closing this as stale with insufficient information after Codex automated review.";
+      return "经百炼自动化审查后，按「长期停滞且信息不足」关闭本项。";
     case "none":
-      return "Closing this after Codex automated review.";
+      return "经百炼自动化审查后关闭本项。";
   }
 }
 
 function closeOutro(reason: CloseReason): string {
   switch (reason) {
     case "implemented_on_main":
-      return "So I’m closing this as already implemented rather than keeping a duplicate issue open.";
+      return "为避免重复跟踪，先行关闭；若仍有缺口请指向更具体的后续工单。";
     case "clawhub":
-      return "So I’m closing this as a scope-fit item for the plugin/community path rather than keeping it open as an OpenClaw core request.";
+      return "该能力更适合在插件/扩展路径演进，主仓库不再作为核心需求跟踪。";
     case "duplicate_or_superseded":
-      return "So I’m closing this here and keeping the remaining discussion on the canonical linked item.";
+      return "后续讨论请以已链接的规范工单为准。";
     case "not_actionable_in_repo":
-      return "So I’m closing this as outside the OpenClaw source repository rather than keeping it open as core work.";
+      return "该事项超出 LoongCollector 源码仓库可处理范围。";
     default:
       return "";
   }
@@ -2610,9 +2691,10 @@ function runtimeReviewText(runtime?: {
 }): string {
   const model = runtime?.model?.trim();
   const reasoningEffort = runtime?.reasoningEffort?.trim();
-  if (model && reasoningEffort) return `model ${model}, reasoning ${reasoningEffort}`;
-  if (model) return `model ${model}`;
-  if (reasoningEffort) return `reasoning ${reasoningEffort}`;
+  if (model && reasoningEffort && reasoningEffort !== "n/a")
+    return `模型 ${model}，推理强度 ${reasoningEffort}`;
+  if (model) return `模型 ${model}`;
+  if (reasoningEffort && reasoningEffort !== "n/a") return `推理强度 ${reasoningEffort}`;
   return "";
 }
 
@@ -2629,20 +2711,18 @@ function closeReviewLineFromDecision(
   runtime?: Pick<ReviewRuntime, "model" | "reasoningEffort">,
 ): string {
   const fixed = fixedInText(decision);
-  const parts = [runtimeReviewText(runtime), `reviewed against ${linkedSha(git.mainSha)}`].filter(
-    Boolean,
-  );
-  if (fixed !== "not determined") parts.push(`fix evidence: ${fixed}`);
-  return `Codex Review notes: ${parts.join("; ")}.`;
+  const parts = [runtimeReviewText(runtime), `对照提交 ${linkedSha(git.mainSha)}`].filter(Boolean);
+  if (fixed !== "未确定") parts.push(`修复证据：${fixed}`);
+  return `百炼审查备注：${parts.join("；")}。`;
 }
 
 function closeReviewLineFromReport(markdown: string): string {
   const mainSha = frontMatterValue(markdown, "main_sha");
   const fixed = fixedInReportText(markdown);
   const parts: string[] = [runtimeReviewTextFromReport(markdown)].filter(Boolean);
-  if (mainSha && mainSha !== "unknown") parts.push(`reviewed against ${linkedSha(mainSha)}`);
-  if (fixed !== "not determined") parts.push(`fix evidence: ${fixed}`);
-  return parts.length ? `Codex Review notes: ${parts.join("; ")}.` : "";
+  if (mainSha && mainSha !== "unknown") parts.push(`对照提交 ${linkedSha(mainSha)}`);
+  if (fixed !== "未确定") parts.push(`修复证据：${fixed}`);
+  return parts.length ? `百炼审查备注：${parts.join("；")}。` : "";
 }
 
 function renderCloseComment(options: {
@@ -2655,8 +2735,8 @@ function renderCloseComment(options: {
   const evidence = options.evidence.slice(0, 6).map(closeEvidenceLine);
   const lines = [closeIntro(options.reason), "", sentence(options.summary)];
   const bestSolution = options.bestSolution?.trim();
-  if (bestSolution) lines.push("", "Best possible solution:", "", sentence(bestSolution));
-  if (evidence.length) lines.push("", "What I checked:", "", ...evidence);
+  if (bestSolution) lines.push("", "最佳落地路径：", "", sentence(bestSolution));
+  if (evidence.length) lines.push("", "已核对内容：", "", ...evidence);
 
   const outro = closeOutro(options.reason);
   if (outro) lines.push("", outro);
@@ -2724,19 +2804,16 @@ function renderKeepOpenCommentFromReport(markdown: string): string {
   const bestSolution = sectionValue(markdown, "Best Possible Solution");
   const risks = sectionValue(markdown, "Risks / Open Questions");
   const lines = [
-    "Codex automated review: keeping this open.",
+    "百炼自动化审查：建议保持开启。",
     "",
     sentence(summary),
     "",
-    "Best possible solution:",
+    "最佳落地路径：",
     "",
-    sentence(
-      bestSolution ||
-        "Continue tracking this item until the missing behavior is implemented or a maintainer decides the product direction.",
-    ),
+    sentence(bestSolution || "请继续跟踪，直到缺失行为在代码中落地，或由维护者明确产品取舍。"),
   ];
-  if (evidence.length) lines.push("", "What I checked:", "", ...evidence);
-  if (risks && risks !== "- none") lines.push("", "Remaining risk / open question:", "", risks);
+  if (evidence.length) lines.push("", "已核对内容：", "", ...evidence);
+  if (risks && risks !== "- none") lines.push("", "剩余风险 / 待澄清：", "", risks);
   const reviewLine = closeReviewLineFromReport(markdown);
   if (reviewLine) lines.push("", reviewLine);
   return sanitizePublicSelfReferences(
@@ -2842,6 +2919,9 @@ function markedReviewCommentBody(number: number, body: string): string {
 
 export function isCodexReviewCommentBody(body: string): boolean {
   return (
+    body.includes("百炼审查备注：") ||
+    body.includes("百炼自动化审查：") ||
+    body.includes("百炼审查失败") ||
     body.includes("Codex Review notes:") ||
     body.includes("Codex automated review:") ||
     body.includes("after Codex review.") ||
@@ -3036,7 +3116,7 @@ function markdownFor(options: {
   const risks = options.decision.risks.length
     ? options.decision.risks.map((risk) => `- ${risk}`).join("\n")
     : "- none";
-  const bestSolution = options.decision.bestSolution.trim() || "_Not provided._";
+  const bestSolution = options.decision.bestSolution.trim() || "_未提供_";
   return `---
 number: ${options.item.number}
 type: ${options.item.kind}
@@ -3060,7 +3140,7 @@ review_reasoning_effort: ${options.runtime.reasoningEffort}
 review_sandbox: ${options.runtime.sandboxMode ?? "unknown"}
 review_service_tier: ${options.runtime.serviceTier ?? "unknown"}
 review_mode: ${options.reviewMode}
-review_status: ${options.decision.summary.startsWith("Codex review failed") ? "failed" : "complete"}
+review_status: ${options.decision.summary.startsWith("百炼审查失败") || options.decision.summary.startsWith("Codex review failed") ? "failed" : "complete"}
 local_checkout_access: verified
 item_snapshot_hash: ${options.snapshotHash}
 close_comment_sha256: ${options.action.closeComment ? sha256(options.action.closeComment) : "none"}
@@ -3075,31 +3155,31 @@ action_taken: ${options.action.actionTaken}
 
 # ${markdownLink(`#${options.item.number}: ${options.item.title}`, options.item.url)}
 
-Type: ${options.item.kind}
+类型: ${options.item.kind}
 
-URL: ${markdownLink(options.item.url, options.item.url)}
+链接: ${markdownLink(options.item.url, options.item.url)}
 
-Author: ${options.item.author}
+作者: ${options.item.author}
 
-Author association: ${options.item.authorAssociation}
+作者身份: ${options.item.authorAssociation}
 
-Labels: ${labels}
+标签: ${labels}
 
-Created at: ${formatTimestamp(options.item.createdAt)}
+创建时间: ${formatTimestamp(options.item.createdAt)}
 
-Updated at: ${formatTimestamp(options.item.updatedAt)}
+更新时间: ${formatTimestamp(options.item.updatedAt)}
 
-Reviewed against: ${linkedSha(options.git.mainSha)}
+对照提交: ${linkedSha(options.git.mainSha)}
 
-Codex review: ${runtimeReviewText(options.runtime)}
+百炼审查：${runtimeReviewText(options.runtime)}
 
-Latest release at review time: ${
+审查时最新发布: ${
     options.git.latestRelease?.tagName
       ? linkedRelease(options.git.latestRelease.tagName)
       : "unknown"
   }${options.git.latestRelease?.sha ? ` (${linkedSha(options.git.latestRelease.sha)})` : ""}
 
-Fixed in: ${fixedInText(options.decision)}
+修复于: ${fixedInText(options.decision)}
 
 ## Decision
 
@@ -3147,11 +3227,8 @@ function planCommand(args: Args): void {
   const itemNumbers = itemNumbersArg(args.item_numbers, args.item_number);
   const hasItemNumbersInput = typeof args.item_numbers === "string" && args.item_numbers.trim();
   const hotIntake = boolArg(args.hot_intake);
-  const model = stringArg(args.codex_model, DEFAULT_CODEX_MODEL);
-  const reasoningEffort = stringArg(args.codex_reasoning_effort, DEFAULT_REASONING_EFFORT);
-  const sandboxMode = stringArg(args.codex_sandbox, "read-only");
-  const serviceTier = stringArg(args.codex_service_tier, DEFAULT_SERVICE_TIER);
-  const reviewPolicy = reviewPolicyHash({ model, reasoningEffort, sandboxMode, serviceTier });
+  const model = resolveBailianModel(args);
+  const reviewPolicy = reviewPolicyHash({ model });
   const planOptions: Parameters<typeof planCandidates>[0] = {
     batchSize,
     maxPages,
@@ -3179,16 +3256,16 @@ function planCommand(args: Args): void {
 }
 
 function reviewCommand(args: Args): void {
-  const openclawDir = resolve(stringArg(args.openclaw_dir, "../openclaw"));
+  const repoDir = resolveRepoDir(args);
   const artifactDir = resolve(stringArg(args.artifact_dir, "artifacts/reviews"));
   const itemsDir = resolve(stringArg(args.items_dir, join(ROOT, "items")));
   const batchSize = numberArg(args.batch_size, 5);
   const maxPages = numberArg(args.max_pages, 250);
-  const model = stringArg(args.codex_model, DEFAULT_CODEX_MODEL);
-  const reasoningEffort = stringArg(args.codex_reasoning_effort, DEFAULT_REASONING_EFFORT);
-  const sandboxMode = stringArg(args.codex_sandbox, "read-only");
-  const serviceTier = stringArg(args.codex_service_tier, DEFAULT_SERVICE_TIER);
-  const timeoutMs = numberArg(args.codex_timeout_ms, 600_000);
+  const model = resolveBailianModel(args);
+  const reasoningEffort = "n/a";
+  const sandboxMode = "n/a";
+  const serviceTier = "n/a";
+  const timeoutMs = resolveLlmTimeoutMs(args);
   const shardIndex = numberArg(args.shard_index, 0);
   const shardCount = numberArg(args.shard_count, 1);
   const itemNumber = numberArg(args.item_number, 0) || undefined;
@@ -3197,16 +3274,16 @@ function reviewCommand(args: Args): void {
   const itemNumbers = hasItemNumbersInput
     ? itemNumbersArg(args.item_numbers, undefined)
     : undefined;
-  const readonlyOpenclaw = boolArg(args.readonly_openclaw);
+  const readonlyRepo = resolveReadonlyRepo(args);
   const requestedApplyClosures =
     boolArg(args.apply_closures) || process.env.CLAWSWEEPER_APPLY_CLOSURES === "true";
   if (requestedApplyClosures) {
     console.error("[review] apply_closures is disabled; review shards are proposal-only");
   }
   ensureDir(artifactDir);
-  const git = gitInfo(openclawDir);
-  const reviewPolicy = reviewPolicyHash({ model, reasoningEffort, sandboxMode, serviceTier });
-  if (readonlyOpenclaw) makeTreeReadOnly(openclawDir);
+  const git = gitInfo(repoDir);
+  const reviewPolicy = reviewPolicyHash({ model });
+  if (readonlyRepo) makeTreeReadOnly(repoDir);
   const selectionOptions: Parameters<typeof selectCandidates>[0] = {
     batchSize,
     maxPages,
@@ -3235,23 +3312,20 @@ function reviewCommand(args: Args): void {
     const snapshotHash = itemSnapshotHash(item, context);
     let decision: Decision;
     try {
-      decision = runCodex({
+      decision = runBailian({
         item,
         context,
         git,
         model,
-        openclawDir,
-        reasoningEffort,
-        sandboxMode,
-        serviceTier,
+        repoDir,
         timeoutMs,
-        workDir: join(artifactDir, "codex"),
+        workDir: join(artifactDir, "bailian"),
       });
     } catch (error) {
-      decision = codexFailureDecision(
+      decision = llmFailureDecision(
         null,
         error instanceof Error ? error.message : String(error),
-        "Per-item Codex failure; continuing with the rest of the shard.",
+        "分片内单项失败，继续处理其余条目。",
       );
     }
     const runtime = { model, reasoningEffort, sandboxMode, serviceTier };
@@ -3564,7 +3638,7 @@ function applyDecisionsCommand(args: Args): void {
       if (needsReviewCommentBodySync) {
         try {
           syncedComment = upsertReviewComment(number, reviewComment, existingReviewComment);
-          syncReason = "updated durable Codex review comment";
+          syncReason = "已更新持久化百炼审查评论";
         } catch (error) {
           if (!isLockedConversationCommentError(error)) throw error;
           if (
@@ -3890,31 +3964,31 @@ export function auditHasStrictFailures(result: AuditResult): boolean {
 }
 
 function auditHealthStatus(result: AuditResult): string {
-  return auditHasStrictFailures(result) ? "Action needed" : "Passing";
+  return auditHasStrictFailures(result) ? "需处理" : "正常";
 }
 
 function auditFindingCategory(category: keyof AuditResult["findings"]): string {
   switch (category) {
     case "missingEligibleOpen":
-      return "Missing eligible open";
+      return "缺少符合条件开放记录";
     case "openArchived":
-      return "Open archived";
+      return "归档记录已重新打开";
     case "staleItemRecords":
-      return "Stale item record";
+      return "陈旧条目记录";
     case "duplicateRecords":
-      return "Duplicate record";
+      return "重复记录";
     case "protectedProposed":
-      return "Protected proposed close";
+      return "受保护提议关闭";
     case "staleReviews":
-      return "Stale review";
+      return "陈旧审查";
     case "missingOpen":
-      return "Missing open";
+      return "缺少开放记录";
     case "missingMaintainerOpen":
-      return "Missing maintainer open";
+      return "缺少维护者开放记录";
     case "missingProtectedOpen":
-      return "Missing protected open";
+      return "缺少受保护开放记录";
     case "missingRecentOpen":
-      return "Missing recent open";
+      return "缺少近期创建开放记录";
   }
 }
 
@@ -3944,39 +4018,39 @@ function actionableAuditFindings(result: AuditResult, limit = 3): string {
       if (rows.length >= limit) return rows.join("\n");
     }
   }
-  return "| _None_ |  |  |  |";
+  return "| _无_ |  |  |  |";
 }
 
 export function auditHealthSection(result: AuditResult | null): string {
   if (!result) {
-    return `### Audit Health
+    return `### 审计健康
 
 ${AUDIT_HEALTH_START}
-No audit has been published yet. Run \`npm run audit -- --update-dashboard\` to refresh this section.
+尚未发布审计结果。运行 \`npm run audit -- --update-dashboard\` 可刷新本段。
 ${AUDIT_HEALTH_END}`;
   }
-  return `### Audit Health
+  return `### 审计健康
 
 ${AUDIT_HEALTH_START}
-Last audit: ${formatTimestamp(result.generatedAt)}
+上次审计：${formatTimestamp(result.generatedAt)}
 
-Status: **${auditHealthStatus(result)}**
+状态：**${auditHealthStatus(result)}**
 
-| Metric | Count |
+| 指标 | 数量 |
 | --- | ---: |
-| Scan complete | ${result.scan.complete ? "yes" : "no"} |
-| Open items seen | ${result.scan.openItemsSeen} |
-| Missing eligible open records | ${result.counts.missingEligibleOpen} |
-| Missing maintainer-authored open records | ${result.counts.missingMaintainerOpen} |
-| Missing protected open records | ${result.counts.missingProtectedOpen} |
-| Missing recently-created open records | ${result.counts.missingRecentOpen} |
-| Archived records that are open again | ${result.counts.openArchived} |
-| Stale item records | ${result.counts.staleItemRecords} |
-| Duplicate records | ${result.counts.duplicateRecords} |
-| Protected proposed closes | ${result.counts.protectedProposed} |
-| Stale reviews | ${result.counts.staleReviews} |
+| 扫描完成 | ${result.scan.complete ? "是" : "否"} |
+| 已见开放条目 | ${result.scan.openItemsSeen} |
+| 缺少符合条件开放记录 | ${result.counts.missingEligibleOpen} |
+| 缺少维护者开放记录 | ${result.counts.missingMaintainerOpen} |
+| 缺少受保护开放记录 | ${result.counts.missingProtectedOpen} |
+| 缺少近期创建开放记录 | ${result.counts.missingRecentOpen} |
+| 归档记录再次打开 | ${result.counts.openArchived} |
+| 陈旧条目记录 | ${result.counts.staleItemRecords} |
+| 重复记录 | ${result.counts.duplicateRecords} |
+| 受保护提议关闭 | ${result.counts.protectedProposed} |
+| 陈旧审查 | ${result.counts.staleReviews} |
 
-| Item | Category | Title | Detail |
+| 条目 | 类别 | 标题 | 详情 |
 | --- | --- | --- | --- |
 ${actionableAuditFindings(result)}
 ${AUDIT_HEALTH_END}`;
@@ -3984,7 +4058,7 @@ ${AUDIT_HEALTH_END}`;
 
 function currentAuditHealthSection(readme: string): string {
   const match = readme.match(
-    new RegExp(`### Audit Health\\n\\n${AUDIT_HEALTH_START}[\\s\\S]*?${AUDIT_HEALTH_END}`),
+    new RegExp(`### 审计健康\\n\\n${AUDIT_HEALTH_START}[\\s\\S]*?${AUDIT_HEALTH_END}`),
   );
   return match?.[0] ?? auditHealthSection(null);
 }
@@ -3994,11 +4068,11 @@ function updateAuditHealthDashboard(result: AuditResult): void {
   const readme = readFileSync(readmePath, "utf8");
   const section = auditHealthSection(result);
   const existingPattern = new RegExp(
-    `### Audit Health\\n\\n${AUDIT_HEALTH_START}[\\s\\S]*?${AUDIT_HEALTH_END}`,
+    `### 审计健康\\n\\n${AUDIT_HEALTH_START}[\\s\\S]*?${AUDIT_HEALTH_END}`,
   );
   const updated = existingPattern.test(readme)
     ? readme.replace(existingPattern, section)
-    : readme.replace(/\n### Latest Run Activity/, `\n${section}\n\n### Latest Run Activity`);
+    : readme.replace(/\n### 最近运行动态/, `\n${section}\n\n### 最近运行动态`);
   writeFileSync(readmePath, updated, "utf8");
 }
 
@@ -4287,7 +4361,7 @@ function markdownTableCell(value: string): string {
 function displayCloseReason(reason: string | undefined): string {
   if (reason && ALL_REASONS.has(reason as CloseReason))
     return closeReasonText(reason as CloseReason);
-  return reason || "unknown";
+  return reason || "未知";
 }
 
 export function formatRecentClosedRows(items: readonly DashboardClosedItem[], limit = 10): string {
@@ -4299,7 +4373,7 @@ export function formatRecentClosedRows(items: readonly DashboardClosedItem[], li
         const reason = markdownTableCell(displayCloseReason(item.closeReason));
         return `| ${markdownLink(`#${item.number}`, itemUrl(item.number, item.kind))} | ${title} | ${reason} | ${formatTimestamp(item.appliedAt)} | ${markdownLink(item.reportPath, reportFileUrl(item.number, item.reportPath))} |`;
       })
-      .join("\n") || "| _None_ |  |  |  |  |"
+      .join("\n") || "| _无_ |  |  |  |  |"
   );
 }
 
@@ -4320,98 +4394,95 @@ function updateDashboard(itemsDir = join(ROOT, "items"), closedDir = join(ROOT, 
         );
         return `| ${markdownLink(`#${item.number}`, itemUrl(item.number, item.kind))} | ${title} | ${outcome} | ${item.reviewStatus} | ${formatTimestamp(item.reviewedAt)} |`;
       })
-      .join("\n") || "| _None_ |  |  |  |  |";
+      .join("\n") || "| _无_ |  |  |  |  |";
   const recentClosed = formatRecentClosedRows(stats.recentClosed);
-  const dashboard = `## Dashboard
+  const dashboard = `## 仪表盘
 
-Last dashboard update: ${formatTimestamp(new Date().toISOString())}
+上次仪表盘更新：${formatTimestamp(new Date().toISOString())}
 
-### Current Run
+### 当前运行
 
 ${status}
 
-### Queue
+### 队列
 
-| Metric | Count |
+| 指标 | 数量 |
 | --- | ---: |
-| Open issues in ${markdownLink(TARGET_REPO, repoUrl())} | ${stats.open.issues} |
-| Open PRs in ${markdownLink(TARGET_REPO, repoUrl())} | ${stats.open.pullRequests} |
-| Open items total | ${stats.open.total} |
-| Reviewed files | ${stats.files} |
-| Unreviewed open items | ${stats.cadence.unreviewedOpen} |
-| Archived closed files | ${stats.archivedFiles} |
+| ${markdownLink(TARGET_REPO, repoUrl())} 开放 Issue | ${stats.open.issues} |
+| ${markdownLink(TARGET_REPO, repoUrl())} 开放 PR | ${stats.open.pullRequests} |
+| 开放条目合计 | ${stats.open.total} |
+| 已审查文件 | ${stats.files} |
+| 尚未审查的开放条目 | ${stats.cadence.unreviewedOpen} |
+| 归档的 closed 文件 | ${stats.archivedFiles} |
 
-### Review Outcomes
+### 审查结果
 
-| Metric | Count |
+| 指标 | 数量 |
 | --- | ---: |
-| Fresh reviewed issues in the last ${FRESH_DAYS} days | ${stats.byKind.issue.fresh} |
-| Proposed issue closes | ${stats.byKind.issue.proposedClose} (${formatPercent(stats.byKind.issue.proposedClose, stats.byKind.issue.fresh)} of reviewed issues) |
-| Fresh reviewed PRs in the last ${FRESH_DAYS} days | ${stats.byKind.pull_request.fresh} |
-| Proposed PR closes | ${stats.byKind.pull_request.proposedClose} (${formatPercent(stats.byKind.pull_request.proposedClose, stats.byKind.pull_request.fresh)} of reviewed PRs) |
-| Fresh verified reviews in the last ${FRESH_DAYS} days | ${stats.fresh} |
-| Proposed closes awaiting apply | ${stats.proposedClose} (${formatPercent(stats.proposedClose, stats.fresh)} of fresh reviews) |
-| Closed by Codex apply | ${stats.closed} |
-| Failed or stale reviews | ${stats.failed + stats.stale} |
+| 近 ${FRESH_DAYS} 天新审查 Issue | ${stats.byKind.issue.fresh} |
+| 提议关闭 Issue | ${stats.byKind.issue.proposedClose}（占已审查 Issue 的 ${formatPercent(stats.byKind.issue.proposedClose, stats.byKind.issue.fresh)}） |
+| 近 ${FRESH_DAYS} 天新审查 PR | ${stats.byKind.pull_request.fresh} |
+| 提议关闭 PR | ${stats.byKind.pull_request.proposedClose}（占已审查 PR 的 ${formatPercent(stats.byKind.pull_request.proposedClose, stats.byKind.pull_request.fresh)}） |
+| 近 ${FRESH_DAYS} 天已验证审查 | ${stats.fresh} |
+| 待 apply 的提议关闭 | ${stats.proposedClose}（占新审查的 ${formatPercent(stats.proposedClose, stats.fresh)}） |
+| 已由 apply 关闭 | ${stats.closed} |
+| 失败或陈旧审查 | ${stats.failed + stats.stale} |
 
-### Cadence
+### 节奏
 
-| Metric | Coverage |
+| 指标 | 覆盖 |
 | --- | ---: |
-| Hourly cadence coverage | ${formatCadenceBucket(stats.cadence.hourly)} |
-| Hourly hot item cadence (<${HOT_REVIEW_DAYS}d) | ${formatCadenceBucket(stats.cadence.hourlyHotItems)} |
-| Daily cadence coverage | ${formatCadenceBucket(stats.cadence.daily)} |
-| Daily PR cadence | ${formatCadenceBucket(stats.cadence.dailyPullRequests)} |
-| Daily new issue cadence (<${RECENT_ISSUE_DAYS}d) | ${formatCadenceBucket(stats.cadence.dailyNewIssues)} |
-| Weekly older issue cadence | ${formatCadenceBucket(stats.cadence.weekly)} |
-| Due now by cadence | ${stats.cadence.due} |
+| 每小时节奏 | ${formatCadenceBucket(stats.cadence.hourly)} |
+| 热点每小时节奏（<${HOT_REVIEW_DAYS} 天） | ${formatCadenceBucket(stats.cadence.hourlyHotItems)} |
+| 每日节奏 | ${formatCadenceBucket(stats.cadence.daily)} |
+| 每日 PR 节奏 | ${formatCadenceBucket(stats.cadence.dailyPullRequests)} |
+| 每日新 Issue 节奏（<${RECENT_ISSUE_DAYS} 天） | ${formatCadenceBucket(stats.cadence.dailyNewIssues)} |
+| 每周陈旧 Issue 节奏 | ${formatCadenceBucket(stats.cadence.weekly)} |
+| 节奏维度待办合计 | ${stats.cadence.due} |
 
 ${auditHealth}
 
-### Latest Run Activity
+### 最近运行动态
 
-Latest review: ${formatTimestamp(stats.activity.latestReviewAt)}. Latest close: ${formatTimestamp(stats.activity.latestCloseAt)}. Latest comment sync: ${formatTimestamp(stats.activity.latestCommentSyncAt)}.
+最近审查：${formatTimestamp(stats.activity.latestReviewAt)}。最近关闭：${formatTimestamp(stats.activity.latestCloseAt)}。最近评论同步：${formatTimestamp(stats.activity.latestCommentSyncAt)}。
 
-| Window | Reviews | Close decisions | Keep-open decisions | Failed/stale reviews | Closed | Comments synced | Apply skips |
+| 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-${formatActivityRow("Last 15 minutes", stats.activity.last15Minutes)}
-${formatActivityRow("Last hour", stats.activity.lastHour)}
-${formatActivityRow("Last 24 hours", stats.activity.last24Hours)}
+${formatActivityRow("最近 15 分钟", stats.activity.last15Minutes)}
+${formatActivityRow("最近 1 小时", stats.activity.lastHour)}
+${formatActivityRow("最近 24 小时", stats.activity.last24Hours)}
 
-### Recently Closed
+### 最近关闭
 
-| Item | Title | Reason | Closed | Report |
+| 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
 ${recentClosed}
 
 <details>
-<summary>Recently Reviewed (latest 10)</summary>
+<summary>最近审查（最多 10 条）</summary>
 
 <br>
 
-| Item | Title | Outcome | Status | Reviewed |
+| 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
 ${recent}
 
 </details>`;
-  const updated = readme.replace(
-    /## Dashboard[\s\S]*?## How It Works/,
-    `${dashboard}\n\n## How It Works`,
-  );
+  const updated = readme.replace(/## 仪表盘[\s\S]*?## 使用说明/, `${dashboard}\n\n## 使用说明`);
   writeFileSync(readmePath, updated, "utf8");
 }
 
 function statusCommand(args: Args): void {
   const readmePath = join(ROOT, "README.md");
   const readme = readFileSync(readmePath, "utf8");
-  const state = stringArg(args.state, "Working");
-  const detail = stringArg(args.detail, "Workflow is running.");
+  const state = stringArg(args.state, "运行中");
+  const detail = stringArg(args.detail, "工作流正在执行。");
   const runUrl = stringArg(args.run_url, "");
   const block = workflowStatusBlock(runUrl ? { state, detail, runUrl } : { state, detail });
   const pattern = new RegExp(`${STATUS_START}[\\s\\S]*?${STATUS_END}`);
   const updated = pattern.test(readme)
     ? readme.replace(pattern, block)
-    : readme.replace(/Last dashboard update: .+/, `$&\n\n${block}`);
+    : readme.replace(/上次仪表盘更新: .+|Last dashboard update: .+/, `$&\n\n${block}`);
   writeFileSync(readmePath, updated, "utf8");
 }
 
