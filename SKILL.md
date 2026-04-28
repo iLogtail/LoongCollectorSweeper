@@ -28,18 +28,38 @@ argument-hint: "<issue-number | 'all'> [--batch-size N] [--max-pages N]"
 ## 快速开始（Agent 自动化流程）
 
 > **重要**：首次运行前必须完成环境配置（步骤 1-2），否则所有命令都会失败。
-> 如果遇到错误，先检查 `node --version`（需 >= 24）、`gh auth status`（需已登录）、`.env` 中的 `DASHSCOPE_API_KEY`。
+>
+> **沙盒环境注意**：本 skill 运行在沙盒中，**无法继承宿主机的 `gh auth` 登录状态**。
+> 必须向用户索要两个凭证，由你写入 `.env` 文件。
 
-按以下步骤顺序执行即可完成一次完整审查。每步都是一条 shell 命令，**在 `loongsweeper.js` 所在目录执行**。
+### 步骤 1：向用户索要凭证（首次运行前必须完成）
+
+检查 `.env` 文件是否已存在且包含有效值。若不存在或缺少必需项，**立即向用户提问索要**以下两个值：
+
+1. **`DASHSCOPE_API_KEY`** — 阿里云百炼 API Key（必需，用于 AI 审查）
+2. **`GH_TOKEN`** — GitHub Personal Access Token（必需，沙盒无法继承宿主 `gh` 登录）
+   - PAT 最低权限：`public_repo`（只读审查）；若需关单/评论：`repo`
+   - 创建地址：https://github.com/settings/tokens
+
+收到用户提供的值后，执行以下操作生成 `.env`：
 
 ```bash
-# 1. 前置检查
-node --version                          # 需要 >= 24
-gh auth status                          # 需要已登录
-
-# 2. 环境配置（首次使用时）
 cp .env.example .env
-# 编辑 .env，填入 DASHSCOPE_API_KEY（必需）
+```
+
+然后将用户给的值写入 `.env` 文件中对应的字段（替换占位内容）：
+- `DASHSCOPE_API_KEY=<用户提供的值>`
+- `GH_TOKEN=<用户提供的值>`
+
+> **注意**：不要在聊天中回显用户的密钥值。写入文件后用 `grep -c '=' .env` 确认行数即可。
+
+### 步骤 2-7：执行审查
+
+按以下步骤顺序执行。每步都是一条 shell 命令，**在 `loongsweeper.js` 所在目录执行**。
+
+```bash
+# 2. 前置检查
+node --version                          # 需要 >= 24
 
 # 3. 克隆上游仓库（首次使用时）
 git clone https://github.com/alibaba/loongcollector.git ../loongcollector
@@ -77,7 +97,7 @@ tail -5 loongsweeper.log.jsonl
 | 项目 | 要求 |
 | --- | --- |
 | **Node.js** | >= 24 |
-| **GitHub CLI `gh`** | 已安装并登录，能访问 `alibaba/loongcollector` |
+| **GitHub CLI `gh`** | 已安装；**沙盒环境下须通过 `GH_TOKEN` 环境变量传入 PAT**（宿主 `gh auth` 不可用） |
 | **百炼 API Key** | 环境变量 `DASHSCOPE_API_KEY` 已配置 |
 | **上游源码** | 本地克隆 `alibaba/loongcollector`（默认路径 `../loongcollector`） |
 
@@ -99,6 +119,7 @@ loongsweeper/
 | 变量 | 说明 |
 | --- | --- |
 | `DASHSCOPE_API_KEY` | 百炼/灵积 API Key（**必需**） |
+| `GH_TOKEN` | GitHub Personal Access Token（**沙盒环境必需**；`gh` CLI 会自动读取此变量进行认证。最低权限：`public_repo`；若需关单/评论：`repo`） |
 | `DASHSCOPE_MODEL` | 模型名，默认 `qwen3.6-max-preview` |
 | `DASHSCOPE_HTTP_BASE_URL` | 可选；兼容模式 API 根 |
 | `LOONGSWEEPER_TARGET_REPO_DIR` | 可选；上游克隆路径，默认 `../loongcollector` |
@@ -186,7 +207,7 @@ node loongsweeper.js apply-decisions --sync-comments-only --item-numbers 12345 -
 
 | 现象 | 解决 |
 | --- | --- |
-| `gh` 报错未认证 | `gh auth login` |
+| `gh` 报错未认证 | 沙盒中无法用 `gh auth login`，须在 `.env` 中设置 `GH_TOKEN=ghp_xxx`（PAT），或 `export GH_TOKEN=ghp_xxx` |
 | 百炼报错 | 检查 `DASHSCOPE_API_KEY` 和网络 |
 | 找不到上游路径 | 传入 `--loongcollector-dir` 指向克隆目录 |
 | 命令似乎卡住 | `tail -1 loongsweeper.log.jsonl` 查看最新日志 |

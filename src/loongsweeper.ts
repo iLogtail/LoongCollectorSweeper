@@ -423,8 +423,7 @@ let _logFilePath: string | null = null;
 let _logStartMs = Date.now();
 
 function resolveLogFile(args: Args): void {
-  const explicit =
-    (typeof args.log_file === "string" && args.log_file.trim()) || "";
+  const explicit = (typeof args.log_file === "string" && args.log_file.trim()) || "";
   const fromEnv = process.env.LOONGSWEEPER_LOG_FILE?.trim() || "";
   const path = explicit || fromEnv || join(ROOT, "loongsweeper.log.jsonl");
   _logFilePath = resolve(path);
@@ -487,7 +486,6 @@ function resolveRepoDir(args: Args): string {
   const explicit =
     (typeof args.loongcollector_dir === "string" && args.loongcollector_dir.trim()) ||
     (typeof args.target_repo_dir === "string" && args.target_repo_dir.trim()) ||
-
     "";
   const fromEnv =
     process.env.LOONGSWEEPER_TARGET_REPO_DIR?.trim() ||
@@ -777,7 +775,13 @@ function ghWithRetry(args: string[], attempts = 12): string {
       emitLog({
         phase: "gh",
         event: "retry",
-        detail: { kind: retryKind, attempt: attempt + 1, attempts, wait_s: Math.round(waitMs / 1000), command: summarizeGhArgs(args) },
+        detail: {
+          kind: retryKind,
+          attempt: attempt + 1,
+          attempts,
+          wait_s: Math.round(waitMs / 1000),
+          command: summarizeGhArgs(args),
+        },
       });
       if (retryKind === "throttle") {
         maybePublishThrottleHeartbeat({ args, attempt, attempts, waitMs });
@@ -3591,7 +3595,12 @@ function reviewCommand(args: Args): void {
     phase: "review",
     event: "candidates_selected",
     progress: `0/${candidates.length}`,
-    detail: { shard_index: shardIndex, shard_count: shardCount, selected: candidates.length, scanned_pages: scannedPages },
+    detail: {
+      shard_index: shardIndex,
+      shard_count: shardCount,
+      selected: candidates.length,
+      scanned_pages: scannedPages,
+    },
   });
   writeFileSync(
     join(artifactDir, "selection.json"),
@@ -3642,11 +3651,7 @@ function reviewCommand(args: Args): void {
         item: item.number,
         detail: { error: errMsg.slice(0, 500) },
       });
-      decision = llmFailureDecision(
-        null,
-        errMsg,
-        "分片内单项失败，继续处理其余条目。",
-      );
+      decision = llmFailureDecision(null, errMsg, "分片内单项失败，继续处理其余条目。");
     }
     const runtime = { model, reasoningEffort, sandboxMode, serviceTier };
     const action = reviewActionForDecision({ item, decision, git, runtime });
@@ -3674,7 +3679,12 @@ function reviewCommand(args: Args): void {
       event: "item_done",
       item: item.number,
       progress: `${completed}/${candidates.length}`,
-      detail: { decision: decision.decision, confidence: decision.confidence, action: action.actionTaken, close_reason: decision.closeReason },
+      detail: {
+        decision: decision.decision,
+        confidence: decision.confidence,
+        action: action.actionTaken,
+        close_reason: decision.closeReason,
+      },
     });
   }
   console.error(
@@ -3722,7 +3732,15 @@ function applyDecisionsCommand(args: Args): void {
     );
     emitLog({
       phase: "apply",
-      event: message.startsWith("closing") ? "closing_item" : message.startsWith("closed") ? "item_closed" : message.startsWith("starting") ? "apply_start" : message.startsWith("finished") ? "apply_finish" : "progress",
+      event: message.startsWith("closing")
+        ? "closing_item"
+        : message.startsWith("closed")
+          ? "item_closed"
+          : message.startsWith("starting")
+            ? "apply_start"
+            : message.startsWith("finished")
+              ? "apply_finish"
+              : "progress",
       progress: `closed=${closedCount}/${limit} processed=${processedCount}/${processedLimit}`,
       detail: { message, counts },
     });

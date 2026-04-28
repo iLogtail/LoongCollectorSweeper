@@ -6,6 +6,18 @@
 
 ## [未发布]
 
+### 新增
+
+- **SKILL.md 交互式凭证配置**：Agent 首次运行时主动向用户索要 `DASHSCOPE_API_KEY` 和 `GH_TOKEN`，自动写入 `.env`，无需用户手动编辑文件。
+- **Release Notes 自动生成**：`release.yml` 在发布时自动从 `CHANGELOG.md` 提取对应版本的变更内容作为 Release Notes；若 CHANGELOG 中无对应版本，fallback 到 `git log`。
+
+### 变更
+
+- **沙盒环境 GitHub 认证**：SKILL.md 与 `.env.example` 明确提示沙盒无法继承宿主 `gh auth`，必须通过 `GH_TOKEN` 环境变量传入 PAT。
+- CHANGELOG 补全历史版本（v0.1.0 – v0.1.4），与 GitHub Releases 对齐。
+
+## [0.1.4] - 2026-04-28
+
 ### 修复
 
 - **ROOT 路径解析**：独立 skill/bundle 模式下 ROOT 不再错误地指向上级目录；自动检测 `dist/` 开发模式与独立部署模式。
