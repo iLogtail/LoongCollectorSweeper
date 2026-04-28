@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年4月28日 UTC 14:37
+更新时间：2026年4月28日 UTC 14:41
 
-状态：审计完成
+状态：正在规划审查
 
-已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25059330845](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25059330845)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25059533820](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25059533820)
 <!-- loongsweeper-status:end -->
 
 ### 队列
