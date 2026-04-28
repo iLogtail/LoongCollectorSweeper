@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年4月28日 UTC 09:34
+上次仪表盘更新：2026年4月28日 UTC 09:37
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年4月28日 UTC 09:34
+更新时间：2026年4月28日 UTC 09:36
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 67 条，分片 67，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 25045290388 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25045290388](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25045290388)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年4月28日 UTC 09:09。最近关闭：2026年4月27日 UTC 11:00。最近评论同步：2026年4月27日 UTC 11:00。
+最近审查：2026年4月28日 UTC 09:36。最近关闭：2026年4月27日 UTC 11:00。最近评论同步：2026年4月27日 UTC 11:00。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 20 | 0 | 20 | 20 | 0 | 0 | 0 |
-| 最近 24 小时 | 73 | 6 | 67 | 67 | 9 | 9 | 0 |
+| 最近 15 分钟 | 67 | 0 | 67 | 67 | 0 | 0 | 0 |
+| 最近 1 小时 | 67 | 0 | 67 | 67 | 0 | 0 | 0 |
+| 最近 24 小时 | 72 | 5 | 67 | 67 | 9 | 9 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#885](https://github.com/alibaba/loongcollector/pull/885) | support send medata to config server | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/885.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#1947](https://github.com/alibaba/loongcollector/pull/1947) | feat: prom textparser with simd | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1947.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | failed | 2026年4月28日 UTC 09:09 |
-| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | failed | 2026年4月28日 UTC 09:09 |
+| [#1710](https://github.com/alibaba/loongcollector/pull/1710) | Support config server v2 provider(HeartBeat、FetchPipelineConfig、FetchProcessConfig) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1710.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2179](https://github.com/alibaba/loongcollector/issues/2179) | [FEATURE]:flusher_http supports log text output, specifying json field values, such as contents.content | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2179.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2257](https://github.com/alibaba/loongcollector/issues/2257) | [FEATURE]: Add native plugin of kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2257.md) | failed | 2026年4月28日 UTC 09:36 |
+| [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | failed | 2026年4月28日 UTC 09:36 |
 
 </details>
 
