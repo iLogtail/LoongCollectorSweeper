@@ -132,8 +132,8 @@ if [[ "${SKIP_BUILD}" -eq 0 ]]; then
   npm run build
 fi
 
-if [[ ! -f dist/clawsweeper.js ]]; then
-  echo "错误: dist/clawsweeper.js 不存在，请先 npm run build。" >&2
+if [[ ! -f dist/loongsweeper.js ]]; then
+  echo "错误: dist/loongsweeper.js 不存在，请先 npm run build。" >&2
   exit 1
 fi
 
@@ -141,7 +141,7 @@ HOT_ARGS=()
 [[ "${HOT_INTAKE}" -eq 1 ]] && HOT_ARGS+=(--hot-intake)
 
 echo "==> plan → ${PLAN_JSON}"
-node dist/clawsweeper.js plan \
+node dist/loongsweeper.js plan \
   --batch-size "${BATCH_SIZE}" \
   --shard-count "${SHARD_COUNT}" \
   --max-pages "${MAX_PAGES}" \
@@ -172,7 +172,7 @@ while IFS=$'\t' read -r shard nums; do
   out="artifacts/review-shard-${shard}"
   mkdir -p "${out}"
   echo "    shard=${shard} items=${nums}"
-  node dist/clawsweeper.js review \
+  node dist/loongsweeper.js review \
     --artifact-dir "${out}" \
     --batch-size "${BATCH_SIZE}" \
     --max-pages "${MAX_PAGES}" \
@@ -213,7 +213,7 @@ if [[ "${COUNT}" -eq 0 ]]; then
 fi
 
 echo "==> apply-artifacts（写入 items/closed + reconcile + dashboard）"
-node dist/clawsweeper.js apply-artifacts --artifact-dir "${MERGED_DIR}"
+node dist/loongsweeper.js apply-artifacts --artifact-dir "${MERGED_DIR}"
 
 echo "==> 完成本地落盘。请检查: git status"
 if [[ "${APPLY_REMOTE}" -eq 1 ]]; then
@@ -222,7 +222,7 @@ if [[ "${APPLY_REMOTE}" -eq 1 ]]; then
   sleep 2
   SYNC_ARGS=()
   [[ "${APPLY_SYNC_ONLY}" -eq 1 ]] && SYNC_ARGS+=(--sync-comments-only)
-  node dist/clawsweeper.js apply-decisions \
+  node dist/loongsweeper.js apply-decisions \
     --limit "${APPLY_LIMIT}" \
     --apply-kind all \
     --min-age-days 0 \

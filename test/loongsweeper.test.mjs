@@ -30,7 +30,7 @@ import {
   shouldRetryGh,
   shouldPlanItem,
   validateCloseDecision,
-} from "../dist/clawsweeper.js";
+} from "../dist/loongsweeper.js";
 
 function item(overrides = {}) {
   return {
@@ -758,7 +758,7 @@ test("audit health section summarizes strict status and actionable findings", ()
   const section = auditHealthSection(result);
 
   assert.match(section, /### 审计健康/);
-  assert.match(section, /<!-- clawsweeper-audit:start -->/);
+  assert.match(section, /<!-- loongsweeper-audit:start -->/);
   assert.match(section, /状态：\*\*需处理\*\*/);
   assert.match(section, /\| 缺少符合条件开放记录 \| 1 \|/);
   assert.match(section, /\[#10\]\(https:\/\/github\.com\/alibaba\/loongcollector\/issues\/10\)/);

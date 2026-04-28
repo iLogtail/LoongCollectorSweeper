@@ -3,6 +3,7 @@ import { config as loadDotenv } from "dotenv";
 import { execFileSync, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
+  appendFileSync,
   chmodSync,
   existsSync,
   mkdirSync,
@@ -24,7 +25,7 @@ type DecisionKind = "close" | "keep_open";
 type CloseReason =
   | "implemented_on_main"
   | "cannot_reproduce"
-  | "clawhub"
+  | "loong_plugin_system"
   | "duplicate_or_superseded"
   | "not_actionable_in_repo"
   | "incoherent"
@@ -362,9 +363,9 @@ const TARGET_REPO = "alibaba/loongcollector";
 const REPORT_REPO = "iLogtail/LoongCollectorSweeper";
 const DEFAULT_DOCS_URL =
   "https://github.com/Takuka0311/LoongCollector/tree/xuanyang/update-docs/docs/cn";
-const CLAWHUB_URL =
+const LOONG_PLUGIN_SYSTEM_URL =
   "https://github.com/Takuka0311/LoongCollector/blob/xuanyang/update-docs/docs/cn/plugins/overview.md";
-const DEFAULT_BAILIAN_MODEL = "qwen-plus";
+const DEFAULT_BAILIAN_MODEL = "qwen3.6-max-preview";
 const DEFAULT_DASHSCOPE_COMPAT_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1";
 const FRESH_DAYS = 7;
 const HOT_REVIEW_DAYS = 7;
@@ -374,17 +375,66 @@ const DAILY_REVIEW_DAYS = 1;
 const WEEKLY_REVIEW_DAYS = 7;
 const DAY_MS = 24 * 60 * 60 * 1000;
 const RECENT_MISSING_OPEN_MS = DAY_MS;
-const STATUS_START = "<!-- clawsweeper-status:start -->";
-const STATUS_END = "<!-- clawsweeper-status:end -->";
-const AUDIT_HEALTH_START = "<!-- clawsweeper-audit:start -->";
-const AUDIT_HEALTH_END = "<!-- clawsweeper-audit:end -->";
+const STATUS_START = "<!-- loongsweeper-status:start -->";
+const STATUS_END = "<!-- loongsweeper-status:end -->";
+const AUDIT_HEALTH_START = "<!-- loongsweeper-audit:start -->";
+const AUDIT_HEALTH_END = "<!-- loongsweeper-audit:end -->";
 const REVIEW_POLICY_VERSION = "2026-04-27-loongcollector-bailian-v1";
-const REVIEW_COMMENT_MARKER_PREFIX = "<!-- clawsweeper-review";
+const REVIEW_COMMENT_MARKER_PREFIX = "<!-- loongsweeper-review";
 const PROTECTED_LABELS = new Set(["security", "beta-blocker", "release-blocker", "maintainer"]);
+
+// ---------------------------------------------------------------------------
+// Structured audit log (JSONL)
+// ---------------------------------------------------------------------------
+
+interface LogEntry {
+  ts: string;
+  elapsed_ms: number;
+  phase: string;
+  event: string;
+  progress?: string;
+  item?: number;
+  detail?: Record<string, unknown>;
+}
+
+let _logFilePath: string | null = null;
+let _logStartMs = Date.now();
+
+function resolveLogFile(args: Args): void {
+  const explicit =
+    (typeof args.log_file === "string" && args.log_file.trim()) || "";
+  const fromEnv = process.env.LOONGSWEEPER_LOG_FILE?.trim() || "";
+  const path = explicit || fromEnv || join(ROOT, "loongsweeper.log.jsonl");
+  _logFilePath = resolve(path);
+  _logStartMs = Date.now();
+}
+
+function emitLog(entry: Omit<LogEntry, "ts" | "elapsed_ms">): void {
+  if (!_logFilePath) return;
+  const record: LogEntry = {
+    ts: new Date().toISOString(),
+    elapsed_ms: Date.now() - _logStartMs,
+    ...entry,
+  };
+  try {
+    appendFileSync(_logFilePath, JSON.stringify(record) + "\n", "utf8");
+  } catch {
+    // best-effort: never let logging break the main flow
+  }
+}
+
+function sanitizeArgsForLog(args: Args): Record<string, unknown> {
+  const safe: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(args)) {
+    if (key === "_") continue;
+    safe[key] = value;
+  }
+  return safe;
+}
 const ALLOWED_REASONS = new Set<CloseReason>([
   "implemented_on_main",
   "cannot_reproduce",
-  "clawhub",
+  "loong_plugin_system",
   "duplicate_or_superseded",
   "not_actionable_in_repo",
   "incoherent",
@@ -415,7 +465,7 @@ function resolveRepoDir(args: Args): string {
   const explicit =
     (typeof args.loongcollector_dir === "string" && args.loongcollector_dir.trim()) ||
     (typeof args.target_repo_dir === "string" && args.target_repo_dir.trim()) ||
-    (typeof args.openclaw_dir === "string" && args.openclaw_dir.trim()) ||
+
     "";
   const fromEnv =
     process.env.LOONGSWEEPER_TARGET_REPO_DIR?.trim() ||
@@ -425,7 +475,7 @@ function resolveRepoDir(args: Args): string {
 }
 
 function resolveReadonlyRepo(args: Args): boolean {
-  return boolArg(args.readonly_loongcollector) || boolArg(args.readonly_openclaw);
+  return boolArg(args.readonly_loongcollector);
 }
 
 function resolveBailianModel(args: Args): string {
@@ -629,10 +679,10 @@ function maybePublishThrottleHeartbeat(options: {
   attempts: number;
   waitMs: number;
 }): void {
-  if (process.env.CLAWSWEEPER_PUBLISH_THROTTLE_STATUS !== "true") return;
-  const minWaitMs = Number(process.env.CLAWSWEEPER_THROTTLE_STATUS_MIN_WAIT_MS ?? 60_000);
+  if (process.env.LOONGSWEEPER_PUBLISH_THROTTLE_STATUS !== "true") return;
+  const minWaitMs = Number(process.env.LOONGSWEEPER_THROTTLE_STATUS_MIN_WAIT_MS ?? 60_000);
   if (options.waitMs < minWaitMs) return;
-  const minIntervalMs = Number(process.env.CLAWSWEEPER_THROTTLE_STATUS_MIN_INTERVAL_MS ?? 120_000);
+  const minIntervalMs = Number(process.env.LOONGSWEEPER_THROTTLE_STATUS_MIN_INTERVAL_MS ?? 120_000);
   const now = Date.now();
   if (now - lastThrottleHeartbeatAt < minIntervalMs) return;
   lastThrottleHeartbeatAt = now;
@@ -641,7 +691,7 @@ function maybePublishThrottleHeartbeat(options: {
     const readmePath = join(ROOT, "README.md");
     if (!existsSync(readmePath)) return;
     const context = throttleHeartbeatContext?.();
-    const checkpoint = process.env.CLAWSWEEPER_APPLY_CHECKPOINT;
+    const checkpoint = process.env.LOONGSWEEPER_APPLY_CHECKPOINT;
     const checkpointText = checkpoint ? `Checkpoint ${checkpoint}. ` : "";
     const detail = [
       `${checkpointText}GitHub throttled while applying close decisions.`,
@@ -659,8 +709,8 @@ function maybePublishThrottleHeartbeat(options: {
       state: "Apply throttled",
       detail,
     };
-    if (process.env.CLAWSWEEPER_RUN_URL) {
-      statusOptions.runUrl = process.env.CLAWSWEEPER_RUN_URL;
+    if (process.env.LOONGSWEEPER_RUN_URL) {
+      statusOptions.runUrl = process.env.LOONGSWEEPER_RUN_URL;
     }
     const block = workflowStatusBlock(statusOptions);
     const readme = readFileSync(readmePath, "utf8");
@@ -702,6 +752,11 @@ function ghWithRetry(args: string[], attempts = 12): string {
       console.error(
         `${retryLabel}; retrying ${summarizeGhArgs(args)} in ${Math.round(waitMs / 1000)}s`,
       );
+      emitLog({
+        phase: "gh",
+        event: "retry",
+        detail: { kind: retryKind, attempt: attempt + 1, attempts, wait_s: Math.round(waitMs / 1000), command: summarizeGhArgs(args) },
+      });
       if (retryKind === "throttle") {
         maybePublishThrottleHeartbeat({ args, attempt, attempts, waitMs });
       }
@@ -766,7 +821,7 @@ function reviewPolicyHash(options: { model?: string }): string {
       docsUrl: docsBaseUrl(),
       dashscopeBase: dashscopeCompatBase(),
       prompt: readFileSync(join(ROOT, "prompts", "review-item.md"), "utf8"),
-      schema: readFileSync(join(ROOT, "schema", "clawsweeper-decision.schema.json"), "utf8"),
+      schema: readFileSync(join(ROOT, "schema", "loongsweeper-decision.schema.json"), "utf8"),
     }),
   ).slice(0, 16);
 }
@@ -812,7 +867,7 @@ function requireStringArray(value: unknown, path: string): string[] {
 }
 
 function isEnvironmentAccessCaveat(value: string): boolean {
-  return /(?:GH_TOKEN|GITHUB_TOKEN|OPENCLAW_GH_TOKEN|LOONGCOLLECTOR_GH_TOKEN|SWEEPER_GH_TOKEN|DASHSCOPE_API_KEY|authenticated gh|gh (?:was |is )?unavailable|unauthenticated gh|shallow clone|GitHub auth(?:entication)? (?:was |is )?unavailable|could not use authenticated GitHub)/i.test(
+  return /(?:GH_TOKEN|GITHUB_TOKEN|LOONGCOLLECTOR_GH_TOKEN|SWEEPER_GH_TOKEN|DASHSCOPE_API_KEY|authenticated gh|gh (?:was |is )?unavailable|unauthenticated gh|shallow clone|GitHub auth(?:entication)? (?:was |is )?unavailable|could not use authenticated GitHub)/i.test(
     value,
   );
 }
@@ -1293,9 +1348,8 @@ const RELATED_TITLE_STOP_WORDS = new Set([
   "being",
   "bug",
   "cannot",
-  "claw",
-  "clawhub",
-  "claws",
+  "loong_plugin_system",
+  "loongsweeper",
   "ilogtail",
   "loongcollector",
   "does",
@@ -2410,7 +2464,6 @@ function llmEnv(): NodeJS.ProcessEnv {
   const env = { ...process.env };
   delete env.GH_TOKEN;
   delete env.GITHUB_TOKEN;
-  delete env.OPENCLAW_GH_TOKEN;
   delete env.LOONGCOLLECTOR_GH_TOKEN;
   delete env.SWEEPER_GH_TOKEN;
   delete env.OPENAI_API_KEY;
@@ -2567,8 +2620,8 @@ function closeReasonText(reason: CloseReason): string {
       return "已在 main 上实现";
     case "cannot_reproduce":
       return "当前 main 上无法复现";
-    case "clawhub":
-      return "更适合插件/扩展生态（closeReason 仍为 clawhub）";
+    case "loong_plugin_system":
+      return "更适合插件/扩展生态";
     case "duplicate_or_superseded":
       return "重复或已被替代";
     case "not_actionable_in_repo":
@@ -2810,8 +2863,8 @@ function closeIntro(reason: CloseReason): string {
       return "经百炼自动化审查后，按「已在 main 上实现」关闭本项。";
     case "cannot_reproduce":
       return "经百炼自动化审查后，按「当前 main 无法复现」关闭本项。";
-    case "clawhub":
-      return `经百炼自动化审查后，按「更适合以插件/扩展承载」关闭本项；生态说明见 ${markdownLink("插件概览", CLAWHUB_URL)}。`;
+    case "loong_plugin_system":
+      return `经百炼自动化审查后，按「更适合以插件/扩展承载」关闭本项；生态说明见 ${markdownLink("插件概览", LOONG_PLUGIN_SYSTEM_URL)}。`;
     case "duplicate_or_superseded":
       return "经百炼自动化审查后，按「重复或已被替代」关闭本项。";
     case "not_actionable_in_repo":
@@ -2829,7 +2882,7 @@ function closeOutro(reason: CloseReason): string {
   switch (reason) {
     case "implemented_on_main":
       return "为避免重复跟踪，先行关闭；若仍有缺口请指向更具体的后续工单。";
-    case "clawhub":
+    case "loong_plugin_system":
       return "该能力更适合在插件/扩展路径演进，主仓库不再作为核心需求跟踪。";
     case "duplicate_or_superseded":
       return "后续讨论请以已链接的规范工单为准。";
@@ -3442,6 +3495,16 @@ function planCommand(args: Args): void {
   if (hasItemNumbersInput || itemNumbers.length > 0) planOptions.itemNumbers = itemNumbers;
   if (hotIntake) planOptions.hotIntake = true;
   const plan = planCandidates(planOptions);
+  emitLog({
+    phase: "plan",
+    event: "candidates_selected",
+    detail: {
+      shards: plan.shards.length,
+      total_candidates: plan.candidates.length,
+      scanned_pages: plan.scannedPages,
+      review_policy: reviewPolicy,
+    },
+  });
   console.log(
     JSON.stringify(
       {
@@ -3479,7 +3542,7 @@ function reviewCommand(args: Args): void {
     : undefined;
   const readonlyRepo = resolveReadonlyRepo(args);
   const requestedApplyClosures =
-    boolArg(args.apply_closures) || process.env.CLAWSWEEPER_APPLY_CLOSURES === "true";
+    boolArg(args.apply_closures) || process.env.LOONGSWEEPER_APPLY_CLOSURES === "true";
   if (requestedApplyClosures) {
     console.error("[review] apply_closures is disabled; review shards are proposal-only");
   }
@@ -3502,6 +3565,12 @@ function reviewCommand(args: Args): void {
   console.error(
     `[review] ${new Date().toISOString()} shard=${shardIndex}/${shardCount} selected=${candidates.length} scanned_pages=${scannedPages}`,
   );
+  emitLog({
+    phase: "review",
+    event: "candidates_selected",
+    progress: `0/${candidates.length}`,
+    detail: { shard_index: shardIndex, shard_count: shardCount, selected: candidates.length, scanned_pages: scannedPages },
+  });
   writeFileSync(
     join(artifactDir, "selection.json"),
     JSON.stringify({ shardIndex, shardCount, scannedPages, candidates, reviewPolicy }, null, 2),
@@ -3511,10 +3580,23 @@ function reviewCommand(args: Args): void {
     console.error(
       `[review] ${new Date().toISOString()} shard=${shardIndex}/${shardCount} start #${item.number} (${completed + 1}/${candidates.length})`,
     );
+    emitLog({
+      phase: "review",
+      event: "item_start",
+      item: item.number,
+      progress: `${completed + 1}/${candidates.length}`,
+      detail: { shard_index: shardIndex },
+    });
     const context = collectItemContext(item);
     const snapshotHash = itemSnapshotHash(item, context);
     let decision: Decision;
     try {
+      emitLog({
+        phase: "review",
+        event: "llm_call_start",
+        item: item.number,
+        detail: { model, timeout_ms: timeoutMs },
+      });
       decision = runBailian({
         item,
         context,
@@ -3524,10 +3606,23 @@ function reviewCommand(args: Args): void {
         timeoutMs,
         workDir: join(artifactDir, "bailian"),
       });
+      emitLog({
+        phase: "review",
+        event: "llm_call_done",
+        item: item.number,
+        detail: { decision: decision.decision, confidence: decision.confidence },
+      });
     } catch (error) {
+      const errMsg = error instanceof Error ? error.message : String(error);
+      emitLog({
+        phase: "review",
+        event: "llm_call_error",
+        item: item.number,
+        detail: { error: errMsg.slice(0, 500) },
+      });
       decision = llmFailureDecision(
         null,
-        error instanceof Error ? error.message : String(error),
+        errMsg,
         "分片内单项失败，继续处理其余条目。",
       );
     }
@@ -3552,10 +3647,23 @@ function reviewCommand(args: Args): void {
     console.error(
       `[review] ${new Date().toISOString()} shard=${shardIndex}/${shardCount} done #${item.number} (${completed}/${candidates.length}) decision=${decision.decision} confidence=${decision.confidence} action=${action.actionTaken}`,
     );
+    emitLog({
+      phase: "review",
+      event: "item_done",
+      item: item.number,
+      progress: `${completed}/${candidates.length}`,
+      detail: { decision: decision.decision, confidence: decision.confidence, action: action.actionTaken, close_reason: decision.closeReason },
+    });
   }
   console.error(
     `[review] ${new Date().toISOString()} shard=${shardIndex}/${shardCount} complete reviewed=${completed}`,
   );
+  emitLog({
+    phase: "review",
+    event: "complete",
+    progress: `${completed}/${candidates.length}`,
+    detail: { reviewed: completed },
+  });
 }
 
 function applyDecisionsCommand(args: Args): void {
@@ -3590,6 +3698,12 @@ function applyDecisionsCommand(args: Args): void {
         `counts=${JSON.stringify(counts)}`,
       ].join(" "),
     );
+    emitLog({
+      phase: "apply",
+      event: message.startsWith("closing") ? "closing_item" : message.startsWith("closed") ? "item_closed" : message.startsWith("starting") ? "apply_start" : message.startsWith("finished") ? "apply_finish" : "progress",
+      progress: `closed=${closedCount}/${limit} processed=${processedCount}/${processedLimit}`,
+      detail: { message, counts },
+    });
   };
   const maybeLogProgress = (message: string): void => {
     if (processedCount % progressEvery === 0) logProgress(message);
@@ -3763,7 +3877,7 @@ function applyDecisionsCommand(args: Args): void {
         results.push({
           number,
           action: "closed",
-          reason: "matching ClawSweeper review comment already exists",
+          reason: "matching LoongSweeper review comment already exists",
         });
         maybeLogProgress(`archived #${number}: already ${state} with matching review comment`);
         if (processedCount >= processedLimit || closedCount >= limit) break;
@@ -3987,6 +4101,11 @@ function applyArtifactsCommand(args: Args): void {
   console.error(
     `[apply-artifacts] applied=${appliedArtifacts} skipped_closed=${skippedClosedArtifacts}`,
   );
+  emitLog({
+    phase: "apply-artifacts",
+    event: "complete",
+    detail: { applied: appliedArtifacts, skipped_closed: skippedClosedArtifacts },
+  });
   if (!skipReconcile) reconcileFolders({ itemsDir, closedDir });
   updateDashboard(itemsDir, closedDir);
 }
@@ -4388,6 +4507,7 @@ function reconcileCommand(args: Args): void {
   const maxPages = numberArg(args.max_pages, 250);
   const dryRun = boolArg(args.dry_run);
   const result = reconcileFolders({ itemsDir, closedDir, maxPages, dryRun });
+  emitLog({ phase: "reconcile", event: "complete", detail: { dry_run: dryRun } });
   console.log(JSON.stringify(result, null, 2));
 }
 
@@ -4412,6 +4532,7 @@ function auditCommand(args: Args): void {
     writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`, "utf8");
   }
   if (updateDashboard) updateAuditHealthDashboard(result);
+  emitLog({ phase: "audit", event: "complete", detail: { sample_limit: sampleLimit, strict } });
   console.log(JSON.stringify(limitAuditFindings(result, sampleLimit), null, 2));
   if (strict && auditHasStrictFailures(result)) process.exit(1);
 }
@@ -4721,7 +4842,7 @@ function statusCommand(args: Args): void {
 }
 
 function checkCommand(): void {
-  JSON.parse(readFileSync(join(ROOT, "schema", "clawsweeper-decision.schema.json"), "utf8"));
+  JSON.parse(readFileSync(join(ROOT, "schema", "loongsweeper-decision.schema.json"), "utf8"));
   if (!existsSync(join(ROOT, ".github", "workflows", "sweep.yml")))
     throw new Error("Missing workflow");
   console.log("ok");
@@ -4729,7 +4850,9 @@ function checkCommand(): void {
 
 export function main(argv = process.argv.slice(2)): void {
   const args = parseArgs(argv);
+  resolveLogFile(args);
   const command = args._[0] ?? "review";
+  emitLog({ phase: command, event: "start", detail: { command, args: sanitizeArgsForLog(args) } });
   if (command === "plan") planCommand(args);
   else if (command === "review") reviewCommand(args);
   else if (command === "apply-artifacts") applyArtifactsCommand(args);
@@ -4745,8 +4868,10 @@ export function main(argv = process.argv.slice(2)): void {
   else if (command === "check") checkCommand();
   else {
     console.error(`Unknown command: ${command}`);
+    emitLog({ phase: command, event: "error", detail: { message: `Unknown command: ${command}` } });
     process.exit(1);
   }
+  emitLog({ phase: command, event: "finish" });
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

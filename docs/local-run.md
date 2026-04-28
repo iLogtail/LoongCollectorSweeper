@@ -38,7 +38,7 @@ npm run check
 通过 `npm run <脚本名>` 调用时，**子命令的参数必须写在 `--` 之后**，否则会被 npm 吞掉。
 
 ```bash
-# 正确：参数交给 node dist/clawsweeper.js review
+# 正确：参数交给 node dist/loongsweeper.js review
 npm run review -- --item-number 12345 --shard-index 0 --shard-count 1
 
 # 错误：--item-number 不会传给 review
@@ -48,7 +48,7 @@ npm run review --item-number 12345
 也可以先 `npm run build` 后直接调用入口（此时不需要中间的 `--`）：
 
 ```bash
-node dist/clawsweeper.js review --item-number 12345 --shard-index 0 --shard-count 1
+node dist/loongsweeper.js review --item-number 12345 --shard-index 0 --shard-count 1
 ```
 
 ## 环境变量（`.env` 与 shell 均可）
@@ -58,7 +58,7 @@ node dist/clawsweeper.js review --item-number 12345 --shard-index 0 --shard-coun
 | 变量 | 说明 |
 | --- | --- |
 | `DASHSCOPE_API_KEY` | 百炼/灵积 API Key，**审查必需**。 |
-| `DASHSCOPE_MODEL` | 模型名；不设时默认 `qwen-plus`。 |
+| `DASHSCOPE_MODEL` | 模型名；不设时默认 `qwen3.6-max-preview`。 |
 | `DASHSCOPE_HTTP_BASE_URL` | 可选；兼容模式 API 根，不设则用代码内默认 DashScope 兼容地址。 |
 | `LOONGSWEEPER_DOCS_URL` | 可选；审查里生成文档链接时的「公开文档根」。 |
 | `LOONGSWEEPER_TARGET_REPO_DIR` 或 `LOONGCOLLECTOR_LOCAL_DIR` | 可选；本机上游克隆绝对或相对路径；**CLI 路径参数优先**。 |
@@ -69,7 +69,7 @@ node dist/clawsweeper.js review --item-number 12345 --shard-index 0 --shard-coun
 ```ini
 # .env
 DASHSCOPE_API_KEY=你的Key
-DASHSCOPE_MODEL=qwen-plus
+DASHSCOPE_MODEL=qwen3.6-max-preview
 # LOONGSWEEPER_TARGET_REPO_DIR=../loongcollector
 ```
 
@@ -77,12 +77,12 @@ DASHSCOPE_MODEL=qwen-plus
 
 ```bash
 export DASHSCOPE_API_KEY="你的Key"
-export DASHSCOPE_MODEL="qwen-plus"
+export DASHSCOPE_MODEL="qwen3.6-max-preview"
 ```
 
 ## 子命令一览
 
-入口为 `dist/clawsweeper.js`（由 `npm run build` 生成），第一个参数为子命令：
+入口为 `dist/loongsweeper.js`（由 `npm run build` 生成），第一个参数为子命令：
 
 | 子命令 | npm 脚本 | 作用简述 |
 | --- | --- | --- |
@@ -101,10 +101,8 @@ export DASHSCOPE_MODEL="qwen-plus"
 | --- | --- |
 | `--loongcollector-dir` | 上游仓库本地路径（推荐）。 |
 | `--target-repo-dir` | 与上者等价。 |
-| `--openclaw-dir` | 旧名兼容，语义同上。 |
 | 以上皆不传 | 使用默认 **`../loongcollector`**（相对当前工作目录，一般为 Sweeper 根目录）。 |
 | `--readonly-loongcollector` | 审查前将上游树设为只读，防止误改。 |
-| `--readonly-openclaw` | 旧开关名，效果同上。 |
 
 ## `review` 常用参数
 
@@ -165,7 +163,7 @@ npm run plan -- \
 | `--item-numbers` | 只处理指定编号。 |
 | `--sync-comments-only` | 仅同步持久化审查评论，不关单。 |
 | `--skip-dashboard` | 跳过写 README 仪表盘（本地试跑可减少改动）。 |
-| `--min-age-days`、`--close-delay-ms` 等 | 与线上一致，见 `src/clawsweeper.ts` 中 `applyDecisionsCommand`。 |
+| `--min-age-days`、`--close-delay-ms` 等 | 与线上一致，见 `src/loongsweeper.ts` 中 `applyDecisionsCommand`。 |
 
 ## `reconcile` / `dashboard` / `status`
 
@@ -190,6 +188,6 @@ npm run audit -- --strict   # 严格失败时非零退出
 - **百炼报错**：检查 `DASHSCOPE_API_KEY`、`DASHSCOPE_MODEL` 与网络；必要时设置 `DASHSCOPE_HTTP_BASE_URL`。
 - **找不到上游默认路径**：显式传入 `--loongcollector-dir`（或 `--target-repo-dir`）指向你的克隆目录。
 
-更细的实现以 [`src/clawsweeper.ts`](../src/clawsweeper.ts) 中各 `*Command` 函数为准。
+更细的实现以 [`src/loongsweeper.ts`](../src/loongsweeper.ts) 中各 `*Command` 函数为准。
 
 **相关：** 希望「规划 → 多片审查 → 合并进本仓库 → 可选对上游关单/评论」的**完整顺序**，见 [**全量工作流**](full-sweep-workflow.md)（含 **`npm run sweep:local`** 一键脚本）。

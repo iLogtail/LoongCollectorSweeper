@@ -93,7 +93,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true' && github.event.inputs.apply_sync_comments_only == 'true') && 'clawsweeper-comment-sync' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '3 * * * *' || github.event.schedule == '18 * * * *' || github.event.schedule == '33 * * * *' || github.event.schedule == '48 * * * *'))) && 'clawsweeper-apply' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.hot_intake == 'true') || (github.event_name == 'schedule' && github.event.schedule == '*/5 * * * *')) && 'clawsweeper-intake' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.audit_dashboard == 'true') || (github.event_name == 'schedule' && github.event.schedule == '7 */6 * * *')) && 'clawsweeper-audit' || 'clawsweeper-review' }}
+  group: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true' && github.event.inputs.apply_sync_comments_only == 'true') && 'loongsweeper-comment-sync' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '3 * * * *' || github.event.schedule == '18 * * * *' || github.event.schedule == '33 * * * *' || github.event.schedule == '48 * * * *'))) && 'loongsweeper-apply' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.hot_intake == 'true') || (github.event_name == 'schedule' && github.event.schedule == '*/5 * * * *')) && 'loongsweeper-intake' || ((github.event_name == 'workflow_dispatch' && github.event.inputs.audit_dashboard == 'true') || (github.event_name == 'schedule' && github.event.schedule == '7 */6 * * *')) && 'loongsweeper-audit' || 'loongsweeper-review' }}
   cancel-in-progress: false
 
 jobs:
@@ -103,8 +103,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      CLAWSWEEPER_APP_ID: ${{ secrets.CLAWSWEEPER_APP_ID }}
-      CLAWSWEEPER_APP_PRIVATE_KEY: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
+      LOONGSWEEPER_APP_ID: ${{ secrets.LOONGSWEEPER_APP_ID }}
+      LOONGSWEEPER_APP_PRIVATE_KEY: ${{ secrets.LOONGSWEEPER_APP_PRIVATE_KEY }}
     outputs:
       apply_closures: ${{ steps.mode.outputs.apply_closures }}
       batch_size: ${{ steps.mode.outputs.batch_size }}
@@ -119,16 +119,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          path: clawsweeper
+          path: loongsweeper
           fetch-depth: 0
 
       - name: 创建 LoongCollector 只读 token
         id: loongcollector-read-token
-        if: ${{ env.CLAWSWEEPER_APP_ID != '' && env.CLAWSWEEPER_APP_PRIVATE_KEY != '' }}
+        if: ${{ env.LOONGSWEEPER_APP_ID != '' && env.LOONGSWEEPER_APP_PRIVATE_KEY != '' }}
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ env.CLAWSWEEPER_APP_ID }}
-          private-key: ${{ env.CLAWSWEEPER_APP_PRIVATE_KEY }}
+          app-id: ${{ env.LOONGSWEEPER_APP_ID }}
+          private-key: ${{ env.LOONGSWEEPER_APP_PRIVATE_KEY }}
           owner: alibaba
           repositories: loongcollector
 
@@ -136,20 +136,20 @@ jobs:
         with:
           node-version: "24"
           cache: npm
-          cache-dependency-path: clawsweeper/package-lock.json
+          cache-dependency-path: loongsweeper/package-lock.json
 
       - name: Install dependencies
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         run: npm ci
 
       - name: 构建 Sweeper
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         run: npm run build
 
       - name: 发布「规划开始」状态
         if: ${{ !((github.event_name == 'workflow_dispatch' && github.event.inputs.apply_existing == 'true') || (github.event_name == 'schedule' && (github.event.schedule == '3 * * * *' || github.event.schedule == '18 * * * *' || github.event.schedule == '33 * * * *' || github.event.schedule == '48 * * * *'))) }}
         continue-on-error: true
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -194,7 +194,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - id: select
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         env:
           SHARD_COUNT: ${{ steps.mode.outputs.shard_count }}
           BATCH_SIZE: ${{ steps.mode.outputs.batch_size }}
@@ -202,8 +202,8 @@ jobs:
           ITEM_NUMBER: ${{ github.event.inputs.item_number || '' }}
           ITEM_NUMBERS: ${{ github.event.inputs.item_numbers || '' }}
           MAX_PAGES: ${{ steps.mode.outputs.max_pages }}
-          DASHSCOPE_MODEL: ${{ vars.DASHSCOPE_MODEL || 'qwen-plus' }}
-          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          DASHSCOPE_MODEL: ${{ vars.DASHSCOPE_MODEL || 'qwen3.6-max-preview' }}
+          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           set -euo pipefail
           item_arg=()
@@ -236,9 +236,9 @@ jobs:
       - name: Publish planning status
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.apply_existing != 'true' }}
         continue-on-error: true
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         env:
-          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -269,10 +269,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 75
     env:
-      CLAWSWEEPER_APP_ID: ${{ secrets.CLAWSWEEPER_APP_ID }}
-      CLAWSWEEPER_APP_PRIVATE_KEY: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
+      LOONGSWEEPER_APP_ID: ${{ secrets.LOONGSWEEPER_APP_ID }}
+      LOONGSWEEPER_APP_PRIVATE_KEY: ${{ secrets.LOONGSWEEPER_APP_PRIVATE_KEY }}
       DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
-      DASHSCOPE_MODEL: ${{ vars.DASHSCOPE_MODEL || 'qwen-plus' }}
+      DASHSCOPE_MODEL: ${{ vars.DASHSCOPE_MODEL || 'qwen3.6-max-preview' }}
     permissions:
       contents: read
       issues: read
@@ -284,17 +284,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          path: clawsweeper
+          path: loongsweeper
           fetch-depth: 0
           persist-credentials: false
 
       - name: 创建 LoongCollector 只读 token
         id: loongcollector-read-token
-        if: ${{ env.CLAWSWEEPER_APP_ID != '' && env.CLAWSWEEPER_APP_PRIVATE_KEY != '' }}
+        if: ${{ env.LOONGSWEEPER_APP_ID != '' && env.LOONGSWEEPER_APP_PRIVATE_KEY != '' }}
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ env.CLAWSWEEPER_APP_ID }}
-          private-key: ${{ env.CLAWSWEEPER_APP_PRIVATE_KEY }}
+          app-id: ${{ env.LOONGSWEEPER_APP_ID }}
+          private-key: ${{ env.LOONGSWEEPER_APP_PRIVATE_KEY }}
           owner: alibaba
           repositories: loongcollector
 
@@ -302,14 +302,14 @@ jobs:
         with:
           node-version: "24"
           cache: npm
-          cache-dependency-path: clawsweeper/package-lock.json
+          cache-dependency-path: loongsweeper/package-lock.json
 
       - name: Install dependencies
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         run: npm ci
 
       - name: 构建 Sweeper
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         run: npm run build
 
       - uses: actions/cache@v4
@@ -333,10 +333,10 @@ jobs:
           git -C loongcollector rev-parse --short HEAD
 
       - name: 运行审查分片
-        working-directory: clawsweeper
+        working-directory: loongsweeper
         env:
-          CLAWSWEEPER_APPLY_CLOSURES: ${{ needs.plan.outputs.apply_closures }}
-          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          LOONGSWEEPER_APPLY_CLOSURES: ${{ needs.plan.outputs.apply_closures }}
+          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           hot_intake_arg=()
           if [ "${{ needs.plan.outputs.hot_intake }}" = "true" ]; then
@@ -369,8 +369,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      CLAWSWEEPER_APP_ID: ${{ secrets.CLAWSWEEPER_APP_ID }}
-      CLAWSWEEPER_APP_PRIVATE_KEY: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
+      LOONGSWEEPER_APP_ID: ${{ secrets.LOONGSWEEPER_APP_ID }}
+      LOONGSWEEPER_APP_PRIVATE_KEY: ${{ secrets.LOONGSWEEPER_APP_PRIVATE_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -378,11 +378,11 @@ jobs:
 
       - name: 创建 LoongCollector 读写 token
         id: loongcollector-write-token
-        if: ${{ env.CLAWSWEEPER_APP_ID != '' && env.CLAWSWEEPER_APP_PRIVATE_KEY != '' }}
+        if: ${{ env.LOONGSWEEPER_APP_ID != '' && env.LOONGSWEEPER_APP_PRIVATE_KEY != '' }}
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ env.CLAWSWEEPER_APP_ID }}
-          private-key: ${{ env.CLAWSWEEPER_APP_PRIVATE_KEY }}
+          app-id: ${{ env.LOONGSWEEPER_APP_ID }}
+          private-key: ${{ env.LOONGSWEEPER_APP_PRIVATE_KEY }}
           owner: alibaba
           repositories: loongcollector
           permission-issues: write
@@ -410,7 +410,7 @@ jobs:
 
       - name: Apply review artifacts
         env:
-          GH_TOKEN: ${{ secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          GH_TOKEN: ${{ secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           npm run apply-artifacts -- --artifact-dir artifacts
           npm run status -- \
@@ -420,7 +420,7 @@ jobs:
 
       - name: Commit dashboard and review files
         env:
-          GH_TOKEN: ${{ secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          GH_TOKEN: ${{ secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           npm run reconcile
           npm run dashboard
@@ -502,8 +502,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      CLAWSWEEPER_APP_ID: ${{ secrets.CLAWSWEEPER_APP_ID }}
-      CLAWSWEEPER_APP_PRIVATE_KEY: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
+      LOONGSWEEPER_APP_ID: ${{ secrets.LOONGSWEEPER_APP_ID }}
+      LOONGSWEEPER_APP_PRIVATE_KEY: ${{ secrets.LOONGSWEEPER_APP_PRIVATE_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -511,11 +511,11 @@ jobs:
 
       - name: 创建 LoongCollector 只读 token
         id: loongcollector-read-token
-        if: ${{ env.CLAWSWEEPER_APP_ID != '' && env.CLAWSWEEPER_APP_PRIVATE_KEY != '' }}
+        if: ${{ env.LOONGSWEEPER_APP_ID != '' && env.LOONGSWEEPER_APP_PRIVATE_KEY != '' }}
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ env.CLAWSWEEPER_APP_ID }}
-          private-key: ${{ env.CLAWSWEEPER_APP_PRIVATE_KEY }}
+          app-id: ${{ env.LOONGSWEEPER_APP_ID }}
+          private-key: ${{ env.LOONGSWEEPER_APP_PRIVATE_KEY }}
           owner: alibaba
           repositories: loongcollector
 
@@ -532,11 +532,11 @@ jobs:
 
       - name: 刷新审计健康区块
         env:
-          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || secrets.OPENCLAW_GH_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.loongcollector-read-token.outputs.token || secrets.LOONGCOLLECTOR_GH_READ_TOKEN || github.token }}
         run: |
           set -euo pipefail
           git pull --rebase
-          npm run audit -- --max-pages 250 --sample-limit 25 --output /tmp/clawsweeper-audit.json --update-dashboard
+          npm run audit -- --max-pages 250 --sample-limit 25 --output /tmp/loongsweeper-audit.json --update-dashboard
           npm run status -- \
             --state "审计完成" \
             --detail "已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。" \
@@ -567,8 +567,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     env:
-      CLAWSWEEPER_APP_ID: ${{ secrets.CLAWSWEEPER_APP_ID }}
-      CLAWSWEEPER_APP_PRIVATE_KEY: ${{ secrets.CLAWSWEEPER_APP_PRIVATE_KEY }}
+      LOONGSWEEPER_APP_ID: ${{ secrets.LOONGSWEEPER_APP_ID }}
+      LOONGSWEEPER_APP_PRIVATE_KEY: ${{ secrets.LOONGSWEEPER_APP_PRIVATE_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -576,11 +576,11 @@ jobs:
 
       - name: 创建 LoongCollector 读写 token
         id: loongcollector-write-token
-        if: ${{ env.CLAWSWEEPER_APP_ID != '' && env.CLAWSWEEPER_APP_PRIVATE_KEY != '' }}
+        if: ${{ env.LOONGSWEEPER_APP_ID != '' && env.LOONGSWEEPER_APP_PRIVATE_KEY != '' }}
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ env.CLAWSWEEPER_APP_ID }}
-          private-key: ${{ env.CLAWSWEEPER_APP_PRIVATE_KEY }}
+          app-id: ${{ env.LOONGSWEEPER_APP_ID }}
+          private-key: ${{ env.LOONGSWEEPER_APP_PRIVATE_KEY }}
           owner: alibaba
           repositories: loongcollector
           permission-issues: write
@@ -603,10 +603,10 @@ jobs:
       - name: Apply unchanged proposed decisions with checkpoints
         env:
           GH_TOKEN: ${{ steps.loongcollector-write-token.outputs.token || secrets.LOONGCOLLECTOR_GH_WRITE_TOKEN }}
-          CLAWSWEEPER_PUBLISH_THROTTLE_STATUS: "true"
-          CLAWSWEEPER_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          CLAWSWEEPER_THROTTLE_STATUS_MIN_WAIT_MS: "60000"
-          CLAWSWEEPER_THROTTLE_STATUS_MIN_INTERVAL_MS: "120000"
+          LOONGSWEEPER_PUBLISH_THROTTLE_STATUS: "true"
+          LOONGSWEEPER_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          LOONGSWEEPER_THROTTLE_STATUS_MIN_WAIT_MS: "60000"
+          LOONGSWEEPER_THROTTLE_STATUS_MIN_INTERVAL_MS: "120000"
         run: |
           test -n "$GH_TOKEN"
           limit="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.apply_limit || '20' }}"
@@ -705,7 +705,7 @@ jobs:
 
           const allowedReasons = new Set([
             "cannot_reproduce",
-            "clawhub",
+            "loong_plugin_system",
             "duplicate_or_superseded",
             "incoherent",
             "implemented_on_main",
@@ -816,7 +816,7 @@ jobs:
             checkpoint=$((checkpoint + 1))
             echo "::group::Apply checkpoint $checkpoint"
             echo "Applying up to $chunk_limit fresh closes; $closed_total/$limit already closed in this run"
-            CLAWSWEEPER_APPLY_CHECKPOINT="$checkpoint" npm run apply-decisions -- \
+            LOONGSWEEPER_APPLY_CHECKPOINT="$checkpoint" npm run apply-decisions -- \
               --limit "$chunk_limit" \
               --min-age-days "$min_age_days" \
               --apply-kind "$apply_kind" \

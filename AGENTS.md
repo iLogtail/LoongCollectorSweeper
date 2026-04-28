@@ -4,8 +4,8 @@ LoongCollectorSweeper（本仓库）是面向 [`alibaba/loongcollector`](https:/
 
 ## 仓库结构
 
-- 主逻辑：[`src/clawsweeper.ts`](src/clawsweeper.ts)
-- 测试：[`test/clawsweeper.test.mjs`](test/clawsweeper.test.mjs)
+- 主逻辑：[`src/loongsweeper.ts`](src/loongsweeper.ts)
+- 测试：[`test/loongsweeper.test.mjs`](test/loongsweeper.test.mjs)
 - GitHub Actions：[`.github/workflows/sweep.yml`](.github/workflows/sweep.yml)
 - 仪表盘与说明：[README.md](README.md)
 - 开放/已审记录：扁平 `items/<编号>.md`
@@ -51,7 +51,7 @@ gh api repos/iLogtail/LoongCollectorSweeper/readme --jq '.content' | base64 --de
 gh api graphql -f query='query { repository(owner:"alibaba", name:"loongcollector") { issues(states: OPEN) { totalCount } pullRequests(states: OPEN) { totalCount } } }'
 ```
 
-吞吐与默认参数请同时查看 [`src/clawsweeper.ts`](src/clawsweeper.ts) 与 [`.github/workflows/sweep.yml`](.github/workflows/sweep.yml)；continuation 路径否则会沿用旧默认值。
+吞吐与默认参数请同时查看 [`src/loongsweeper.ts`](src/loongsweeper.ts) 与 [`.github/workflows/sweep.yml`](.github/workflows/sweep.yml)；continuation 路径否则会沿用旧默认值。
 
 ## 秘钥与环境变量（摘要）
 

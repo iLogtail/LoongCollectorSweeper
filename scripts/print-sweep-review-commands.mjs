@@ -19,7 +19,7 @@ for (const row of matrix) {
   const nums = row.item_numbers === "none" ? "" : String(row.item_numbers).trim();
   const extra = nums ? `--item-numbers ${nums} ` : "";
   const line = [
-    "node dist/clawsweeper.js review",
+    "node dist/loongsweeper.js review",
     `--artifact-dir artifacts/review-shard-${row.shard}`,
     `--batch-size ${batch}`,
     `--max-pages ${maxPages}`,

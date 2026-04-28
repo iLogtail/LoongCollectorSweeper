@@ -1,0 +1,72 @@
+name: Release LoongSweeper Skill
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "版本号（如 0.2.0，不含 v 前缀）"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: 构建并发布 Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Bundle single-file
+        run: npm run bundle
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Prepare release archive
+        run: |
+          set -euo pipefail
+          version="${{ github.event.inputs.version }}"
+          dir="loongsweeper"
+          mkdir -p "$dir"
+          cp dist/loongsweeper.bundle.js "$dir/loongsweeper.js"
+          cp SKILL.md "$dir/SKILL.md"
+          cp .env.example "$dir/.env.example"
+          zip -r "loongsweeper-${version}.zip" "$dir"
+          echo "RELEASE_FILE=loongsweeper-${version}.zip" >> "$GITHUB_ENV"
+          echo "RELEASE_TAG=v${version}" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create "$RELEASE_TAG" \
+            --title "LoongSweeper $RELEASE_TAG" \
+            --notes "## LoongSweeper $RELEASE_TAG
+
+          下载 \`$RELEASE_FILE\` 并解压，即可使用：
+
+          \`\`\`bash
+          unzip $RELEASE_FILE
+          cd loongsweeper
+          node loongsweeper.js check
+          \`\`\`
+
+          前置条件：Node.js 24+、\`gh\` CLI 已登录、\`DASHSCOPE_API_KEY\` 已配置。
+
+          详见 \`SKILL.md\` 中的完整使用说明。" \
+            "$RELEASE_FILE"

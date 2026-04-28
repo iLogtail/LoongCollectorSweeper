@@ -1,6 +1,6 @@
 # 更新日志
 
-本文件记录 **LoongCollectorSweeper** 的重要变更。本工具由 OpenClaw 生态下的 ClawSweeper fork 而来，目标仓库为 [`alibaba/loongcollector`](https://github.com/alibaba/loongcollector)，报告与仪表盘落在 [`iLogtail/LoongCollectorSweeper`](https://github.com/iLogtail/LoongCollectorSweeper)。
+本文件记录 **LoongCollectorSweeper** 的重要变更。本工具由 OpenClaw 生态下的 ClawSweeper fork 而来，所有 claw 相关命名已重命名为 loong 系列，目标仓库为 [`alibaba/loongcollector`](https://github.com/alibaba/loongcollector)，报告与仪表盘落在 [`iLogtail/LoongCollectorSweeper`](https://github.com/iLogtail/LoongCollectorSweeper)。
 
 仪表盘心跳、检查点与仅状态类提交有意不写入本日志；若需细粒度历史，请以 Git 提交记录为准。
 
@@ -11,7 +11,7 @@
 - 以「保守维护」为目标的清扫机器人：为上游每个开放 Issue / Pull Request 生成一份 Markdown 审查记录。
 - **仅提议**的审查流水线，以及独立的 **apply** 模式：仅对未变更且高置信的「提议关闭」执行关单与评论同步。
 - 支持按单号 / 逗号分隔多号定向审查，便于排障与补审。
-- README **仪表盘**：指向 `items/` 报告、证据与关单率、节奏覆盖、工作流状态、apply 状态等；保留 `<!-- clawsweeper-status:* -->` / `<!-- clawsweeper-audit:* -->` 锚点供自动化更新。
+- README **仪表盘**：指向 `items/` 报告、证据与关单率、节奏覆盖、工作流状态、apply 状态等；保留 `<!-- loongsweeper-status:* -->` / `<!-- loongsweeper-audit:* -->` 锚点供自动化更新。
 - 扁平 **`closed/`** 归档，使 **`items/`** 主要跟踪当前仍开放的条目。
 - **`audit`** 只读命令：对照 GitHub 实时状态检查 `items/` 与 `closed/` 是否一致（致谢 @stainlu）。
 - 审查报告中的运行元数据（模型等）；MIT 许可。
@@ -23,14 +23,14 @@
 - README **最近运行**统计：近期审查、关单决策、评论同步、apply 跳过、实际关单等计数。
 - README **审计健康**区块及独立定时/手动任务，可在不触发全量审查的情况下刷新（致谢 @stainlu）。
 - 支持逗号分隔的定向审查派发，便于按审计结果批量补审（致谢 @stainlu）。
-- **阿里云百炼 / DashScope**：通过兼容 OpenAI Chat Completions 的 HTTP 接口调用模型，解析并校验符合 `schema/clawsweeper-decision.schema.json` 的 JSON；**不再依赖 Codex CLI**。
+- **阿里云百炼 / DashScope**：通过兼容 OpenAI Chat Completions 的 HTTP 接口调用模型，解析并校验符合 `schema/loongsweeper-decision.schema.json` 的 JSON；**不再依赖 Codex CLI**。
 - 可配置文档根（如 `LOONGSWEEPER_DOCS_URL`）、默认中文文档树与插件生态说明链接；审查提示词 **`prompts/review-item.md`** 中文化并绑定 LoongCollector 边界。
 
 ### 变更
 
 - 审查模型由 Codex/GPT 管线改为 **百炼**（默认模型可通过 `DASHSCOPE_MODEL` 等配置）。
 - 目标仓库 **`alibaba/loongcollector`**，报告仓库 **`iLogtail/LoongCollectorSweeper`**；`gh` 默认 `--repo`、链接与正则均对齐上游。
-- 本地 / CI 检出目录默认为 **`../loongcollector`**；CLI 推荐 **`--target-repo-dir` / `--loongcollector-dir`**，保留 **`--openclaw-dir`** 等旧参数别名。
+- 本地 / CI 检出目录默认为 **`../loongcollector`**；CLI 推荐 **`--target-repo-dir` / `--loongcollector-dir`**。
 - GitHub Actions：克隆 `alibaba/loongcollector`、缓存与 job 展示名中文化；Secrets 推荐使用 **`LOONGCOLLECTOR_GH_READ_TOKEN`** / **`LOONGCOLLECTOR_GH_WRITE_TOKEN`**（并保留对旧名的兼容回退）；审查 job 注入 **`DASHSCOPE_API_KEY`**。
 - 工作流 `workflow_dispatch` 中单条超时参数改为 **`bailian_timeout_ms`**（代码侧仍兼容 `codex_timeout_ms` / `llm_timeout_ms`）。
 - 提升吞吐：更大 batch、多分片、链式续跑、检查点提交等策略仍适用。

@@ -199,7 +199,7 @@ npm run apply-decisions -- \
   --item-numbers 具体编号,逗号分隔
 ```
 
-3. 确认无问题后，再按仓库策略跑正式 apply（关单、checkpoint 等，参数见 `src/clawsweeper.ts` 的 `applyDecisionsCommand` 与 [local-run 中说明](local-run.md)）。  
+3. 确认无问题后，再按仓库策略跑正式 apply（关单、checkpoint 等，参数见 `src/loongsweeper.ts` 的 `applyDecisionsCommand` 与 [local-run 中说明](local-run.md)）。  
 4. 每次对上游有写操作后，建议再 `npm run reconcile` + `npm run dashboard` 与线上一致。
 
 > **再次提醒**：[AGENTS.md](../AGENTS.md) 要求**未经明确授权**不要随意对生产仓库执行会关单的命令；在团队有流程前，可先只做步骤 0～4，把报告留在本仓库做人工跟进。
