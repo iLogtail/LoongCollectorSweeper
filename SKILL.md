@@ -1,3 +1,22 @@
+---
+name: loongsweeper
+description: >-
+  Automate conservative maintenance of alibaba/loongcollector: scan open Issues/PRs,
+  generate structured AI review reports via Alibaba Cloud Bailian, propose closures
+  with evidence, and sync review comments to GitHub. Use when the user wants to
+  triage, review, audit, or close stale issues in the loongcollector repository.
+when_to_use:
+  - User asks to review or triage loongcollector issues
+  - User wants to scan and close stale issues/PRs
+  - User needs to audit issue status or refresh the dashboard
+  - User wants to sync AI review comments to GitHub
+allowed-tools:
+  - Bash
+  - Read
+  - Grep
+  - Write
+---
+
 # LoongSweeper
 
 面向 [`alibaba/loongcollector`](https://github.com/alibaba/loongcollector) 的保守维护自动化工具：为每个待处理 Issue/PR 生成结构化审查报告，在证据充分时提议关闭，并可同步持久化审查评论。
