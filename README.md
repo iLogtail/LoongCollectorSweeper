@@ -17,9 +17,9 @@
 
 更新时间：2026年4月28日 UTC 12:14
 
-状态：Apply in progress
+状态：Apply finished
 
-Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
+Apply/comment-sync run finished with 1 fresh closes out of requested limit 1. See apply-report.json for per-item results.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25052144430](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25052144430)
 <!-- loongsweeper-status:end -->
 
