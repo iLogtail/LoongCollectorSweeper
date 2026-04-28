@@ -27,6 +27,9 @@ argument-hint: "<issue-number | 'all'> [--batch-size N] [--max-pages N]"
 
 ## 快速开始（Agent 自动化流程）
 
+> **重要**：首次运行前必须完成环境配置（步骤 1-2），否则所有命令都会失败。
+> 如果遇到错误，先检查 `node --version`（需 >= 24）、`gh auth status`（需已登录）、`.env` 中的 `DASHSCOPE_API_KEY`。
+
 按以下步骤顺序执行即可完成一次完整审查。每步都是一条 shell 命令，**在 `loongsweeper.js` 所在目录执行**。
 
 ```bash

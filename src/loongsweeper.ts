@@ -17,7 +17,18 @@ import {
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-loadDotenv({ path: join(dirname(fileURLToPath(import.meta.url)), "..", ".env") });
+// Detect ROOT: if the script lives inside a "dist/" directory (dev mode),
+// go up one level to the repo root. Otherwise (standalone skill/bundle),
+// ROOT is the script's own directory.
+const __scriptDir = dirname(fileURLToPath(import.meta.url));
+const __isDevMode = basename(__scriptDir) === "dist";
+const ROOT = __isDevMode ? resolve(__scriptDir, "..") : resolve(__scriptDir);
+
+// Load .env from ROOT; in dev mode also try repo root
+loadDotenv({ path: join(ROOT, ".env") });
+if (__isDevMode) {
+  loadDotenv({ path: join(__scriptDir, "..", ".env") });
+}
 
 type ItemKind = "issue" | "pull_request";
 type ApplyKind = ItemKind | "all";
@@ -358,7 +369,18 @@ interface AuditResult {
   };
 }
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+// Read a resource file. In bundle mode, __inlinedResources (injected by bundle.mjs)
+// provides the content without needing the file on disk.
+declare const __inlinedResources: Map<string, string> | undefined;
+function readResource(filePath: string): string {
+  if (typeof __inlinedResources !== "undefined") {
+    const name = basename(filePath);
+    const inlined = __inlinedResources.get(name);
+    if (inlined !== undefined) return inlined;
+  }
+  return readFileSync(filePath, "utf8");
+}
+
 const TARGET_REPO = "alibaba/loongcollector";
 const REPORT_REPO = "iLogtail/LoongCollectorSweeper";
 const DEFAULT_DOCS_URL =
@@ -820,8 +842,8 @@ function reviewPolicyHash(options: { model?: string }): string {
       model: options.model ?? defaultBailianModel(),
       docsUrl: docsBaseUrl(),
       dashscopeBase: dashscopeCompatBase(),
-      prompt: readFileSync(join(ROOT, "prompts", "review-item.md"), "utf8"),
-      schema: readFileSync(join(ROOT, "schema", "loongsweeper-decision.schema.json"), "utf8"),
+      prompt: readResource(join(ROOT, "prompts", "review-item.md")),
+      schema: readResource(join(ROOT, "schema", "loongsweeper-decision.schema.json")),
     }),
   ).slice(0, 16);
 }
@@ -2386,7 +2408,7 @@ function gitInfo(repoDir: string): GitInfo {
 }
 
 function promptFor(item: Item, context: ItemContext, git: GitInfo): string {
-  const prompt = readFileSync(join(ROOT, "prompts", "review-item.md"), "utf8");
+  const prompt = readResource(join(ROOT, "prompts", "review-item.md"));
   return `${prompt}
 
 ## Repository State
@@ -4842,8 +4864,10 @@ function statusCommand(args: Args): void {
 }
 
 function checkCommand(): void {
-  JSON.parse(readFileSync(join(ROOT, "schema", "loongsweeper-decision.schema.json"), "utf8"));
-  if (!existsSync(join(ROOT, ".github", "workflows", "sweep.yml")))
+  JSON.parse(readResource(join(ROOT, "schema", "loongsweeper-decision.schema.json")));
+  // sweep.yml only exists in repo context, not in standalone skill mode
+  const workflowPath = join(ROOT, ".github", "workflows", "sweep.yml");
+  if (existsSync(join(ROOT, ".github")) && !existsSync(workflowPath))
     throw new Error("Missing workflow");
   console.log("ok");
 }

@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for changelog generation
 
       - uses: actions/setup-node@v4
         with:
@@ -52,24 +54,56 @@ jobs:
           echo "RELEASE_FILE=loongsweeper-${version}.zip" >> "$GITHUB_ENV"
           echo "RELEASE_TAG=v${version}" >> "$GITHUB_ENV"
 
+      - name: Generate release notes from CHANGELOG
+        id: notes
+        run: |
+          set -euo pipefail
+          version="${{ github.event.inputs.version }}"
+          # Extract the section for this version from CHANGELOG.md
+          # Matches from "## [X.Y.Z]" to the next "## [" or end of file
+          notes=$(awk -v ver="$version" '
+            BEGIN { found=0 }
+            /^## \[/ {
+              if (found) exit
+              if (index($0, "[" ver "]")) { found=1; next }
+            }
+            found { print }
+          ' CHANGELOG.md)
+          if [ -z "$notes" ]; then
+            # Fallback: generate from git log since last tag
+            prev_tag=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+            if [ -n "$prev_tag" ]; then
+              notes=$(git log --oneline --no-merges "${prev_tag}..HEAD" | head -20)
+            else
+              notes="Initial release."
+            fi
+          fi
+          # Write to file to avoid shell escaping issues
+          echo "$notes" > /tmp/release-notes.md
+
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          {
+            echo "## LoongSweeper $RELEASE_TAG"
+            echo ""
+            cat /tmp/release-notes.md
+            echo ""
+            echo "---"
+            echo ""
+            echo "下载 \`$RELEASE_FILE\` 并解压，即可使用："
+            echo ""
+            echo '```bash'
+            echo "unzip $RELEASE_FILE"
+            echo "cd loongsweeper"
+            echo "node loongsweeper.js check"
+            echo '```'
+            echo ""
+            echo "前置条件：Node.js 24+、\`gh\` CLI 已登录、\`DASHSCOPE_API_KEY\` 已配置。详见 \`SKILL.md\`。"
+          } > /tmp/full-release-notes.md
           gh release create "$RELEASE_TAG" \
             --title "LoongSweeper $RELEASE_TAG" \
-            --notes "## LoongSweeper $RELEASE_TAG
-
-          下载 \`$RELEASE_FILE\` 并解压，即可使用：
-
-          \`\`\`bash
-          unzip $RELEASE_FILE
-          cd loongsweeper
-          node loongsweeper.js check
-          \`\`\`
-
-          前置条件：Node.js 24+、\`gh\` CLI 已登录、\`DASHSCOPE_API_KEY\` 已配置。
-
-          详见 \`SKILL.md\` 中的完整使用说明。" \
+            --notes-file /tmp/full-release-notes.md \
             "$RELEASE_FILE"

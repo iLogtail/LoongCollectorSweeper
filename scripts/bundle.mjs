@@ -38,22 +38,9 @@ const banner = `
 import { createRequire as __bundleCR } from "node:module";
 const require = __bundleCR(import.meta.url);
 
-// Patch fs.readFileSync to serve inlined resources
 const __inlinedResources = new Map();
 __inlinedResources.set("review-item.md", ${JSON.stringify(reviewPrompt)});
 __inlinedResources.set("loongsweeper-decision.schema.json", ${JSON.stringify(decisionSchema)});
-
-const __patchedFs = await import("node:fs");
-const __origRead = __patchedFs.default.readFileSync;
-__patchedFs.default.readFileSync = function(filePath, ...args) {
-  if (typeof filePath === "string") {
-    const basename = filePath.split("/").pop().split("\\\\").pop();
-    if (__inlinedResources.has(basename)) {
-      return __inlinedResources.get(basename);
-    }
-  }
-  return __origRead.call(this, filePath, ...args);
-};
 // --- End inlined resources ---
 `;
 
