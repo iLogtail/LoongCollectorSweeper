@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年4月29日 UTC 14:32
+上次仪表盘更新：2026年4月29日 UTC 14:34
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年4月29日 UTC 14:32
+更新时间：2026年4月29日 UTC 14:34
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 7。条目: 2321,2325,2382,2391,2522,2555,2556。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25114858775](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25114858775)
+已合并 run 25114977681 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25114977681](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25114977681)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年4月29日 UTC 14:31。最近关闭：2026年4月28日 UTC 12:14。最近评论同步：2026年4月29日 UTC 14:32。
+最近审查：2026年4月29日 UTC 14:33。最近关闭：2026年4月28日 UTC 12:14。最近评论同步：2026年4月29日 UTC 12:10。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 7 | 0 | 7 | 0 | 0 | 7 | 0 |
-| 最近 1 小时 | 7 | 0 | 7 | 0 | 0 | 7 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 7 | 0 | 7 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 7 | 0 | 7 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 32 | 0 |
 
 ### 最近关闭
 
@@ -117,13 +117,13 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年4月29日 UTC 14:31 |
-| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年4月29日 UTC 14:31 |
-| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_dns_etw plugin for Windows DNS Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年4月29日 UTC 14:31 |
-| [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年4月29日 UTC 14:30 |
-| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年4月29日 UTC 14:30 |
-| [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年4月29日 UTC 14:30 |
-| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年4月29日 UTC 14:30 |
+| [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年4月29日 UTC 14:33 |
+| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年4月29日 UTC 14:33 |
+| [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年4月29日 UTC 14:33 |
+| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年4月29日 UTC 14:33 |
+| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年4月29日 UTC 14:32 |
+| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_dns_etw plugin for Windows DNS Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年4月29日 UTC 14:32 |
+| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年4月29日 UTC 14:32 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年4月29日 UTC 12:09 |
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2268.md) | complete | 2026年4月29日 UTC 12:08 |
 | [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年4月29日 UTC 12:08 |
