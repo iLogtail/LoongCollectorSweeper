@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月2日 UTC 16:11
+上次仪表盘更新：2026年5月2日 UTC 16:12
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月2日 UTC 16:11
+更新时间：2026年5月2日 UTC 16:12
 
-状态：Apply in progress
+状态：Apply finished
 
-Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
+Apply/comment-sync run finished with 1 fresh closes out of requested limit 1. See apply-report.json for per-item results.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25256124453](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25256124453)
 <!-- loongsweeper-status:end -->
 
