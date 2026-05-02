@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月2日 UTC 15:59
+更新时间：2026年5月2日 UTC 16:01
 
-状态：热点审查进行中
+状态：正在规划审查
 
-已规划热点 19 条，分片 19，容量 20。审查分片将启动，完成后由 publish 合并产物。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25255883038](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25255883038)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25255917511](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25255917511)
 <!-- loongsweeper-status:end -->
 
 ### 队列
