@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月3日 UTC 17:08
+更新时间：2026年5月3日 UTC 18:00
 
-状态：审查发布完成
+状态：正在规划审查
 
-已合并 run 25285393274 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25285393274](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25285393274)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25286568125](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25286568125)
 <!-- loongsweeper-status:end -->
 
 ### 队列
