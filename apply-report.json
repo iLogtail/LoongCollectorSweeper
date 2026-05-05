@@ -1,67 +1,7 @@
 [
   {
-    "number": 557,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
-  },
-  {
-    "number": 754,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 918,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1236,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1585,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
     "number": 2186,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2207,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
-  },
-  {
-    "number": 2257,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2383,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2480,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2512,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2555,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2556,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "action": "closed",
+    "reason": "长期停滞且信息不足"
   }
 ]
