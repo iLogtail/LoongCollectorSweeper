@@ -19,7 +19,7 @@
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2186。
+Checkpoint 1 finished. Fresh closes in checkpoint: 0. Total fresh closes in this run: 0/1. Result records in checkpoint: 0, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385669913](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385669913)
 <!-- loongsweeper-status:end -->
 
@@ -92,7 +92,7 @@
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 最近 15 分钟 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 1 | 11 | 0 |
+| 最近 1 小时 | 0 | 0 | 0 | 0 | 1 | 10 | 0 |
 | 最近 24 小时 | 48 | 1 | 47 | 0 | 1 | 48 | 0 |
 
 ### 最近关闭
