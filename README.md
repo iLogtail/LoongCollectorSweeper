@@ -19,8 +19,8 @@
 
 状态：热点审查进行中
 
-已规划热点 19 条，分片 19，容量 20。审查分片将启动，完成后由 publish 合并产物。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25390111097](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25390111097)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25390133091](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25390133091)
 <!-- loongsweeper-status:end -->
 
 ### 队列
