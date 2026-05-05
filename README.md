@@ -17,10 +17,10 @@
 
 更新时间：2026年5月5日 UTC 15:27
 
-状态：Apply finished
+状态：Apply in progress
 
-Apply/comment-sync run finished with 1 fresh closes out of requested limit 1. See apply-report.json for per-item results.
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385639380](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385639380)
+开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2186。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385669913](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25385669913)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -92,7 +92,7 @@ Apply/comment-sync run finished with 1 fresh closes out of requested limit 1. Se
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 最近 15 分钟 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 1 | 13 | 0 |
+| 最近 1 小时 | 0 | 0 | 0 | 0 | 1 | 11 | 0 |
 | 最近 24 小时 | 48 | 1 | 47 | 0 | 1 | 48 | 0 |
 
 ### 最近关闭
