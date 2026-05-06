@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月6日 UTC 12:06
+上次仪表盘更新：2026年5月6日 UTC 12:09
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月6日 UTC 12:06
+更新时间：2026年5月6日 UTC 12:09
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 2 条，分片 2，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 25434190176 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25434190176](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25434190176)
 <!-- loongsweeper-status:end -->
 
@@ -30,8 +30,8 @@
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 72 |
 | 开放条目合计 | 118 |
-| 已审查文件 | 64 |
-| 尚未审查的开放条目 | 54 |
+| 已审查文件 | 65 |
+| 尚未审查的开放条目 | 53 |
 | 归档的 closed 文件 | 24 |
 
 ### 审查结果
@@ -45,14 +45,14 @@
 | 近 7 天已验证审查 | 64 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 23 |
-| 失败或陈旧审查 | 0 |
+| 失败或陈旧审查 | 1 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 1/1 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每小时节奏 | 1/2 当前（1 待办，50%） |
+| 热点每小时节奏（<7 天） | 1/2 当前（1 待办，50%） |
 | 每日节奏 | 36/36 当前（0 待办，100%） |
 | 每日 PR 节奏 | 36/36 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月6日 UTC 11:31。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月6日 UTC 11:32。
+最近审查：2026年5月6日 UTC 12:08。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月6日 UTC 11:32。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 最近 24 小时 | 65 | 1 | 64 | 0 | 1 | 65 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 1 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 1 | 0 | 1 | 0 |
+| 最近 24 小时 | 66 | 1 | 65 | 1 | 1 | 64 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年5月6日 UTC 12:08 |
+| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | failed | 2026年5月6日 UTC 12:07 |
 | [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_dns_etw plugin for Windows DNS Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月6日 UTC 11:31 |
-| [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年5月6日 UTC 09:38 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年5月5日 UTC 18:09 |
 | [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年5月5日 UTC 18:09 |
 | [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年5月5日 UTC 18:09 |
@@ -126,7 +127,6 @@
 | [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年5月5日 UTC 18:09 |
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年5月5日 UTC 18:09 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年5月5日 UTC 18:09 |
-| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年5月5日 UTC 18:09 |
 
 </details>
 
