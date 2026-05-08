@@ -17,10 +17,10 @@
 
 更新时间：2026年5月8日 UTC 21:18
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 1。条目: 2557。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25579913793](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25579913793)
+已合并 run 25579927088 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25579927088](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25579927088)
 <!-- loongsweeper-status:end -->
 
 ### 队列
