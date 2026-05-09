@@ -20,7 +20,7 @@
 状态：审查评论已检查
 
 已检查并同步持久化百炼审查评论。已同步: 2。条目: 2555,2557。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25591018383](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25591018383)
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25591014137](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25591014137)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,7 +87,7 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月9日 UTC 03:56。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月9日 UTC 03:57。
+最近审查：2026年5月9日 UTC 03:57。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月9日 UTC 03:57。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
