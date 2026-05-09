@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月9日 UTC 12:35
+上次仪表盘更新：2026年5月9日 UTC 12:38
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月9日 UTC 12:35
+更新时间：2026年5月9日 UTC 12:38
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 25601270427 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25601270427](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25601270427)
 <!-- loongsweeper-status:end -->
 
@@ -40,12 +40,12 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 27 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 38 |
+| 近 7 天新审查 PR | 37 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 65 |
+| 近 7 天已验证审查 | 64 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 23 |
-| 失败或陈旧审查 | 0 |
+| 失败或陈旧审查 | 1 |
 
 ### 节奏
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月9日 UTC 11:14。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月9日 UTC 11:15。
+最近审查：2026年5月9日 UTC 12:37。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月9日 UTC 06:15。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 1 | 0 | 0 | 0 |
+| 最近 24 小时 | 38 | 0 | 38 | 1 | 0 | 37 | 0 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月9日 UTC 11:14 |
+| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | failed | 2026年5月9日 UTC 12:37 |
 | [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月9日 UTC 06:14 |
 | [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年5月9日 UTC 03:56 |
 | [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年5月8日 UTC 20:13 |
