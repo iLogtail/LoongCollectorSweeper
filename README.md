@@ -17,10 +17,10 @@
 
 更新时间：2026年5月12日 UTC 12:20
 
-状态：正在规划审查
+状态：审查评论已检查
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733990425](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733990425)
+已检查并同步持久化百炼审查评论。已同步: 1。条目: 2557。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733829799](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733829799)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月12日 UTC 12:19。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月12日 UTC 09:52。
+最近审查：2026年5月12日 UTC 12:19。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月12日 UTC 12:20。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 37 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
 
 ### 最近关闭
 
