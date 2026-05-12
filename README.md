@@ -17,10 +17,10 @@
 
 更新时间：2026年5月12日 UTC 12:20
 
-状态：审查评论已检查
+状态：热点审查进行中
 
-已检查并同步持久化百炼审查评论。已同步: 1。条目: 2557。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733829799](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733829799)
+已规划热点 0 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733990425](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25733990425)
 <!-- loongsweeper-status:end -->
 
 ### 队列
