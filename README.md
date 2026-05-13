@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月13日 UTC 15:20
+上次仪表盘更新：2026年5月13日 UTC 16:33
 
 ### 当前运行
 
@@ -17,9 +17,9 @@
 
 更新时间：2026年5月13日 UTC 16:33
 
-状态：正在规划审查
+状态：审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25812535981](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25812535981)
 <!-- loongsweeper-status:end -->
 
@@ -28,11 +28,11 @@
 | 指标 | 数量 |
 | --- | ---: |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 70 |
-| 开放条目合计 | 116 |
-| 已审查文件 | 65 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 69 |
+| 开放条目合计 | 115 |
+| 已审查文件 | 64 |
 | 尚未审查的开放条目 | 51 |
-| 归档的 closed 文件 | 24 |
+| 归档的 closed 文件 | 25 |
 
 ### 审查结果
 
@@ -40,9 +40,9 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 27 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 38 |
+| 近 7 天新审查 PR | 37 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 65 |
+| 近 7 天已验证审查 | 64 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 23 |
 | 失败或陈旧审查 | 0 |
@@ -53,8 +53,8 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 38/38 当前（0 待办，100%） |
-| 每日 PR 节奏 | 38/38 当前（0 待办，100%） |
+| 每日节奏 | 37/37 当前（0 待办，100%） |
+| 每日 PR 节奏 | 37/37 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 27/27 当前（0 待办，100%） |
 | 节奏维度待办合计 | 51 |
@@ -119,7 +119,6 @@
 | --- | --- | --- | --- | --- |
 | [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月13日 UTC 12:23 |
 | [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月13日 UTC 10:07 |
-| [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年5月13日 UTC 07:27 |
 | [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年5月13日 UTC 04:13 |
 | [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年5月12日 UTC 22:06 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年5月12日 UTC 22:06 |
@@ -127,6 +126,7 @@
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年5月12日 UTC 22:06 |
 | [#1864](https://github.com/alibaba/loongcollector/pull/1864) | test: go to cpp PipelineEventGroup transfer | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1864.md) | complete | 2026年5月12日 UTC 22:06 |
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年5月12日 UTC 22:06 |
+| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年5月12日 UTC 22:06 |
 
 </details>
 
