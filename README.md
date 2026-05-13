@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月13日 UTC 12:21
+上次仪表盘更新：2026年5月13日 UTC 12:24
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月13日 UTC 12:21
+更新时间：2026年5月13日 UTC 12:24
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 25798725356 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25798725356](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25798725356)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月13日 UTC 10:07。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月13日 UTC 10:08。
+最近审查：2026年5月13日 UTC 12:23。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月13日 UTC 10:08。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 65 | 0 | 65 | 0 | 0 | 65 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 65 | 0 | 65 | 0 | 0 | 64 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月13日 UTC 12:23 |
 | [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月13日 UTC 10:07 |
-| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月13日 UTC 10:07 |
 | [#2555](https://github.com/alibaba/loongcollector/pull/2555) | agentsight loongcollector代码首次提交 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2555.md) | complete | 2026年5月13日 UTC 07:27 |
 | [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年5月13日 UTC 04:13 |
 | [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年5月12日 UTC 22:06 |
