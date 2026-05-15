@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月15日 UTC 22:11
+上次仪表盘更新：2026年5月15日 UTC 22:12
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月15日 UTC 22:11
+更新时间：2026年5月15日 UTC 22:12
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 17。条目: 850,1166,1323,1549,1710,1798,1819,1854,1872,1885,1939,1947,2051,2054,2081,2151,2208。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25943747073](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25943747073)
+已合并 run 25943836944 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25943836944](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25943836944)
 <!-- loongsweeper-status:end -->
 
 ### 队列
