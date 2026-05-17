@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月17日 UTC 11:33
+上次仪表盘更新：2026年5月17日 UTC 11:35
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月17日 UTC 11:33
+更新时间：2026年5月17日 UTC 11:35
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 2 条，分片 2，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 25989651818 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25989651818](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25989651818)
 <!-- loongsweeper-status:end -->
 
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 35/37 当前（2 待办，94.6%） |
-| 每日 PR 节奏 | 35/37 当前（2 待办，94.6%） |
+| 每日节奏 | 37/37 当前（0 待办，100%） |
+| 每日 PR 节奏 | 37/37 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 27/27 当前（0 待办，100%） |
-| 节奏维度待办合计 | 55 |
+| 节奏维度待办合计 | 53 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月17日 UTC 00:10。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月17日 UTC 00:11。
+最近审查：2026年5月17日 UTC 11:35。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月17日 UTC 00:11。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 35 | 0 | 35 | 0 | 0 | 35 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 35 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月17日 UTC 11:35 |
+| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月17日 UTC 11:34 |
 | [#1864](https://github.com/alibaba/loongcollector/pull/1864) | test: go to cpp PipelineEventGroup transfer | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1864.md) | complete | 2026年5月17日 UTC 00:10 |
 | [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年5月17日 UTC 00:10 |
 | [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年5月17日 UTC 00:10 |
@@ -125,8 +127,6 @@
 | [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年5月17日 UTC 00:10 |
 | [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年5月17日 UTC 00:10 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年5月17日 UTC 00:10 |
-| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年5月17日 UTC 00:10 |
-| [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年5月17日 UTC 00:10 |
 
 </details>
 
