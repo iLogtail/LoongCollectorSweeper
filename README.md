@@ -17,10 +17,10 @@
 
 更新时间：2026年5月17日 UTC 15:17
 
-状态：审查发布完成
+状态：热点发布完成
 
-已合并 run 25994672519 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25994672519](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25994672519)
+已合并 run 25994675449 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25994675449](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/25994675449)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 37/37 当前（0 待办，100%） |
-| 每日 PR 节奏 | 37/37 当前（0 待办，100%） |
+| 每日节奏 | 36/37 当前（1 待办，97.3%） |
+| 每日 PR 节奏 | 36/37 当前（1 待办，97.3%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 27/27 当前（0 待办，100%） |
-| 节奏维度待办合计 | 53 |
+| 节奏维度待办合计 | 54 |
 
 ### 审计健康
 
@@ -93,7 +93,7 @@
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 37 | 0 |
+| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 37 | 0 |
 
 ### 最近关闭
 
