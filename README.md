@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月18日 UTC 08:53
+上次仪表盘更新：2026年5月18日 UTC 08:56
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月18日 UTC 08:53
+更新时间：2026年5月18日 UTC 08:56
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 2 条，分片 2，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26023371010 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26023371010](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26023371010)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月18日 UTC 01:32。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月18日 UTC 01:32。
+最近审查：2026年5月18日 UTC 08:55。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月18日 UTC 01:32。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 37 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 35 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年5月18日 UTC 08:55 |
+| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月18日 UTC 08:54 |
 | [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年5月18日 UTC 01:32 |
 | [#1864](https://github.com/alibaba/loongcollector/pull/1864) | test: go to cpp PipelineEventGroup transfer | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1864.md) | complete | 2026年5月18日 UTC 01:31 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年5月18日 UTC 01:31 |
@@ -125,8 +127,6 @@
 | [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年5月18日 UTC 01:31 |
 | [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年5月18日 UTC 01:31 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年5月18日 UTC 00:12 |
-| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年5月18日 UTC 00:12 |
-| [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年5月18日 UTC 00:12 |
 
 </details>
 
