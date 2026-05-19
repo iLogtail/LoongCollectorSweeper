@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月19日 UTC 05:48
+上次仪表盘更新：2026年5月19日 UTC 05:50
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月19日 UTC 05:48
+更新时间：2026年5月19日 UTC 05:50
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26078846592 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26078846592](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26078846592)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月19日 UTC 04:35。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月19日 UTC 04:35。
+最近审查：2026年5月19日 UTC 05:49。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月19日 UTC 04:35。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 37 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年5月19日 UTC 04:35 |
+| [#2391](https://github.com/alibaba/loongcollector/pull/2391) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2391.md) | complete | 2026年5月19日 UTC 05:49 |
 | [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月19日 UTC 04:35 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年5月19日 UTC 01:36 |
 | [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年5月19日 UTC 01:35 |
