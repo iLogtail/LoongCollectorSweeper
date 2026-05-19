@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月19日 UTC 22:38
+上次仪表盘更新：2026年5月19日 UTC 22:40
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月19日 UTC 22:38
+更新时间：2026年5月19日 UTC 22:40
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 13 条，分片 13，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26129556850 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26129556850](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26129556850)
 <!-- loongsweeper-status:end -->
 
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 24/37 当前（13 待办，64.9%） |
-| 每日 PR 节奏 | 24/37 当前（13 待办，64.9%） |
+| 每日节奏 | 37/37 当前（0 待办，100%） |
+| 每日 PR 节奏 | 37/37 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 26/26 当前（0 待办，100%） |
-| 节奏维度待办合计 | 65 |
+| 节奏维度待办合计 | 52 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月19日 UTC 16:35。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月19日 UTC 16:36。
+最近审查：2026年5月19日 UTC 22:40。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月19日 UTC 16:36。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 51 | 1 | 50 | 0 | 1 | 51 | 0 |
+| 最近 15 分钟 | 13 | 0 | 13 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 13 | 0 | 13 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 64 | 1 | 63 | 0 | 1 | 51 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2182](https://github.com/alibaba/loongcollector/issues/2182) | [QUESTION]:如何为每个项目创建一个单独的配置文件，而不是都放在一个configmap中？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2182.md) | complete | 2026年5月19日 UTC 16:35 |
-| [#910](https://github.com/alibaba/loongcollector/issues/910) | [FEATURE]: 支持分级保障能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/910.md) | complete | 2026年5月19日 UTC 16:35 |
-| [#2514](https://github.com/alibaba/loongcollector/issues/2514) | [ENHANCEMENT]: flusher_kafka_v2 未来有没有可能支持类似 SLS 的 DiskBufferWriter，当前大部分日志采集器都有这类本地缓存的能力，可以大幅灾备能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2514.md) | complete | 2026年5月19日 UTC 16:35 |
-| [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年5月19日 UTC 16:34 |
-| [#1236](https://github.com/alibaba/loongcollector/issues/1236) | [FEATURE]: Support S3/OSS Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1236.md) | complete | 2026年5月19日 UTC 16:34 |
-| [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年5月19日 UTC 16:34 |
-| [#793](https://github.com/alibaba/loongcollector/issues/793) | [FEATURE]: iLogtail support oss Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/793.md) | complete | 2026年5月19日 UTC 16:34 |
-| [#1585](https://github.com/alibaba/loongcollector/issues/1585) | 是否可以在processor_fields_with_condition中添加rename key的功能？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1585.md) | complete | 2026年5月19日 UTC 16:33 |
-| [#2223](https://github.com/alibaba/loongcollector/issues/2223) | [QUESTION]: sidecar use caes in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2223.md) | complete | 2026年5月19日 UTC 16:33 |
-| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年5月19日 UTC 16:33 |
+| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#1710](https://github.com/alibaba/loongcollector/pull/1710) | Support config server v2 provider(HeartBeat、FetchPipelineConfig、FetchProcessConfig) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1710.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年5月19日 UTC 22:40 |
+| [#1947](https://github.com/alibaba/loongcollector/pull/1947) | feat: prom textparser with simd | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1947.md) | complete | 2026年5月19日 UTC 22:39 |
+| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年5月19日 UTC 22:39 |
+| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年5月19日 UTC 22:39 |
 
 </details>
 
