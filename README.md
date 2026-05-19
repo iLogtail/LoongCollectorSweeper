@@ -19,7 +19,7 @@
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2383。
+Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26114002510](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26114002510)
 <!-- loongsweeper-status:end -->
 
@@ -27,24 +27,24 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 45 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 70 |
-| 开放条目合计 | 116 |
-| 已审查文件 | 64 |
+| 开放条目合计 | 115 |
+| 已审查文件 | 63 |
 | 尚未审查的开放条目 | 52 |
-| 归档的 closed 文件 | 25 |
+| 归档的 closed 文件 | 26 |
 
 ### 审查结果
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 27 |
-| 提议关闭 Issue | 1（占已审查 Issue 的 3.7%） |
+| 近 7 天新审查 Issue | 26 |
+| 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 37 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 64 |
-| 待 apply 的提议关闭 | 1（占新审查的 1.6%） |
-| 已由 apply 关闭 | 23 |
+| 近 7 天已验证审查 | 63 |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
+| 已由 apply 关闭 | 24 |
 | 失败或陈旧审查 | 0 |
 
 ### 节奏
@@ -56,7 +56,7 @@
 | 每日节奏 | 37/37 当前（0 待办，100%） |
 | 每日 PR 节奏 | 37/37 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
-| 每周陈旧 Issue 节奏 | 27/27 当前（0 待办，100%） |
+| 每周陈旧 Issue 节奏 | 26/26 当前（0 待办，100%） |
 | 节奏维度待办合计 | 52 |
 
 ### 审计健康
@@ -87,18 +87,19 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月19日 UTC 16:35。最近关闭：2026年5月5日 UTC 15:27。最近评论同步：2026年5月19日 UTC 16:36。
+最近审查：2026年5月19日 UTC 16:35。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月19日 UTC 16:36。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 27 | 1 | 26 | 0 | 0 | 27 | 0 |
-| 最近 24 小时 | 64 | 1 | 63 | 0 | 0 | 64 | 0 |
+| 最近 15 分钟 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 最近 1 小时 | 27 | 1 | 26 | 0 | 1 | 27 | 0 |
+| 最近 24 小时 | 64 | 1 | 63 | 0 | 1 | 64 | 0 |
 
 ### 最近关闭
 
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
+| [#2383](https://github.com/alibaba/loongcollector/issues/2383) | [QUESTION]:LoongCollector unable to filter and route the logs. | 长期停滞且信息不足 | 2026年5月19日 UTC 17:30 | [closed/2383.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2383.md) |
 | [#2186](https://github.com/alibaba/loongcollector/issues/2186) | [BUG]:日志报inspect container timeout | 长期停滞且信息不足 | 2026年5月5日 UTC 15:27 | [closed/2186.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2186.md) |
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | 重复或已被替代 | 2026年5月2日 UTC 16:11 | [closed/2268.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2268.md) |
 | [#885](https://github.com/alibaba/loongcollector/pull/885) | support send medata to config server | 重复或已被替代 | 2026年5月2日 UTC 14:59 | [closed/885.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/885.md) |
@@ -108,7 +109,6 @@
 | [#2303](https://github.com/alibaba/loongcollector/issues/2303) | [QUESTION]: I collect pod log to loki，but Convert failed in  using DynamicLabels | 本仓库内无法落地 | 2026年4月27日 UTC 09:53 | [closed/2303.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2303.md) |
 | [#2218](https://github.com/alibaba/loongcollector/issues/2218) | [FEATURE]: Support flush trace data to langfuse | 更适合插件/扩展生态 | 2026年4月27日 UTC 09:53 | [closed/2218.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2218.md) |
 | [#2192](https://github.com/alibaba/loongcollector/issues/2192) | [QUESTION]:有没有 metric 可以监控没来得及收集的日志文件 | 本仓库内无法落地 | 2026年4月27日 UTC 09:53 | [closed/2192.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2192.md) |
-| [#2168](https://github.com/alibaba/loongcollector/issues/2168) | [BUG]:seelog overflow | 长期停滞且信息不足 | 2026年4月27日 UTC 09:53 | [closed/2168.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2168.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
@@ -124,9 +124,9 @@
 | [#1236](https://github.com/alibaba/loongcollector/issues/1236) | [FEATURE]: Support S3/OSS Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1236.md) | complete | 2026年5月19日 UTC 16:34 |
 | [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年5月19日 UTC 16:34 |
 | [#793](https://github.com/alibaba/loongcollector/issues/793) | [FEATURE]: iLogtail support oss Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/793.md) | complete | 2026年5月19日 UTC 16:34 |
-| [#2383](https://github.com/alibaba/loongcollector/issues/2383) | [QUESTION]:LoongCollector unable to filter and route the logs. | [close / proposed_close](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2383.md) | complete | 2026年5月19日 UTC 16:34 |
 | [#1585](https://github.com/alibaba/loongcollector/issues/1585) | 是否可以在processor_fields_with_condition中添加rename key的功能？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1585.md) | complete | 2026年5月19日 UTC 16:33 |
 | [#2223](https://github.com/alibaba/loongcollector/issues/2223) | [QUESTION]: sidecar use caes in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2223.md) | complete | 2026年5月19日 UTC 16:33 |
+| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年5月19日 UTC 16:33 |
 
 </details>
 
