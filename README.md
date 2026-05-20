@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月20日 UTC 08:36
+上次仪表盘更新：2026年5月20日 UTC 08:39
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月20日 UTC 08:36
+更新时间：2026年5月20日 UTC 08:39
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26151216617 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26151216617](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26151216617)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月20日 UTC 05:20。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月20日 UTC 05:21。
+最近审查：2026年5月20日 UTC 08:39。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月20日 UTC 05:21。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 64 | 1 | 63 | 0 | 1 | 64 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 64 | 1 | 63 | 0 | 1 | 63 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2556](https://github.com/alibaba/loongcollector/pull/2556) | feat(input): add service_etw plugin for Windows Analytical ETW | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2556.md) | complete | 2026年5月20日 UTC 08:39 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年5月20日 UTC 05:20 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年5月20日 UTC 05:18 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年5月20日 UTC 05:18 |
@@ -126,7 +127,6 @@
 | [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年5月20日 UTC 05:18 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年5月20日 UTC 05:18 |
 | [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年5月20日 UTC 05:17 |
-| [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年5月20日 UTC 05:17 |
 
 </details>
 
