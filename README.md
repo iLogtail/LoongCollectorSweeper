@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月21日 UTC 20:58
+更新时间：2026年5月21日 UTC 20:59
 
 状态：审查进行中
 
-已规划 0 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26252742500](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26252742500)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26252760223](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26252760223)
 <!-- loongsweeper-status:end -->
 
 ### 队列
