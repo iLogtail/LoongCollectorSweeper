@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月22日 UTC 00:18
+更新时间：2026年5月22日 UTC 01:32
 
-状态：审查评论已检查
+状态：正在规划审查
 
-已检查并同步持久化百炼审查评论。已同步: 4。条目: 1323,1819,1939,2054。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26260748307](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26260748307)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26263182726](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26263182726)
 <!-- loongsweeper-status:end -->
 
 ### 队列
