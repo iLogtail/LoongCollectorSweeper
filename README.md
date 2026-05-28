@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月28日 UTC 09:37
+上次仪表盘更新：2026年5月28日 UTC 09:39
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月28日 UTC 09:37
+更新时间：2026年5月28日 UTC 09:39
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26566900939 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26566900939](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26566900939)
 <!-- loongsweeper-status:end -->
 
@@ -30,19 +30,19 @@
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 70 |
 | 开放条目合计 | 116 |
-| 已审查文件 | 62 |
-| 尚未审查的开放条目 | 54 |
+| 已审查文件 | 63 |
+| 尚未审查的开放条目 | 53 |
 | 归档的 closed 文件 | 28 |
 
 ### 审查结果
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 26 |
+| 近 7 天新审查 Issue | 27 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 36 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 62 |
+| 近 7 天已验证审查 | 63 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 24 |
 | 失败或陈旧审查 | 0 |
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 1/1 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 26/26 当前（0 待办，100%） |
-| 节奏维度待办合计 | 54 |
+| 节奏维度待办合计 | 53 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月28日 UTC 08:55。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月28日 UTC 08:55。
+最近审查：2026年5月28日 UTC 09:39。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月28日 UTC 08:55。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 36 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 2 | 0 |
+| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年5月28日 UTC 09:39 |
 | [#2566](https://github.com/alibaba/loongcollector/pull/2566) | fix(common_provider): implement onetime pipeline config delivery | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2566.md) | complete | 2026年5月28日 UTC 08:55 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年5月28日 UTC 08:55 |
 | [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年5月28日 UTC 05:53 |
@@ -126,7 +127,6 @@
 | [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年5月28日 UTC 04:41 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年5月28日 UTC 04:41 |
 | [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年5月28日 UTC 04:41 |
-| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年5月28日 UTC 04:41 |
 
 </details>
 
