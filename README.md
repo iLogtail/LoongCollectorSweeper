@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年5月29日 UTC 22:05
+上次仪表盘更新：2026年5月29日 UTC 22:06
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月29日 UTC 22:05
+更新时间：2026年5月29日 UTC 22:06
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 2557,2568。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26664494656](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26664494656)
+已合并 run 26664565537 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26664565537](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26664565537)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月29日 UTC 22:04。最近关闭：2026年5月29日 UTC 12:25。最近评论同步：2026年5月29日 UTC 22:05。
+最近审查：2026年5月29日 UTC 22:06。最近关闭：2026年5月29日 UTC 12:25。最近评论同步：2026年5月29日 UTC 16:56。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 39 | 1 | 38 | 0 | 1 | 39 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 39 | 1 | 38 | 0 | 1 | 37 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月29日 UTC 22:04 |
-| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年5月29日 UTC 22:04 |
+| [#2557](https://github.com/alibaba/loongcollector/pull/2557) | fix: correct timeStrCache calculation to exclude unmatched trailing chars | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2557.md) | complete | 2026年5月29日 UTC 22:06 |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年5月29日 UTC 22:05 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年5月29日 UTC 16:55 |
 | [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年5月29日 UTC 16:55 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年5月29日 UTC 16:55 |
