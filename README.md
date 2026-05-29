@@ -17,9 +17,9 @@
 
 更新时间：2026年5月29日 UTC 04:42
 
-状态：正在规划审查
+状态：审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划 15 条，分片 15，容量 500。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26618412855](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26618412855)
 <!-- loongsweeper-status:end -->
 
@@ -93,7 +93,7 @@
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 24 | 0 | 24 | 0 | 0 | 37 | 0 |
+| 最近 24 小时 | 24 | 0 | 24 | 0 | 0 | 28 | 0 |
 
 ### 最近关闭
 
