@@ -17,9 +17,9 @@
 
 更新时间：2026年5月29日 UTC 08:35
 
-状态：热点发布完成
+状态：审查评论已检查
 
-已合并 run 26626931914 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+已检查并同步持久化百炼审查评论。已同步: 4。条目: 1323,1939,2054,2568,2574。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26626931914](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26626931914)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月29日 UTC 08:34。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月29日 UTC 04:46。
+最近审查：2026年5月29日 UTC 08:34。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月29日 UTC 08:35。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 33 | 0 |
+| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 4 | 1 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 4 | 1 |
+| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 37 | 1 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2574](https://github.com/alibaba/loongcollector/pull/2574) | feat(common_provider): implement onetime pipeline config delivery | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2574.md) | complete | 2026年5月29日 UTC 08:34 |
+| [#2574](https://github.com/alibaba/loongcollector/pull/2574) | feat(common_provider): implement onetime pipeline config delivery | [keep_open / skipped_changed_since_review](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2574.md) | complete | 2026年5月29日 UTC 08:34 |
 | [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年5月29日 UTC 08:34 |
 | [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年5月29日 UTC 08:34 |
 | [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年5月29日 UTC 08:34 |
