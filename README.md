@@ -19,7 +19,7 @@
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2575。
+Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26637063279](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26637063279)
 <!-- loongsweeper-status:end -->
 
@@ -27,32 +27,32 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 47 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 72 |
-| 开放条目合计 | 119 |
-| 已审查文件 | 64 |
+| 开放条目合计 | 118 |
+| 已审查文件 | 63 |
 | 尚未审查的开放条目 | 55 |
-| 归档的 closed 文件 | 29 |
+| 归档的 closed 文件 | 30 |
 
 ### 审查结果
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 28 |
-| 提议关闭 Issue | 1（占已审查 Issue 的 3.6%） |
+| 近 7 天新审查 Issue | 27 |
+| 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 36 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 64 |
-| 待 apply 的提议关闭 | 1（占新审查的 1.6%） |
-| 已由 apply 关闭 | 24 |
+| 近 7 天已验证审查 | 63 |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
+| 已由 apply 关闭 | 25 |
 | 失败或陈旧审查 | 0 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 3/3 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 3/3 当前（0 待办，100%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
@@ -87,18 +87,19 @@
 
 ### 最近运行动态
 
-最近审查：2026年5月29日 UTC 11:53。最近关闭：2026年5月19日 UTC 17:30。最近评论同步：2026年5月29日 UTC 11:53。
+最近审查：2026年5月29日 UTC 11:53。最近关闭：2026年5月29日 UTC 12:25。最近评论同步：2026年5月29日 UTC 11:53。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 4 | 1 | 3 | 0 | 0 | 4 | 0 |
-| 最近 24 小时 | 39 | 1 | 38 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 最近 1 小时 | 4 | 1 | 3 | 0 | 1 | 4 | 0 |
+| 最近 24 小时 | 39 | 1 | 38 | 0 | 1 | 39 | 0 |
 
 ### 最近关闭
 
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | 更适合插件/扩展生态 | 2026年5月29日 UTC 12:25 | [closed/2575.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2575.md) |
 | [#2383](https://github.com/alibaba/loongcollector/issues/2383) | [QUESTION]:LoongCollector unable to filter and route the logs. | 长期停滞且信息不足 | 2026年5月19日 UTC 17:30 | [closed/2383.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2383.md) |
 | [#2186](https://github.com/alibaba/loongcollector/issues/2186) | [BUG]:日志报inspect container timeout | 长期停滞且信息不足 | 2026年5月5日 UTC 15:27 | [closed/2186.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2186.md) |
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | 重复或已被替代 | 2026年5月2日 UTC 16:11 | [closed/2268.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2268.md) |
@@ -108,7 +109,6 @@
 | [#2311](https://github.com/alibaba/loongcollector/issues/2311) | [BUG]: The HasKeys configuration parameter for flusher_kafka_v2 to specify partitions is invalid | 已在 main 上实现 | 2026年4月27日 UTC 10:50 | [closed/2311.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2311.md) |
 | [#2303](https://github.com/alibaba/loongcollector/issues/2303) | [QUESTION]: I collect pod log to loki，but Convert failed in  using DynamicLabels | 本仓库内无法落地 | 2026年4月27日 UTC 09:53 | [closed/2303.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2303.md) |
 | [#2218](https://github.com/alibaba/loongcollector/issues/2218) | [FEATURE]: Support flush trace data to langfuse | 更适合插件/扩展生态 | 2026年4月27日 UTC 09:53 | [closed/2218.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2218.md) |
-| [#2192](https://github.com/alibaba/loongcollector/issues/2192) | [QUESTION]:有没有 metric 可以监控没来得及收集的日志文件 | 本仓库内无法落地 | 2026年4月27日 UTC 09:53 | [closed/2192.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2192.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
@@ -117,7 +117,6 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [close / proposed_close](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年5月29日 UTC 11:53 |
 | [#2574](https://github.com/alibaba/loongcollector/pull/2574) | feat(common_provider): implement onetime pipeline config delivery | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2574.md) | complete | 2026年5月29日 UTC 11:52 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年5月29日 UTC 11:52 |
 | [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年5月29日 UTC 11:52 |
@@ -127,6 +126,7 @@
 | [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年5月29日 UTC 04:45 |
 | [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年5月29日 UTC 04:45 |
 | [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年5月29日 UTC 04:45 |
+| [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年5月29日 UTC 04:45 |
 
 </details>
 
