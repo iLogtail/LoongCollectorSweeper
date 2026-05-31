@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年5月31日 UTC 08:28
+更新时间：2026年5月31日 UTC 09:17
 
-状态：Apply finished
+状态：审计完成
 
-Apply/comment-sync run finished with 0 fresh closes out of requested limit 1. See apply-report.json for per-item results.
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26707705970](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26707705970)
+已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26708695444](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26708695444)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -62,14 +62,14 @@ Apply/comment-sync run finished with 0 fresh closes out of requested limit 1. Se
 ### 审计健康
 
 <!-- loongsweeper-audit:start -->
-上次审计：2026年5月31日 UTC 04:46
+上次审计：2026年5月31日 UTC 09:17
 
 状态：**正常**
 
 | 指标 | 数量 |
 | --- | ---: |
 | 扫描完成 | 是 |
-| 已见开放条目 | 117 |
+| 已见开放条目 | 116 |
 | 缺少符合条件开放记录 | 0 |
 | 缺少维护者开放记录 | 55 |
 | 缺少受保护开放记录 | 0 |
