@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月1日 UTC 00:18
+上次仪表盘更新：2026年6月1日 UTC 05:15
 
 ### 当前运行
 
@@ -17,9 +17,9 @@
 
 更新时间：2026年6月1日 UTC 05:15
 
-状态：正在规划审查
+状态：审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划 2 条，分片 2，容量 500。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26736552848](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26736552848)
 <!-- loongsweeper-status:end -->
 
@@ -27,12 +27,12 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 46 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 47 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 69 |
-| 开放条目合计 | 115 |
-| 已审查文件 | 61 |
+| 开放条目合计 | 116 |
+| 已审查文件 | 62 |
 | 尚未审查的开放条目 | 54 |
-| 归档的 closed 文件 | 32 |
+| 归档的 closed 文件 | 31 |
 
 ### 审查结果
 
@@ -44,20 +44,20 @@
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
 | 近 7 天已验证审查 | 61 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
-| 已由 apply 关闭 | 26 |
-| 失败或陈旧审查 | 0 |
+| 已由 apply 关闭 | 25 |
+| 失败或陈旧审查 | 1 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 1/1 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每小时节奏 | 0/2 当前（2 待办，0%） |
+| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
 | 每日节奏 | 34/34 当前（0 待办，100%） |
 | 每日 PR 节奏 | 34/34 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 26/26 当前（0 待办，100%） |
-| 节奏维度待办合计 | 54 |
+| 节奏维度待办合计 | 56 |
 
 ### 审计健康
 
@@ -92,7 +92,7 @@
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 最近 24 小时 | 36 | 1 | 35 | 0 | 1 | 36 | 0 |
 
 ### 最近关闭
@@ -100,7 +100,6 @@
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
 | [#1710](https://github.com/alibaba/loongcollector/pull/1710) | Support config server v2 provider(HeartBeat、FetchPipelineConfig、FetchProcessConfig) | 重复或已被替代 | 2026年5月31日 UTC 08:28 | [closed/1710.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/1710.md) |
-| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | 更适合插件/扩展生态 | 2026年5月29日 UTC 12:25 | [closed/2575.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2575.md) |
 | [#2383](https://github.com/alibaba/loongcollector/issues/2383) | [QUESTION]:LoongCollector unable to filter and route the logs. | 长期停滞且信息不足 | 2026年5月19日 UTC 17:30 | [closed/2383.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2383.md) |
 | [#2186](https://github.com/alibaba/loongcollector/issues/2186) | [BUG]:日志报inspect container timeout | 长期停滞且信息不足 | 2026年5月5日 UTC 15:27 | [closed/2186.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2186.md) |
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | 重复或已被替代 | 2026年5月2日 UTC 16:11 | [closed/2268.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2268.md) |
@@ -109,6 +108,7 @@
 | [#2533](https://github.com/alibaba/loongcollector/issues/2533) | [ENHANCEMENT]:flusher_kafka_v2输出插件, 账号密码支持从环境变量中获取 | 已在 main 上实现 | 2026年4月27日 UTC 11:00 | [closed/2533.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2533.md) |
 | [#2311](https://github.com/alibaba/loongcollector/issues/2311) | [BUG]: The HasKeys configuration parameter for flusher_kafka_v2 to specify partitions is invalid | 已在 main 上实现 | 2026年4月27日 UTC 10:50 | [closed/2311.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2311.md) |
 | [#2303](https://github.com/alibaba/loongcollector/issues/2303) | [QUESTION]: I collect pod log to loki，but Convert failed in  using DynamicLabels | 本仓库内无法落地 | 2026年4月27日 UTC 09:53 | [closed/2303.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2303.md) |
+| [#2218](https://github.com/alibaba/loongcollector/issues/2218) | [FEATURE]: Support flush trace data to langfuse | 更适合插件/扩展生态 | 2026年4月27日 UTC 09:53 | [closed/2218.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2218.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
