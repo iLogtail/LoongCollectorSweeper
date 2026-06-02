@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月2日 UTC 17:12
+上次仪表盘更新：2026年6月2日 UTC 17:14
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月2日 UTC 17:12
+更新时间：2026年6月2日 UTC 17:14
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 12 条，分片 12，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 26835807631 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26835807631](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26835807631)
 <!-- loongsweeper-status:end -->
 
@@ -38,11 +38,11 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 15 |
+| 近 7 天新审查 Issue | 27 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 34 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 49 |
+| 近 7 天已验证审查 | 61 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 26 |
 | 失败或陈旧审查 | 0 |
@@ -56,8 +56,8 @@
 | 每日节奏 | 34/34 当前（0 待办，100%） |
 | 每日 PR 节奏 | 34/34 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
-| 每周陈旧 Issue 节奏 | 13/25 当前（12 待办，52%） |
-| 节奏维度待办合计 | 66 |
+| 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
+| 节奏维度待办合计 | 54 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月2日 UTC 16:57。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月2日 UTC 16:58。
+最近审查：2026年6月2日 UTC 17:14。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月2日 UTC 16:58。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 1 | 0 | 1 | 0 | 1 | 17 | 0 |
-| 最近 1 小时 | 17 | 1 | 16 | 0 | 1 | 17 | 0 |
-| 最近 24 小时 | 50 | 1 | 49 | 0 | 1 | 50 | 0 |
+| 最近 15 分钟 | 12 | 0 | 12 | 0 | 1 | 0 | 0 |
+| 最近 1 小时 | 29 | 1 | 28 | 0 | 1 | 17 | 0 |
+| 最近 24 小时 | 62 | 1 | 61 | 0 | 1 | 50 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1273](https://github.com/alibaba/loongcollector/issues/1273) | [ENHANCEMENT]: flusher 报错不明显 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1273.md) | complete | 2026年6月2日 UTC 16:57 |
-| [#1236](https://github.com/alibaba/loongcollector/issues/1236) | [FEATURE]: Support S3/OSS Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1236.md) | complete | 2026年6月2日 UTC 16:57 |
-| [#910](https://github.com/alibaba/loongcollector/issues/910) | [FEATURE]: 支持分级保障能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/910.md) | complete | 2026年6月2日 UTC 16:57 |
-| [#2179](https://github.com/alibaba/loongcollector/issues/2179) | [FEATURE]:flusher_http supports log text output, specifying json field values, such as contents.content | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2179.md) | complete | 2026年6月2日 UTC 16:57 |
-| [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年6月2日 UTC 16:56 |
-| [#1603](https://github.com/alibaba/loongcollector/issues/1603) | [FEATURE]: iLogtail support ODPS Flusher  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1603.md) | complete | 2026年6月2日 UTC 16:56 |
-| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年6月2日 UTC 16:56 |
-| [#1805](https://github.com/alibaba/loongcollector/issues/1805) | [FEATURE]:Update container the base image | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1805.md) | complete | 2026年6月2日 UTC 16:56 |
-| [#2207](https://github.com/alibaba/loongcollector/issues/2207) | [ENHANCEMENT]: Support json encoding when converter protocol is raw | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2207.md) | complete | 2026年6月2日 UTC 16:56 |
-| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月2日 UTC 16:56 |
+| [#2257](https://github.com/alibaba/loongcollector/issues/2257) | [FEATURE]: Add native plugin of kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2257.md) | complete | 2026年6月2日 UTC 17:14 |
+| [#2480](https://github.com/alibaba/loongcollector/issues/2480) | [QUESTION]: 在虚拟机上采集日志文件，如果使用纳秒时间？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2480.md) | complete | 2026年6月2日 UTC 17:14 |
+| [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/918.md) | complete | 2026年6月2日 UTC 17:14 |
+| [#553](https://github.com/alibaba/loongcollector/issues/553) | [BUG]: flusher_kafka_v2配置otlp报错 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/553.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#1585](https://github.com/alibaba/loongcollector/issues/1585) | 是否可以在processor_fields_with_condition中添加rename key的功能？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1585.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#1640](https://github.com/alibaba/loongcollector/issues/1640) | [FEATURE]:Can ilogtail support the data streams mode of elasticsearch？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1640.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#1810](https://github.com/alibaba/loongcollector/issues/1810) | [FEATURE]: 希望 Loki Flusher 支持结构化元数据 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1810.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#557](https://github.com/alibaba/loongcollector/issues/557) | [BUG]: metric_system_v2 对于系统启动时间计算不正确 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/557.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年6月2日 UTC 17:13 |
+| [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年6月2日 UTC 17:13 |
 
 </details>
 
