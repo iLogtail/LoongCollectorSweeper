@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月2日 UTC 20:20
+上次仪表盘更新：2026年6月2日 UTC 20:21
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月2日 UTC 20:20
+更新时间：2026年6月2日 UTC 20:21
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 2568,2575。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26845593779](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26845593779)
+已合并 run 26845625727 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26845625727](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/26845625727)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月2日 UTC 20:20。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月2日 UTC 20:20。
+最近审查：2026年6月2日 UTC 20:21。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月2日 UTC 17:15。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 62 | 1 | 61 | 0 | 1 | 62 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 62 | 1 | 61 | 0 | 1 | 60 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月2日 UTC 20:20 |
-| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月2日 UTC 20:20 |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月2日 UTC 20:21 |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月2日 UTC 20:21 |
 | [#2257](https://github.com/alibaba/loongcollector/issues/2257) | [FEATURE]: Add native plugin of kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2257.md) | complete | 2026年6月2日 UTC 17:14 |
 | [#2480](https://github.com/alibaba/loongcollector/issues/2480) | [QUESTION]: 在虚拟机上采集日志文件，如果使用纳秒时间？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2480.md) | complete | 2026年6月2日 UTC 17:14 |
 | [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/918.md) | complete | 2026年6月2日 UTC 17:14 |
