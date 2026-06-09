@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月9日 UTC 19:36
+上次仪表盘更新：2026年6月9日 UTC 19:39
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月9日 UTC 19:36
+更新时间：2026年6月9日 UTC 19:39
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 18 条，分片 18，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 27230895535 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27230895535](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27230895535)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/3 当前（3 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/3 当前（3 待办，0%） |
-| 每日节奏 | 21/36 当前（15 待办，58.3%） |
-| 每日 PR 节奏 | 19/34 当前（15 待办，55.9%） |
+| 每小时节奏 | 3/3 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 3/3 当前（0 待办，100%） |
+| 每日节奏 | 35/36 当前（1 待办，97.2%） |
+| 每日 PR 节奏 | 33/34 当前（1 待办，97.1%） |
 | 每日新 Issue 节奏（<30 天） | 2/2 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 73 |
+| 节奏维度待办合计 | 56 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月9日 UTC 18:22。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月9日 UTC 18:23。
+最近审查：2026年6月9日 UTC 19:38。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月9日 UTC 18:23。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 49 | 0 | 49 | 0 | 0 | 49 | 0 |
+| 最近 15 分钟 | 18 | 0 | 18 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 18 | 0 | 18 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 63 | 0 | 63 | 0 | 0 | 45 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1640](https://github.com/alibaba/loongcollector/issues/1640) | [FEATURE]:Can ilogtail support the data streams mode of elasticsearch？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1640.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#2257](https://github.com/alibaba/loongcollector/issues/2257) | [FEATURE]: Add native plugin of kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2257.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#553](https://github.com/alibaba/loongcollector/issues/553) | [BUG]: flusher_kafka_v2配置otlp报错 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/553.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#1810](https://github.com/alibaba/loongcollector/issues/1810) | [FEATURE]: 希望 Loki Flusher 支持结构化元数据 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1810.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/918.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#557](https://github.com/alibaba/loongcollector/issues/557) | [BUG]: metric_system_v2 对于系统启动时间计算不正确 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/557.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#2480](https://github.com/alibaba/loongcollector/issues/2480) | [QUESTION]: 在虚拟机上采集日志文件，如果使用纳秒时间？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2480.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#1585](https://github.com/alibaba/loongcollector/issues/1585) | 是否可以在processor_fields_with_condition中添加rename key的功能？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1585.md) | complete | 2026年6月9日 UTC 18:22 |
-| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年6月9日 UTC 17:40 |
-| [#204](https://github.com/alibaba/loongcollector/issues/204) | [FEATURE]: add mqtt flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/204.md) | complete | 2026年6月9日 UTC 17:38 |
+| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#2578](https://github.com/alibaba/loongcollector/issues/2578) | [QUESTION]: 已能接收 trace，但flusher_otlp无法转发到 OTLP gRPC 后端 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2578.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年6月9日 UTC 19:38 |
+| [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年6月9日 UTC 19:38 |
 
 </details>
 
