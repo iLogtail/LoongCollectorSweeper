@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月11日 UTC 07:04
+上次仪表盘更新：2026年6月11日 UTC 07:06
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月11日 UTC 07:04
+更新时间：2026年6月11日 UTC 07:06
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 3 条，分片 3，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 27329924938 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27329924938](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27329924938)
 <!-- loongsweeper-status:end -->
 
@@ -30,8 +30,8 @@
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 48 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 72 |
 | 开放条目合计 | 120 |
-| 已审查文件 | 64 |
-| 尚未审查的开放条目 | 56 |
+| 已审查文件 | 65 |
+| 尚未审查的开放条目 | 55 |
 | 归档的 closed 文件 | 32 |
 
 ### 审查结果
@@ -40,9 +40,9 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 29 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 35 |
+| 近 7 天新审查 PR | 36 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 64 |
+| 近 7 天已验证审查 | 65 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 26 |
 | 失败或陈旧审查 | 0 |
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/2 当前（2 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
+| 每小时节奏 | 3/3 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 3/3 当前（0 待办，100%） |
 | 每日节奏 | 37/37 当前（0 待办，100%） |
 | 每日 PR 节奏 | 34/34 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 3/3 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 58 |
+| 节奏维度待办合计 | 55 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月11日 UTC 05:00。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月11日 UTC 05:01。
+最近审查：2026年6月11日 UTC 07:06。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月11日 UTC 05:01。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 37 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2583](https://github.com/alibaba/loongcollector/pull/2583) | feat: Integrate coolbpf cpu profiling feature in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2583.md) | complete | 2026年6月11日 UTC 07:06 |
+| [#2581](https://github.com/alibaba/loongcollector/issues/2581) | [CRITICAL][BUG] flusher_kafka_v2 can hang due to Sarama broker throttle timer race | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2581.md) | complete | 2026年6月11日 UTC 07:06 |
+| [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年6月11日 UTC 07:05 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年6月11日 UTC 05:00 |
 | [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年6月11日 UTC 05:00 |
 | [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年6月11日 UTC 05:00 |
@@ -124,9 +127,6 @@
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年6月11日 UTC 05:00 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年6月11日 UTC 05:00 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年6月11日 UTC 05:00 |
-| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年6月11日 UTC 05:00 |
-| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年6月11日 UTC 05:00 |
-| [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年6月11日 UTC 05:00 |
 
 </details>
 
