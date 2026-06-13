@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月13日 UTC 16:46
+上次仪表盘更新：2026年6月13日 UTC 16:47
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月13日 UTC 16:46
+更新时间：2026年6月13日 UTC 16:47
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 3。条目: 2568,2575,2585。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27472803116](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27472803116)
+已合并 run 27472841186 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27472841186](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27472841186)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月13日 UTC 16:45。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月13日 UTC 16:46。
+最近审查：2026年6月13日 UTC 16:47。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月13日 UTC 13:11。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 3 | 0 |
-| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 3 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,9 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月13日 UTC 16:45 |
-| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年6月13日 UTC 16:45 |
-| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月13日 UTC 16:45 |
+| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年6月13日 UTC 16:47 |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月13日 UTC 16:47 |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月13日 UTC 16:47 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年6月13日 UTC 13:10 |
 | [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年6月13日 UTC 09:45 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年6月13日 UTC 06:33 |
