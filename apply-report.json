@@ -1,12 +1,7 @@
 [
   {
-    "number": 2568,
+    "number": 2585,
     "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2575,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
+    "reason": "recorded existing durable comment metadata"
   }
 ]
