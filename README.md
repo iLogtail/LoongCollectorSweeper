@@ -17,10 +17,10 @@
 
 更新时间：2026年6月14日 UTC 00:22
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 1819,2585。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27483327801](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27483327801)
+已合并 run 27483321340 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27483321340](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27483321340)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年6月14日 UTC 00:21 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年6月14日 UTC 00:21 |
+| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年6月14日 UTC 00:21 |
 | [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年6月13日 UTC 22:20 |
 | [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年6月13日 UTC 22:20 |
 | [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年6月13日 UTC 22:20 |
