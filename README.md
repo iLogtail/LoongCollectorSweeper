@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月16日 UTC 20:27
+更新时间：2026年6月16日 UTC 21:15
 
-状态：审查评论已检查
+状态：审计完成
 
-已检查并同步持久化百炼审查评论。已同步: 20。条目: 204,754,793,842,910,911,1236,1273,1603,1767,1805,2179,2207,2221,2223,2512,2514,2568,2575,2585。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27645739012](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27645739012)
+已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27648617181](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27648617181)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -62,7 +62,7 @@
 ### 审计健康
 
 <!-- loongsweeper-audit:start -->
-上次审计：2026年6月16日 UTC 17:17
+上次审计：2026年6月16日 UTC 21:15
 
 状态：**正常**
 
