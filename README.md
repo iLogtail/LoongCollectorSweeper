@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月19日 UTC 11:12
+上次仪表盘更新：2026年6月19日 UTC 11:14
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月19日 UTC 11:12
+更新时间：2026年6月19日 UTC 11:14
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 27822301814 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27822301814](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27822301814)
 <!-- loongsweeper-status:end -->
 
@@ -30,8 +30,8 @@
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 48 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 75 |
 | 开放条目合计 | 123 |
-| 已审查文件 | 64 |
-| 尚未审查的开放条目 | 59 |
+| 已审查文件 | 65 |
+| 尚未审查的开放条目 | 58 |
 | 归档的 closed 文件 | 34 |
 
 ### 审查结果
@@ -40,9 +40,9 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 29 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 35 |
+| 近 7 天新审查 PR | 36 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 64 |
+| 近 7 天已验证审查 | 65 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 26 |
 | 失败或陈旧审查 | 0 |
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/0 当前（0 待办，-） |
-| 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
+| 每小时节奏 | 1/1 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
 | 每日节奏 | 39/39 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 4/4 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 59 |
+| 节奏维度待办合计 | 58 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月19日 UTC 06:54。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月19日 UTC 06:55。
+最近审查：2026年6月19日 UTC 11:14。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月19日 UTC 06:55。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 39 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2591](https://github.com/alibaba/loongcollector/pull/2591) | Recognize riscv64 in build and release scripts | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2591.md) | complete | 2026年6月19日 UTC 11:14 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年6月19日 UTC 06:54 |
 | [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年6月19日 UTC 06:54 |
 | [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年6月19日 UTC 01:51 |
@@ -126,7 +127,6 @@
 | [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年6月19日 UTC 01:51 |
 | [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年6月19日 UTC 01:51 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年6月19日 UTC 01:51 |
-| [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年6月19日 UTC 01:50 |
 
 </details>
 
