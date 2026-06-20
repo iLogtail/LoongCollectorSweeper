@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月20日 UTC 22:15
+上次仪表盘更新：2026年6月20日 UTC 22:17
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月20日 UTC 22:15
+更新时间：2026年6月20日 UTC 22:17
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 4 条，分片 4，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 27885509148 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27885509148](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/27885509148)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/1 当前（1 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/1 当前（1 待办，0%） |
-| 每日节奏 | 36/39 当前（3 待办，92.3%） |
-| 每日 PR 节奏 | 34/35 当前（1 待办，97.1%） |
-| 每日新 Issue 节奏（<30 天） | 2/4 当前（2 待办，50%） |
+| 每小时节奏 | 1/1 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每日节奏 | 39/39 当前（0 待办，100%） |
+| 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
+| 每日新 Issue 节奏（<30 天） | 4/4 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 62 |
+| 节奏维度待办合计 | 58 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月20日 UTC 21:00。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月20日 UTC 21:00。
+最近审查：2026年6月20日 UTC 22:17。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月20日 UTC 18:48。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 37 | 0 |
+| 最近 15 分钟 | 4 | 0 | 4 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 4 | 0 | 4 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2591](https://github.com/alibaba/loongcollector/pull/2591) | Recognize riscv64 in build and release scripts | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2591.md) | complete | 2026年6月20日 UTC 21:00 |
+| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年6月20日 UTC 22:17 |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月20日 UTC 22:17 |
+| [#2591](https://github.com/alibaba/loongcollector/pull/2591) | Recognize riscv64 in build and release scripts | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2591.md) | complete | 2026年6月20日 UTC 22:17 |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月20日 UTC 22:17 |
 | [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年6月20日 UTC 18:47 |
 | [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年6月20日 UTC 18:47 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年6月20日 UTC 18:47 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年6月20日 UTC 18:47 |
 | [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年6月20日 UTC 18:47 |
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年6月20日 UTC 18:47 |
-| [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年6月20日 UTC 18:47 |
-| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年6月20日 UTC 18:47 |
-| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年6月20日 UTC 18:46 |
 
 </details>
 
