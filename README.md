@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月24日 UTC 23:39
+上次仪表盘更新：2026年6月24日 UTC 23:41
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月24日 UTC 23:39
+更新时间：2026年6月24日 UTC 23:41
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 5 条，分片 5，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 28136708504 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28136708504](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28136708504)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/2 当前（2 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
-| 每日节奏 | 36/39 当前（3 待办，92.3%） |
-| 每日 PR 节奏 | 34/35 当前（1 待办，97.1%） |
-| 每日新 Issue 节奏（<30 天） | 2/4 当前（2 待办，50%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
+| 每日节奏 | 39/39 当前（0 待办，100%） |
+| 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
+| 每日新 Issue 节奏（<30 天） | 4/4 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 63 |
+| 节奏维度待办合计 | 58 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月24日 UTC 22:41。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月24日 UTC 22:42。
+最近审查：2026年6月24日 UTC 23:41。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月24日 UTC 22:42。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 1 | 0 |
+| 最近 24 小时 | 41 | 0 | 41 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年6月24日 UTC 23:41 |
+| [#2568](https://github.com/alibaba/loongcollector/issues/2568) | [ENHANCEMENT]: Support exporting input_internal_metrics directly via flusher_prometheus RemoteWrite | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2568.md) | complete | 2026年6月24日 UTC 23:41 |
+| [#2592](https://github.com/alibaba/loongcollector/pull/2592) | feat: otel proto json umarshal with DiscardUnknown option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2592.md) | complete | 2026年6月24日 UTC 23:41 |
+| [#2591](https://github.com/alibaba/loongcollector/pull/2591) | Recognize riscv64 in build and release scripts | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2591.md) | complete | 2026年6月24日 UTC 23:41 |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年6月24日 UTC 23:41 |
 | [#2578](https://github.com/alibaba/loongcollector/issues/2578) | [QUESTION]: 已能接收 trace，但flusher_otlp无法转发到 OTLP gRPC 后端 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2578.md) | complete | 2026年6月24日 UTC 22:41 |
 | [#2581](https://github.com/alibaba/loongcollector/issues/2581) | [CRITICAL][BUG] flusher_kafka_v2 can hang due to Sarama broker throttle timer race | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2581.md) | complete | 2026年6月24日 UTC 22:26 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年6月24日 UTC 22:26 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年6月24日 UTC 22:26 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年6月24日 UTC 22:26 |
-| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年6月24日 UTC 22:26 |
-| [#1864](https://github.com/alibaba/loongcollector/pull/1864) | test: go to cpp PipelineEventGroup transfer | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1864.md) | complete | 2026年6月24日 UTC 22:26 |
-| [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年6月24日 UTC 22:26 |
-| [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年6月24日 UTC 22:26 |
-| [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年6月24日 UTC 22:26 |
 
 </details>
 
