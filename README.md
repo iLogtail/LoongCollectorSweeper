@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年6月27日 UTC 10:22
+上次仪表盘更新：2026年6月27日 UTC 10:25
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月27日 UTC 10:22
+更新时间：2026年6月27日 UTC 10:25
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 5 条，分片 5，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 28286408734 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28286408734](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28286408734)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/1 当前（1 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/1 当前（1 待办，0%） |
-| 每日节奏 | 35/39 当前（4 待办，89.7%） |
-| 每日 PR 节奏 | 32/36 当前（4 待办，88.9%） |
+| 每小时节奏 | 1/1 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每日节奏 | 39/39 当前（0 待办，100%） |
+| 每日 PR 节奏 | 36/36 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 3/3 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 84 |
+| 节奏维度待办合计 | 79 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年6月27日 UTC 08:07。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月27日 UTC 08:08。
+最近审查：2026年6月27日 UTC 10:24。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年6月27日 UTC 08:08。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 36 | 0 |
+| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 35 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年6月27日 UTC 10:24 |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年6月27日 UTC 10:24 |
+| [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年6月27日 UTC 10:24 |
+| [#2592](https://github.com/alibaba/loongcollector/pull/2592) | feat: otel proto json umarshal with DiscardUnknown option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2592.md) | complete | 2026年6月27日 UTC 10:24 |
+| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年6月27日 UTC 10:24 |
 | [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年6月27日 UTC 08:07 |
 | [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年6月27日 UTC 08:07 |
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年6月27日 UTC 08:07 |
 | [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年6月27日 UTC 08:07 |
 | [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年6月27日 UTC 08:07 |
-| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年6月27日 UTC 08:07 |
-| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年6月27日 UTC 08:07 |
-| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年6月27日 UTC 08:07 |
-| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年6月27日 UTC 08:07 |
-| [#2592](https://github.com/alibaba/loongcollector/pull/2592) | feat: otel proto json umarshal with DiscardUnknown option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2592.md) | complete | 2026年6月27日 UTC 08:07 |
 
 </details>
 
