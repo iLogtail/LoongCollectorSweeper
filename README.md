@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年6月29日 UTC 01:58
+更新时间：2026年6月29日 UTC 04:54
 
-状态：热点发布完成
+状态：审计完成
 
-已合并 run 28343863486 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28343863486](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28343863486)
+已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28349492666](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28349492666)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -62,16 +62,16 @@
 ### 审计健康
 
 <!-- loongsweeper-audit:start -->
-上次审计：2026年6月28日 UTC 19:41
+上次审计：2026年6月29日 UTC 04:54
 
 状态：**正常**
 
 | 指标 | 数量 |
 | --- | ---: |
 | 扫描完成 | 是 |
-| 已见开放条目 | 144 |
+| 已见开放条目 | 146 |
 | 缺少符合条件开放记录 | 0 |
-| 缺少维护者开放记录 | 79 |
+| 缺少维护者开放记录 | 81 |
 | 缺少受保护开放记录 | 0 |
 | 缺少近期创建开放记录 | 0 |
 | 归档记录再次打开 | 0 |
