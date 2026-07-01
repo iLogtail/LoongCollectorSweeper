@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月1日 UTC 20:16
+上次仪表盘更新：2026年7月1日 UTC 20:18
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月1日 UTC 20:16
+更新时间：2026年7月1日 UTC 20:18
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 28545031895 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28545031895](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28545031895)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月1日 UTC 18:18。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月1日 UTC 18:18。
+最近审查：2026年7月1日 UTC 20:18。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月1日 UTC 18:18。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 64 | 0 | 64 | 0 | 0 | 64 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 64 | 0 | 64 | 0 | 0 | 63 | 0 |
 
 ### 最近关闭
 
@@ -117,10 +117,10 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年7月1日 UTC 20:18 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年7月1日 UTC 18:18 |
 | [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年7月1日 UTC 18:17 |
 | [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年7月1日 UTC 13:58 |
-| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年7月1日 UTC 13:58 |
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月1日 UTC 13:58 |
 | [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年7月1日 UTC 13:58 |
 | [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年7月1日 UTC 13:58 |
