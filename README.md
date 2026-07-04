@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月4日 UTC 15:32
+上次仪表盘更新：2026年7月4日 UTC 15:34
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月4日 UTC 15:32
+更新时间：2026年7月4日 UTC 15:34
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 15。条目: 1166,1323,1549,1798,1854,1872,1885,1939,1947,2051,2054,2081,2151,2208,2591。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28710873732](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28710873732)
+已合并 run 28710945138 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28710945138](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/28710945138)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月4日 UTC 15:32。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月4日 UTC 15:32。
+最近审查：2026年7月4日 UTC 15:34。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月4日 UTC 11:47。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 15 | 0 | 15 | 0 | 0 | 15 | 0 |
-| 最近 1 小时 | 15 | 0 | 15 | 0 | 0 | 15 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 15 | 0 | 15 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 15 | 0 | 15 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 23 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月4日 UTC 15:32 |
-| [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1947](https://github.com/alibaba/loongcollector/pull/1947) | feat: prom textparser with simd | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1947.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年7月4日 UTC 15:31 |
-| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年7月4日 UTC 15:31 |
+| [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年7月4日 UTC 15:34 |
+| [#1323](https://github.com/alibaba/loongcollector/pull/1323) | 开发文档修改 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1323.md) | complete | 2026年7月4日 UTC 15:34 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年7月4日 UTC 15:34 |
+| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月4日 UTC 15:34 |
+| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年7月4日 UTC 15:33 |
+| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年7月4日 UTC 15:33 |
+| [#2591](https://github.com/alibaba/loongcollector/pull/2591) | Recognize riscv64 in build and release scripts | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2591.md) | complete | 2026年7月4日 UTC 15:33 |
+| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年7月4日 UTC 15:33 |
+| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年7月4日 UTC 15:33 |
+| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年7月4日 UTC 15:33 |
 
 </details>
 
