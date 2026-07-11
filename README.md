@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月11日 UTC 23:12
+上次仪表盘更新：2026年7月11日 UTC 23:13
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月11日 UTC 23:12
+更新时间：2026年7月11日 UTC 23:13
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 1819,2585。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29171684987](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29171684987)
+已合并 run 29171723941 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29171723941](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29171723941)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月11日 UTC 23:11。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月11日 UTC 23:12。
+最近审查：2026年7月11日 UTC 23:13。最近关闭：2026年6月2日 UTC 17:04。最近评论同步：2026年7月11日 UTC 20:32。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 36 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 34 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年7月11日 UTC 23:11 |
-| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年7月11日 UTC 23:11 |
+| [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年7月11日 UTC 23:13 |
+| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年7月11日 UTC 23:13 |
 | [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年7月11日 UTC 20:31 |
 | [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年7月11日 UTC 20:31 |
 | [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年7月11日 UTC 19:32 |
