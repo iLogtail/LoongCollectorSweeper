@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月14日 UTC 22:17
+更新时间：2026年7月14日 UTC 22:40
 
-状态：Apply finished
+状态：正在规划审查
 
-Apply/comment-sync run finished with 0 fresh closes out of requested limit 2. See apply-report.json for per-item results.
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29372465573](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29372465573)
+规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29373716458](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29373716458)
 <!-- loongsweeper-status:end -->
 
 ### 队列
