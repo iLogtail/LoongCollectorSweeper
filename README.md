@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月14日 UTC 23:36
+上次仪表盘更新：2026年7月14日 UTC 23:37
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月14日 UTC 23:36
+更新时间：2026年7月14日 UTC 23:37
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=918。
+Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376639119](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376639119)
 <!-- loongsweeper-status:end -->
 
@@ -27,24 +27,24 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 71 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 70 |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 78 |
-| 开放条目合计 | 149 |
-| 已审查文件 | 61 |
+| 开放条目合计 | 148 |
+| 已审查文件 | 60 |
 | 尚未审查的开放条目 | 88 |
-| 归档的 closed 文件 | 39 |
+| 归档的 closed 文件 | 40 |
 
 ### 审查结果
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 26 |
-| 提议关闭 Issue | 1（占已审查 Issue 的 3.8%） |
+| 近 7 天新审查 Issue | 25 |
+| 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 35 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 61 |
-| 待 apply 的提议关闭 | 1（占新审查的 1.6%） |
-| 已由 apply 关闭 | 28 |
+| 近 7 天已验证审查 | 60 |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
+| 已由 apply 关闭 | 29 |
 | 失败或陈旧审查 | 0 |
 
 ### 节奏
@@ -56,7 +56,7 @@
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
-| 每周陈旧 Issue 节奏 | 26/26 当前（0 待办，100%） |
+| 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
 | 节奏维度待办合计 | 88 |
 
 ### 审计健康
@@ -87,18 +87,19 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月14日 UTC 23:35。最近关闭：2026年7月14日 UTC 22:16。最近评论同步：2026年7月14日 UTC 23:36。
+最近审查：2026年7月14日 UTC 23:35。最近关闭：2026年7月14日 UTC 23:37。最近评论同步：2026年7月14日 UTC 23:36。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 8 | 1 | 7 | 0 | 0 | 8 | 0 |
-| 最近 1 小时 | 8 | 1 | 7 | 0 | 0 | 8 | 0 |
-| 最近 24 小时 | 60 | 3 | 57 | 0 | 2 | 60 | 0 |
+| 最近 15 分钟 | 8 | 1 | 7 | 0 | 1 | 8 | 0 |
+| 最近 1 小时 | 8 | 1 | 7 | 0 | 1 | 8 | 0 |
+| 最近 24 小时 | 60 | 3 | 57 | 0 | 3 | 60 | 0 |
 
 ### 最近关闭
 
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
+| [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | 本仓库内无法落地 | 2026年7月14日 UTC 23:37 | [closed/918.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/918.md) |
 | [#2512](https://github.com/alibaba/loongcollector/issues/2512) | [QUESTION]:之前提问过关于数据丢失的问题，请教一下这个问题现在是否已经解决 | 长期停滞且信息不足 | 2026年7月14日 UTC 22:16 | [closed/2512.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2512.md) |
 | [#2179](https://github.com/alibaba/loongcollector/issues/2179) | [FEATURE]:flusher_http supports log text output, specifying json field values, such as contents.content | 更适合插件/扩展生态 | 2026年7月14日 UTC 22:16 | [closed/2179.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2179.md) |
 | [#2182](https://github.com/alibaba/loongcollector/issues/2182) | [QUESTION]:如何为每个项目创建一个单独的配置文件，而不是都放在一个configmap中？ | 本仓库内无法落地 | 2026年6月2日 UTC 17:04 | [closed/2182.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2182.md) |
@@ -108,7 +109,6 @@
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | 重复或已被替代 | 2026年5月2日 UTC 16:11 | [closed/2268.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2268.md) |
 | [#885](https://github.com/alibaba/loongcollector/pull/885) | support send medata to config server | 重复或已被替代 | 2026年5月2日 UTC 14:59 | [closed/885.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/885.md) |
 | [#2452](https://github.com/alibaba/loongcollector/issues/2452) | 输出插件不支持infuxdb吗 | 更适合插件/扩展生态 | 2026年4月28日 UTC 12:14 | [closed/2452.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2452.md) |
-| [#2533](https://github.com/alibaba/loongcollector/issues/2533) | [ENHANCEMENT]:flusher_kafka_v2输出插件, 账号密码支持从环境变量中获取 | 已在 main 上实现 | 2026年4月27日 UTC 11:00 | [closed/2533.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2533.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
@@ -117,7 +117,6 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | [close / proposed_close](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/918.md) | complete | 2026年7月14日 UTC 23:35 |
 | [#2480](https://github.com/alibaba/loongcollector/issues/2480) | [QUESTION]: 在虚拟机上采集日志文件，如果使用纳秒时间？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2480.md) | complete | 2026年7月14日 UTC 23:35 |
 | [#553](https://github.com/alibaba/loongcollector/issues/553) | [BUG]: flusher_kafka_v2配置otlp报错 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/553.md) | complete | 2026年7月14日 UTC 23:35 |
 | [#1585](https://github.com/alibaba/loongcollector/issues/1585) | 是否可以在processor_fields_with_condition中添加rename key的功能？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1585.md) | complete | 2026年7月14日 UTC 23:35 |
@@ -127,6 +126,7 @@
 | [#557](https://github.com/alibaba/loongcollector/issues/557) | [BUG]: metric_system_v2 对于系统启动时间计算不正确 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/557.md) | complete | 2026年7月14日 UTC 23:34 |
 | [#793](https://github.com/alibaba/loongcollector/issues/793) | [FEATURE]: iLogtail support oss Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/793.md) | complete | 2026年7月14日 UTC 22:14 |
 | [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年7月14日 UTC 22:14 |
+| [#2223](https://github.com/alibaba/loongcollector/issues/2223) | [QUESTION]: sidecar use caes in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2223.md) | complete | 2026年7月14日 UTC 22:14 |
 
 </details>
 
