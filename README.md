@@ -17,10 +17,10 @@
 
 更新时间：2026年7月14日 UTC 23:36
 
-状态：审查评论已检查
+状态：Apply in progress
 
-已检查并同步持久化百炼审查评论。已同步: 8。条目: 553,557,918,1585,1640,1810,2257,2480。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376462816](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376462816)
+开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=918。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376639119](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29376639119)
 <!-- loongsweeper-status:end -->
 
 ### 队列
