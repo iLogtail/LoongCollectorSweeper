@@ -1,72 +1,12 @@
 [
   {
-    "number": 204,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 754,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 793,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 842,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 910,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 911,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1236,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1273,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 1767,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
     "number": 2179,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2207,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2223,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
+    "action": "closed",
+    "reason": "更适合插件/扩展生态"
   },
   {
     "number": 2512,
-    "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
-  },
-  {
-    "number": 2514,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "action": "closed",
+    "reason": "长期停滞且信息不足"
   }
 ]
