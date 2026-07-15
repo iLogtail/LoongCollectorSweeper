@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月15日 UTC 16:48
+上次仪表盘更新：2026年7月15日 UTC 16:52
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月15日 UTC 16:48
+更新时间：2026年7月15日 UTC 16:52
 
-状态：审查评论已检查
+状态：Apply in progress
 
-已检查并同步持久化百炼审查评论。已同步: 18。条目: 1772,1864,2214,2222,2228,2247,2249,2294,2321,2322,2325,2359,2382,2487,2496,2522,2580,2648。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29433694757](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29433694757)
+开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2648。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297)
 <!-- loongsweeper-status:end -->
 
 ### 队列
