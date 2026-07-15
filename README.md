@@ -19,7 +19,7 @@
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2648。
+Checkpoint 1 finished. Fresh closes in checkpoint: 1. Total fresh closes in this run: 1/1. Result records in checkpoint: 1, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297)
 <!-- loongsweeper-status:end -->
 
@@ -28,11 +28,11 @@
 | 指标 | 数量 |
 | --- | ---: |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 70 |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 79 |
-| 开放条目合计 | 149 |
-| 已审查文件 | 61 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 78 |
+| 开放条目合计 | 148 |
+| 已审查文件 | 60 |
 | 尚未审查的开放条目 | 88 |
-| 归档的 closed 文件 | 40 |
+| 归档的 closed 文件 | 41 |
 
 ### 审查结果
 
@@ -40,19 +40,19 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 25 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 36 |
-| 提议关闭 PR | 1（占已审查 PR 的 2.8%） |
-| 近 7 天已验证审查 | 61 |
-| 待 apply 的提议关闭 | 1（占新审查的 1.6%） |
-| 已由 apply 关闭 | 29 |
+| 近 7 天新审查 PR | 35 |
+| 提议关闭 PR | 0（占已审查 PR 的 0%） |
+| 近 7 天已验证审查 | 60 |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
+| 已由 apply 关闭 | 30 |
 | 失败或陈旧审查 | 0 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 1/1 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
+| 每小时节奏 | 0/0 当前（0 待办，-） |
+| 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
@@ -87,18 +87,19 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月15日 UTC 16:47。最近关闭：2026年7月14日 UTC 23:37。最近评论同步：2026年7月15日 UTC 16:48。
+最近审查：2026年7月15日 UTC 16:47。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月15日 UTC 16:48。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 18 | 1 | 17 | 0 | 0 | 18 | 0 |
-| 最近 1 小时 | 18 | 1 | 17 | 0 | 0 | 18 | 0 |
-| 最近 24 小时 | 61 | 4 | 57 | 0 | 3 | 61 | 0 |
+| 最近 15 分钟 | 18 | 1 | 17 | 0 | 1 | 18 | 0 |
+| 最近 1 小时 | 18 | 1 | 17 | 0 | 1 | 18 | 0 |
+| 最近 24 小时 | 61 | 4 | 57 | 0 | 4 | 61 | 0 |
 
 ### 最近关闭
 
 | 条目 | 标题 | 原因 | 关闭时间 | 报告 |
 | --- | --- | --- | --- | --- |
+| [#2648](https://github.com/alibaba/loongcollector/pull/2648) | chore: minor cleanup in test scripts | 本仓库内无法落地 | 2026年7月15日 UTC 16:52 | [closed/2648.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2648.md) |
 | [#918](https://github.com/alibaba/loongcollector/issues/918) | [FEATURE]:希望采集端有监控采集服务是否异常退出，重启的进程以及升级采集服务进程的能力 | 本仓库内无法落地 | 2026年7月14日 UTC 23:37 | [closed/918.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/918.md) |
 | [#2512](https://github.com/alibaba/loongcollector/issues/2512) | [QUESTION]:之前提问过关于数据丢失的问题，请教一下这个问题现在是否已经解决 | 长期停滞且信息不足 | 2026年7月14日 UTC 22:16 | [closed/2512.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2512.md) |
 | [#2179](https://github.com/alibaba/loongcollector/issues/2179) | [FEATURE]:flusher_http supports log text output, specifying json field values, such as contents.content | 更适合插件/扩展生态 | 2026年7月14日 UTC 22:16 | [closed/2179.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2179.md) |
@@ -108,7 +109,6 @@
 | [#2186](https://github.com/alibaba/loongcollector/issues/2186) | [BUG]:日志报inspect container timeout | 长期停滞且信息不足 | 2026年5月5日 UTC 15:27 | [closed/2186.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2186.md) |
 | [#2268](https://github.com/alibaba/loongcollector/pull/2268) | feat: support dynamic label values and global metrics record. | 重复或已被替代 | 2026年5月2日 UTC 16:11 | [closed/2268.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2268.md) |
 | [#885](https://github.com/alibaba/loongcollector/pull/885) | support send medata to config server | 重复或已被替代 | 2026年5月2日 UTC 14:59 | [closed/885.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/885.md) |
-| [#2452](https://github.com/alibaba/loongcollector/issues/2452) | 输出插件不支持infuxdb吗 | 更适合插件/扩展生态 | 2026年4月28日 UTC 12:14 | [closed/2452.md](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/closed/2452.md) |
 
 <details>
 <summary>最近审查（最多 10 条）</summary>
@@ -117,7 +117,6 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2648](https://github.com/alibaba/loongcollector/pull/2648) | chore: minor cleanup in test scripts | [close / proposed_close](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2648.md) | complete | 2026年7月15日 UTC 16:47 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年7月15日 UTC 16:47 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年7月15日 UTC 16:47 |
 | [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年7月15日 UTC 16:47 |
@@ -127,6 +126,7 @@
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年7月15日 UTC 16:47 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年7月15日 UTC 16:47 |
 | [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年7月15日 UTC 16:47 |
+| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年7月15日 UTC 16:47 |
 
 </details>
 
