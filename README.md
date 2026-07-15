@@ -17,10 +17,10 @@
 
 更新时间：2026年7月15日 UTC 16:52
 
-状态：Apply finished
+状态：Apply in progress
 
-Apply/comment-sync run finished with 1 fresh closes out of requested limit 1. See apply-report.json for per-item results.
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434145297)
+开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2648。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434196165](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29434196165)
 <!-- loongsweeper-status:end -->
 
 ### 队列
