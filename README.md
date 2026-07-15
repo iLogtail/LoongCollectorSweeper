@@ -19,7 +19,7 @@
 
 状态：Apply in progress
 
-开始 apply/评论同步：最多 1 条 all 新关闭。关闭或评论仅同步时，会原地更新既有百炼自动化审查评论（陈旧阈值 7 天）；检查点每 50 条提交；关闭间隔 2000ms；仅同步评论=false；条目=2648。
+Checkpoint 1 finished. Fresh closes in checkpoint: 0. Total fresh closes in this run: 0/1. Result records in checkpoint: 1, including durable review comment syncs.
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29429451841](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29429451841)
 <!-- loongsweeper-status:end -->
 
@@ -41,9 +41,9 @@
 | 近 7 天新审查 Issue | 25 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 36 |
-| 提议关闭 PR | 1（占已审查 PR 的 2.8%） |
+| 提议关闭 PR | 0（占已审查 PR 的 0%） |
 | 近 7 天已验证审查 | 61 |
-| 待 apply 的提议关闭 | 1（占新审查的 1.6%） |
+| 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 29 |
 | 失败或陈旧审查 | 0 |
 
@@ -91,9 +91,9 @@
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 1 | 0 | 0 | 0 | 1 | 0 |
-| 最近 24 小时 | 61 | 4 | 57 | 0 | 3 | 61 | 0 |
+| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 最近 1 小时 | 1 | 1 | 0 | 0 | 0 | 1 | 1 |
+| 最近 24 小时 | 61 | 4 | 57 | 0 | 3 | 61 | 1 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2648](https://github.com/alibaba/loongcollector/pull/2648) | chore: minor cleanup in test scripts | [close / proposed_close](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2648.md) | complete | 2026年7月15日 UTC 15:15 |
+| [#2648](https://github.com/alibaba/loongcollector/pull/2648) | chore: minor cleanup in test scripts | [close / skipped_changed_since_review](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2648.md) | complete | 2026年7月15日 UTC 15:15 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年7月15日 UTC 00:57 |
 | [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年7月15日 UTC 00:56 |
 | [#2480](https://github.com/alibaba/loongcollector/issues/2480) | [QUESTION]: 在虚拟机上采集日志文件，如果使用纳秒时间？ | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2480.md) | complete | 2026年7月14日 UTC 23:35 |
