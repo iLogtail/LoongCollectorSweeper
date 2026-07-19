@@ -17,9 +17,9 @@
 
 更新时间：2026年7月19日 UTC 00:09
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 0 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 29666459292 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29666459292](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29666459292)
 <!-- loongsweeper-status:end -->
 
