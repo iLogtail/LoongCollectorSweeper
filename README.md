@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月21日 UTC 06:40
+上次仪表盘更新：2026年7月21日 UTC 06:42
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月21日 UTC 06:40
+更新时间：2026年7月21日 UTC 06:42
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 29807751210 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29807751210](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29807751210)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月21日 UTC 06:20。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月21日 UTC 06:21。
+最近审查：2026年7月21日 UTC 06:42。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月21日 UTC 06:21。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 16 | 0 | 16 | 0 | 0 | 16 | 0 |
-| 最近 24 小时 | 35 | 0 | 35 | 0 | 0 | 35 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 16 | 0 |
+| 最近 24 小时 | 35 | 0 | 35 | 0 | 0 | 34 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年7月21日 UTC 06:42 |
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年7月21日 UTC 06:20 |
@@ -126,7 +127,6 @@
 | [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年7月21日 UTC 06:20 |
-| [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年7月21日 UTC 06:20 |
 
 </details>
 
