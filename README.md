@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月21日 UTC 23:10
+上次仪表盘更新：2026年7月21日 UTC 23:12
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月21日 UTC 23:10
+更新时间：2026年7月21日 UTC 23:12
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 29876255618 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29876255618](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29876255618)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/1 当前（1 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/1 当前（1 待办，0%） |
+| 每小时节奏 | 1/1 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 1/1 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 93 |
+| 节奏维度待办合计 | 92 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月21日 UTC 22:34。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月21日 UTC 22:35。
+最近审查：2026年7月21日 UTC 23:12。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月21日 UTC 22:35。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 15 | 0 | 15 | 0 | 0 | 15 | 0 |
-| 最近 24 小时 | 51 | 0 | 51 | 0 | 0 | 51 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 16 | 0 | 16 | 0 | 0 | 15 | 0 |
+| 最近 24 小时 | 51 | 0 | 51 | 0 | 0 | 50 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月21日 UTC 23:12 |
 | [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年7月21日 UTC 22:34 |
 | [#910](https://github.com/alibaba/loongcollector/issues/910) | [FEATURE]: 支持分级保障能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/910.md) | complete | 2026年7月21日 UTC 22:33 |
 | [#1273](https://github.com/alibaba/loongcollector/issues/1273) | [ENHANCEMENT]: flusher 报错不明显 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1273.md) | complete | 2026年7月21日 UTC 22:33 |
@@ -126,7 +127,6 @@
 | [#1767](https://github.com/alibaba/loongcollector/issues/1767) | [BUG]:kafka version not support 3.8.0 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1767.md) | complete | 2026年7月21日 UTC 22:33 |
 | [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年7月21日 UTC 22:33 |
 | [#793](https://github.com/alibaba/loongcollector/issues/793) | [FEATURE]: iLogtail support oss Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/793.md) | complete | 2026年7月21日 UTC 22:33 |
-| [#2223](https://github.com/alibaba/loongcollector/issues/2223) | [QUESTION]: sidecar use caes in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2223.md) | complete | 2026年7月21日 UTC 22:33 |
 
 </details>
 
