@@ -17,9 +17,9 @@
 
 更新时间：2026年7月21日 UTC 06:42
 
-状态：审查发布完成
+状态：审查评论已检查
 
-已合并 run 29807751210 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+已检查并同步持久化百炼审查评论。已同步: 0。条目: 2580。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29807751210](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29807751210)
 <!-- loongsweeper-status:end -->
 
@@ -91,9 +91,9 @@
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 16 | 0 |
-| 最近 24 小时 | 35 | 0 | 35 | 0 | 0 | 34 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 1 |
+| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 16 | 1 |
+| 最近 24 小时 | 35 | 0 | 35 | 0 | 0 | 34 | 1 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年7月21日 UTC 06:42 |
+| [#2580](https://github.com/alibaba/loongcollector/pull/2580) | fix(input_etw): harden ETW session cleanup and naming | [keep_open / skipped_changed_since_review](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2580.md) | complete | 2026年7月21日 UTC 06:42 |
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年7月21日 UTC 06:20 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年7月21日 UTC 06:20 |
