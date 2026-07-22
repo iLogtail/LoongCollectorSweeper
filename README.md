@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月22日 UTC 16:45
+上次仪表盘更新：2026年7月22日 UTC 16:46
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月22日 UTC 16:45
+更新时间：2026年7月22日 UTC 16:46
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 1。条目: 2666。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29939216252](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29939216252)
+已合并 run 29939327881 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29939327881](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/29939327881)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月22日 UTC 16:45。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月22日 UTC 16:45。
+最近审查：2026年7月22日 UTC 16:46。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月22日 UTC 06:44。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 最近 24 小时 | 57 | 0 | 57 | 0 | 0 | 57 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 57 | 0 | 57 | 0 | 0 | 56 | 0 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月22日 UTC 16:45 |
+| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月22日 UTC 16:46 |
 | [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年7月22日 UTC 06:43 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年7月22日 UTC 06:43 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年7月22日 UTC 06:43 |
