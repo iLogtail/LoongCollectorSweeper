@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月28日 UTC 23:19
+上次仪表盘更新：2026年7月28日 UTC 23:20
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月28日 UTC 23:19
+更新时间：2026年7月28日 UTC 23:20
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 14。条目: 204,754,793,842,910,911,1236,1273,1767,2207,2223,2228,2359,2514。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30407448063](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30407448063)
+已合并 run 30407505415 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30407505415](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30407505415)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月28日 UTC 23:18。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月28日 UTC 23:19。
+最近审查：2026年7月28日 UTC 23:19。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月28日 UTC 22:22。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 14 | 0 | 14 | 0 | 0 | 14 | 0 |
-| 最近 1 小时 | 28 | 0 | 28 | 0 | 0 | 28 | 0 |
-| 最近 24 小时 | 50 | 0 | 50 | 0 | 0 | 50 | 0 |
+| 最近 15 分钟 | 14 | 0 | 14 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 19 | 0 | 19 | 0 | 0 | 14 | 0 |
+| 最近 24 小时 | 50 | 0 | 50 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#910](https://github.com/alibaba/loongcollector/issues/910) | [FEATURE]: 支持分级保障能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/910.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#1273](https://github.com/alibaba/loongcollector/issues/1273) | [ENHANCEMENT]: flusher 报错不明显 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1273.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#2207](https://github.com/alibaba/loongcollector/issues/2207) | [ENHANCEMENT]: Support json encoding when converter protocol is raw | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2207.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#2514](https://github.com/alibaba/loongcollector/issues/2514) | [ENHANCEMENT]: flusher_kafka_v2 未来有没有可能支持类似 SLS 的 DiskBufferWriter，当前大部分日志采集器都有这类本地缓存的能力，可以大幅灾备能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2514.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#204](https://github.com/alibaba/loongcollector/issues/204) | [FEATURE]: add mqtt flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/204.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年7月28日 UTC 23:18 |
-| [#2223](https://github.com/alibaba/loongcollector/issues/2223) | [QUESTION]: sidecar use caes in loongcollector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2223.md) | complete | 2026年7月28日 UTC 23:18 |
+| [#2514](https://github.com/alibaba/loongcollector/issues/2514) | [ENHANCEMENT]: flusher_kafka_v2 未来有没有可能支持类似 SLS 的 DiskBufferWriter，当前大部分日志采集器都有这类本地缓存的能力，可以大幅灾备能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2514.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#754](https://github.com/alibaba/loongcollector/issues/754) | [FEATURE]:ilogtail 增加ExternalK8sAnnotationsTag 参数支持通过容器的原数据annotations 中的字段追加到日志采集中 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/754.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#1236](https://github.com/alibaba/loongcollector/issues/1236) | [FEATURE]: Support S3/OSS Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1236.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#1273](https://github.com/alibaba/loongcollector/issues/1273) | [ENHANCEMENT]: flusher 报错不明显 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1273.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#910](https://github.com/alibaba/loongcollector/issues/910) | [FEATURE]: 支持分级保障能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/910.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#2207](https://github.com/alibaba/loongcollector/issues/2207) | [ENHANCEMENT]: Support json encoding when converter protocol is raw | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2207.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#1767](https://github.com/alibaba/loongcollector/issues/1767) | [BUG]:kafka version not support 3.8.0 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1767.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#842](https://github.com/alibaba/loongcollector/issues/842) | [FEATURE]: iLogtail support rocketmq Flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/842.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年7月28日 UTC 23:19 |
+| [#911](https://github.com/alibaba/loongcollector/issues/911) | [FEATURE]: File2Kafka支持任务暂停功能 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/911.md) | complete | 2026年7月28日 UTC 23:19 |
 
 </details>
 
