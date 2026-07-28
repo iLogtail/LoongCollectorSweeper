@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月28日 UTC 22:18
+上次仪表盘更新：2026年7月28日 UTC 22:22
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月28日 UTC 22:18
+更新时间：2026年7月28日 UTC 22:22
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 14 条，分片 14，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30403928566 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30403928566](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30403928566)
 <!-- loongsweeper-status:end -->
 
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 19/35 当前（16 待办，54.3%） |
-| 每日 PR 节奏 | 19/35 当前（16 待办，54.3%） |
+| 每日节奏 | 33/35 当前（2 待办，94.3%） |
+| 每日 PR 节奏 | 33/35 当前（2 待办，94.3%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 108 |
+| 节奏维度待办合计 | 94 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月28日 UTC 22:17。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月28日 UTC 22:18。
+最近审查：2026年7月28日 UTC 22:21。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月28日 UTC 22:18。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 3 | 0 |
-| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 3 | 0 |
-| 最近 24 小时 | 22 | 0 | 22 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 17 | 0 | 17 | 0 | 0 | 3 | 0 |
+| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 3 | 0 |
+| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 22 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1805](https://github.com/alibaba/loongcollector/issues/1805) | [FEATURE]:Update container the base image | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1805.md) | complete | 2026年7月28日 UTC 22:17 |
-| [#1603](https://github.com/alibaba/loongcollector/issues/1603) | [FEATURE]: iLogtail support ODPS Flusher  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1603.md) | complete | 2026年7月28日 UTC 22:17 |
-| [#2221](https://github.com/alibaba/loongcollector/issues/2221) | [ENHANCEMENT]: Optimize the authentication configuration of the kafka input plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2221.md) | complete | 2026年7月28日 UTC 22:17 |
-| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年7月28日 UTC 12:14 |
-| [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年7月28日 UTC 12:14 |
+| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年7月28日 UTC 22:21 |
+| [#1864](https://github.com/alibaba/loongcollector/pull/1864) | test: go to cpp PipelineEventGroup transfer | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1864.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年7月28日 UTC 22:20 |
+| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年7月28日 UTC 22:20 |
 
 </details>
 
