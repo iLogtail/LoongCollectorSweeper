@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月29日 UTC 06:18
+上次仪表盘更新：2026年7月29日 UTC 06:20
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月29日 UTC 06:18
+更新时间：2026年7月29日 UTC 06:20
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30427729449 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30427729449](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30427729449)
 <!-- loongsweeper-status:end -->
 
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 0/0 当前（0 待办，-） |
 | 热点每小时节奏（<7 天） | 0/0 当前（0 待办，-） |
-| 每日节奏 | 34/35 当前（1 待办，97.1%） |
-| 每日 PR 节奏 | 34/35 当前（1 待办，97.1%） |
+| 每日节奏 | 35/35 当前（0 待办，100%） |
+| 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 93 |
+| 节奏维度待办合计 | 92 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月29日 UTC 03:39。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月29日 UTC 03:40。
+最近审查：2026年7月29日 UTC 06:19。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月29日 UTC 03:40。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 56 | 0 | 56 | 0 | 0 | 56 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 57 | 0 | 57 | 0 | 0 | 56 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月29日 UTC 06:19 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年7月29日 UTC 03:39 |
 | [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年7月29日 UTC 03:39 |
 | [#553](https://github.com/alibaba/loongcollector/issues/553) | [BUG]: flusher_kafka_v2配置otlp报错 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/553.md) | complete | 2026年7月29日 UTC 00:14 |
@@ -126,7 +127,6 @@
 | [#2257](https://github.com/alibaba/loongcollector/issues/2257) | [FEATURE]: Add native plugin of kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2257.md) | complete | 2026年7月29日 UTC 00:14 |
 | [#1810](https://github.com/alibaba/loongcollector/issues/1810) | [FEATURE]: 希望 Loki Flusher 支持结构化元数据 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1810.md) | complete | 2026年7月29日 UTC 00:14 |
 | [#557](https://github.com/alibaba/loongcollector/issues/557) | [BUG]: metric_system_v2 对于系统启动时间计算不正确 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/557.md) | complete | 2026年7月29日 UTC 00:14 |
-| [#2514](https://github.com/alibaba/loongcollector/issues/2514) | [ENHANCEMENT]: flusher_kafka_v2 未来有没有可能支持类似 SLS 的 DiskBufferWriter，当前大部分日志采集器都有这类本地缓存的能力，可以大幅灾备能力 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2514.md) | complete | 2026年7月28日 UTC 23:19 |
 
 </details>
 
