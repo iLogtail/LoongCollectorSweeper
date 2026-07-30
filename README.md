@@ -17,10 +17,10 @@
 
 更新时间：2026年7月30日 UTC 06:41
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 2666,2669。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30520232859](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30520232859)
+已合并 run 30520304243 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30520304243](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30520304243)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月30日 UTC 06:40。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月30日 UTC 06:41。
+最近审查：2026年7月30日 UTC 06:41。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月30日 UTC 04:10。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 36 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 36 | 0 | 36 | 0 | 0 | 34 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP log export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年7月30日 UTC 06:40 |
-| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月30日 UTC 06:40 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP log export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年7月30日 UTC 06:41 |
+| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月30日 UTC 06:41 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年7月30日 UTC 04:10 |
 | [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年7月30日 UTC 04:10 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年7月29日 UTC 23:35 |
