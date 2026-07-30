@@ -1,6 +1,11 @@
 [
   {
-    "number": 2669,
+    "number": 850,
+    "action": "review_comment_synced",
+    "reason": "recorded existing durable comment metadata"
+  },
+  {
+    "number": 2261,
     "action": "review_comment_synced",
     "reason": "recorded existing durable comment metadata"
   }
