@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月31日 UTC 09:28
+上次仪表盘更新：2026年7月31日 UTC 09:29
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月31日 UTC 09:28
+更新时间：2026年7月31日 UTC 09:29
 
-状态：热点发布完成
+状态：审查评论已检查
 
-已合并 run 30619910807 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+已检查并同步持久化百炼审查评论。已同步: 1。条目: 2669,2670。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30619910807](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30619910807)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年7月31日 UTC 09:28。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月31日 UTC 07:14。
+最近审查：2026年7月31日 UTC 09:28。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年7月31日 UTC 09:29。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 35 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 1 | 1 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 1 | 1 |
+| 最近 24 小时 | 37 | 0 | 37 | 0 | 0 | 36 | 1 |
 
 ### 最近关闭
 
@@ -117,7 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP log export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年7月31日 UTC 09:28 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP log export | [keep_open / skipped_changed_since_review](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年7月31日 UTC 09:28 |
 | [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年7月31日 UTC 09:28 |
 | [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年7月31日 UTC 07:14 |
 | [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年7月31日 UTC 06:35 |
