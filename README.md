@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月31日 UTC 18:44
+上次仪表盘更新：2026年7月31日 UTC 18:46
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月31日 UTC 18:44
+更新时间：2026年7月31日 UTC 18:46
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 2669,2670。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30656199067](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30656199067)
+已合并 run 30656338626 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30656338626](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30656338626)
 <!-- loongsweeper-status:end -->
 
 ### 队列
