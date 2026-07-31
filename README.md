@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年7月31日 UTC 03:51
+上次仪表盘更新：2026年7月31日 UTC 03:52
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年7月31日 UTC 03:51
+更新时间：2026年7月31日 UTC 03:52
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 0 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30602624381 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30602624381](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30602624381)
 <!-- loongsweeper-status:end -->
 
