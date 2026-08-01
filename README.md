@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月1日 UTC 15:18
+上次仪表盘更新：2026年8月1日 UTC 15:19
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月1日 UTC 15:18
+更新时间：2026年8月1日 UTC 15:19
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 2 条，分片 2，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30705597214 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30705597214](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30705597214)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/2 当前（2 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 95 |
+| 节奏维度待办合计 | 93 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月1日 UTC 13:56。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月1日 UTC 13:57。
+最近审查：2026年8月1日 UTC 15:19。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月1日 UTC 13:57。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 36 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月1日 UTC 15:19 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月1日 UTC 15:19 |
 | [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年8月1日 UTC 13:56 |
 | [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年8月1日 UTC 13:56 |
 | [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年8月1日 UTC 13:56 |
@@ -125,8 +127,6 @@
 | [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年8月1日 UTC 13:55 |
 | [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年8月1日 UTC 13:55 |
 | [#2051](https://github.com/alibaba/loongcollector/pull/2051) | e2e: prom metric check func | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2051.md) | complete | 2026年8月1日 UTC 13:55 |
-| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年8月1日 UTC 13:55 |
-| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年8月1日 UTC 13:55 |
 
 </details>
 
