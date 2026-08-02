@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月2日 UTC 22:38
+上次仪表盘更新：2026年8月2日 UTC 22:40
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月2日 UTC 22:38
+更新时间：2026年8月2日 UTC 22:40
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30770544543 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30770544543](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30770544543)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 2/3 当前（1 待办，66.7%） |
-| 热点每小时节奏（<7 天） | 2/3 当前（1 待办，66.7%） |
+| 每小时节奏 | 3/3 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 3/3 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 94 |
+| 节奏维度待办合计 | 93 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月2日 UTC 22:10。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月2日 UTC 22:11。
+最近审查：2026年8月2日 UTC 22:39。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月2日 UTC 22:11。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 2 | 0 |
+| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 38 | 0 |
 
 ### 最近关闭
 
@@ -117,9 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月2日 UTC 22:39 |
 | [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月2日 UTC 22:10 |
 | [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月2日 UTC 22:10 |
-| [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月2日 UTC 21:10 |
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年8月2日 UTC 14:52 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年8月2日 UTC 14:52 |
 | [#1549](https://github.com/alibaba/loongcollector/pull/1549) | feat: legacy config provider | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1549.md) | complete | 2026年8月2日 UTC 14:52 |
