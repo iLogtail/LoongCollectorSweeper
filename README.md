@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月4日 UTC 09:51
+上次仪表盘更新：2026年8月4日 UTC 09:52
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月4日 UTC 09:51
+更新时间：2026年8月4日 UTC 09:52
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 5。条目: 850,2261,2669,2670,2672。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30897964721](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30897964721)
+已合并 run 30897985788 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30897985788](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30897985788)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月4日 UTC 09:51。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月4日 UTC 09:51。
+最近审查：2026年8月4日 UTC 09:51。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月4日 UTC 03:37。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 5 | 0 |
-| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 5 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 33 | 0 |
 
 ### 最近关闭
 
@@ -117,11 +117,11 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年8月4日 UTC 09:51 |
 | [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月4日 UTC 09:51 |
-| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月4日 UTC 09:51 |
 | [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月4日 UTC 09:51 |
 | [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月4日 UTC 09:51 |
-| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年8月4日 UTC 09:51 |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月4日 UTC 09:51 |
 | [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年8月4日 UTC 03:37 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月4日 UTC 03:37 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年8月4日 UTC 01:06 |
