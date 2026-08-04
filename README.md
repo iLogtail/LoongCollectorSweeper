@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月4日 UTC 22:21
+上次仪表盘更新：2026年8月4日 UTC 22:23
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月4日 UTC 22:21
+更新时间：2026年8月4日 UTC 22:23
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 3 条，分片 3，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30956041431 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30956041431](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30956041431)
 <!-- loongsweeper-status:end -->
 
@@ -38,11 +38,11 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 22 |
+| 近 7 天新审查 Issue | 25 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 38 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 60 |
+| 近 7 天已验证审查 | 63 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 30 |
 | 失败或陈旧审查 | 0 |
@@ -56,8 +56,8 @@
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
-| 每周陈旧 Issue 节奏 | 22/25 当前（3 待办，88%） |
-| 节奏维度待办合计 | 96 |
+| 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
+| 节奏维度待办合计 | 93 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月4日 UTC 21:59。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月4日 UTC 22:00。
+最近审查：2026年8月4日 UTC 22:22。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月4日 UTC 22:00。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 3 | 0 |
-| 最近 24 小时 | 38 | 0 | 38 | 0 | 0 | 38 | 0 |
+| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 6 | 0 | 6 | 0 | 0 | 3 | 0 |
+| 最近 24 小时 | 41 | 0 | 41 | 0 | 0 | 38 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2221](https://github.com/alibaba/loongcollector/issues/2221) | [ENHANCEMENT]: Optimize the authentication configuration of the kafka input plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2221.md) | complete | 2026年8月4日 UTC 22:22 |
+| [#1805](https://github.com/alibaba/loongcollector/issues/1805) | [FEATURE]:Update container the base image | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1805.md) | complete | 2026年8月4日 UTC 22:22 |
+| [#1603](https://github.com/alibaba/loongcollector/issues/1603) | [FEATURE]: iLogtail support ODPS Flusher  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1603.md) | complete | 2026年8月4日 UTC 22:22 |
 | [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月4日 UTC 21:59 |
 | [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月4日 UTC 21:59 |
 | [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月4日 UTC 21:59 |
@@ -124,9 +127,6 @@
 | [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年8月4日 UTC 15:59 |
 | [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年8月4日 UTC 15:59 |
 | [#1819](https://github.com/alibaba/loongcollector/pull/1819) | bug: syslog parse in rfc3164 tag length limit is 32 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1819.md) | complete | 2026年8月4日 UTC 15:59 |
-| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年8月4日 UTC 15:59 |
-| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年8月4日 UTC 15:59 |
-| [#2054](https://github.com/alibaba/loongcollector/pull/2054) | feat: enhance encoder interface | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2054.md) | complete | 2026年8月4日 UTC 15:59 |
 
 </details>
 
