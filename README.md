@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月5日 UTC 09:47
+上次仪表盘更新：2026年8月5日 UTC 09:49
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月5日 UTC 09:47
+更新时间：2026年8月5日 UTC 09:49
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30994726063 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30994726063](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30994726063)
 <!-- loongsweeper-status:end -->
 
@@ -40,24 +40,24 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 25 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 38 |
+| 近 7 天新审查 PR | 39 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 63 |
+| 近 7 天已验证审查 | 64 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 30 |
-| 失败或陈旧审查 | 1 |
+| 失败或陈旧审查 | 0 |
 
 ### 节奏
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 3/4 当前（1 待办，75%） |
-| 热点每小时节奏（<7 天） | 3/4 当前（1 待办，75%） |
+| 每小时节奏 | 4/4 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 4/4 当前（0 待办，100%） |
 | 每日节奏 | 35/35 当前（0 待办，100%） |
 | 每日 PR 节奏 | 35/35 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 94 |
+| 节奏维度待办合计 | 93 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月5日 UTC 08:53。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月5日 UTC 08:53。
+最近审查：2026年8月5日 UTC 09:49。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月5日 UTC 08:53。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 4 | 0 | 4 | 1 | 0 | 4 | 0 |
-| 最近 24 小时 | 61 | 0 | 61 | 1 | 0 | 61 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 4 | 0 | 4 | 0 | 0 | 3 | 0 |
+| 最近 24 小时 | 61 | 0 | 61 | 0 | 0 | 60 | 0 |
 
 ### 最近关闭
 
@@ -117,9 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月5日 UTC 09:49 |
 | [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月5日 UTC 08:53 |
 | [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月5日 UTC 08:52 |
-| [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | failed | 2026年8月5日 UTC 08:52 |
 | [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月5日 UTC 08:52 |
 | [#204](https://github.com/alibaba/loongcollector/issues/204) | [FEATURE]: add mqtt flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/204.md) | complete | 2026年8月5日 UTC 06:42 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月5日 UTC 06:11 |
