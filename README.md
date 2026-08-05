@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月5日 UTC 06:40
+上次仪表盘更新：2026年8月5日 UTC 06:43
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月5日 UTC 06:40
+更新时间：2026年8月5日 UTC 06:42
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 30982165141 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30982165141](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/30982165141)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月5日 UTC 06:11。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月5日 UTC 06:12。
+最近审查：2026年8月5日 UTC 06:42。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月5日 UTC 06:12。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 6 | 0 | 6 | 0 | 0 | 6 | 0 |
-| 最近 24 小时 | 61 | 0 | 61 | 0 | 0 | 61 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 7 | 0 | 7 | 0 | 0 | 6 | 0 |
+| 最近 24 小时 | 61 | 0 | 61 | 0 | 0 | 60 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#204](https://github.com/alibaba/loongcollector/issues/204) | [FEATURE]: add mqtt flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/204.md) | complete | 2026年8月5日 UTC 06:42 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月5日 UTC 06:11 |
 | [#2670](https://github.com/alibaba/loongcollector/pull/2670) | feat(agentsight): collect unified security events | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2670.md) | complete | 2026年8月5日 UTC 06:11 |
 | [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年8月5日 UTC 06:11 |
@@ -126,7 +127,6 @@
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年8月5日 UTC 03:38 |
 | [#557](https://github.com/alibaba/loongcollector/issues/557) | [BUG]: metric_system_v2 对于系统启动时间计算不正确 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/557.md) | complete | 2026年8月5日 UTC 03:38 |
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年8月5日 UTC 03:38 |
-| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年8月5日 UTC 03:38 |
 
 </details>
 
