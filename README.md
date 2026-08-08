@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月8日 UTC 10:48
+上次仪表盘更新：2026年8月8日 UTC 10:50
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月8日 UTC 10:48
+更新时间：2026年8月8日 UTC 10:50
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 31253561281 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31253561281](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31253561281)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月8日 UTC 10:08。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月8日 UTC 10:08。
+最近审查：2026年8月8日 UTC 10:49。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月8日 UTC 10:08。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 40 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 3 | 0 | 3 | 0 | 0 | 2 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 39 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月8日 UTC 10:49 |
 | [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月8日 UTC 10:08 |
 | [#2672](https://github.com/alibaba/loongcollector/pull/2672) | feat(agentsight): expose security correlation identity | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2672.md) | complete | 2026年8月8日 UTC 10:08 |
 | [#2581](https://github.com/alibaba/loongcollector/issues/2581) | [CRITICAL][BUG] flusher_kafka_v2 can hang due to Sarama broker throttle timer race | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2581.md) | complete | 2026年8月8日 UTC 09:39 |
@@ -126,7 +127,6 @@
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年8月8日 UTC 05:53 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年8月8日 UTC 05:53 |
 | [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年8月8日 UTC 05:53 |
-| [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年8月8日 UTC 05:53 |
 
 </details>
 
