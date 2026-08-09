@@ -17,10 +17,10 @@
 
 更新时间：2026年8月9日 UTC 05:59
 
-状态：审查评论已检查
+状态：热点审查进行中
 
-已检查并同步持久化百炼审查评论。已同步: 14。条目: 1772,1864,2214,2222,2247,2249,2294,2321,2322,2325,2382,2487,2496,2522。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31297783785](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31297783785)
+已规划热点 0 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31297865061](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31297865061)
 <!-- loongsweeper-status:end -->
 
 ### 队列
