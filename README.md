@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月9日 UTC 18:53
+上次仪表盘更新：2026年8月9日 UTC 18:54
 
 ### 当前运行
 
@@ -17,10 +17,10 @@
 
 更新时间：2026年8月9日 UTC 18:54
 
-状态：审计完成
+状态：热点发布完成
 
-已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31330215254](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31330215254)
+已合并 run 31330192543 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31330192543](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31330192543)
 <!-- loongsweeper-status:end -->
 
 ### 队列
