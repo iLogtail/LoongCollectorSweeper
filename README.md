@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月10日 UTC 22:55
+上次仪表盘更新：2026年8月10日 UTC 22:57
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月10日 UTC 22:55
+更新时间：2026年8月10日 UTC 22:57
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 1 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 31440279112 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31440279112](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31440279112)
 <!-- loongsweeper-status:end -->
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月10日 UTC 21:55。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月10日 UTC 21:56。
+最近审查：2026年8月10日 UTC 22:56。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月10日 UTC 21:56。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 40 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 39 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月10日 UTC 22:56 |
 | [#2674](https://github.com/alibaba/loongcollector/pull/2674) | Fix/bind interface loopback | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2674.md) | complete | 2026年8月10日 UTC 21:55 |
-| [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月10日 UTC 21:55 |
 | [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年8月10日 UTC 13:44 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年8月10日 UTC 12:28 |
 | [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月10日 UTC 11:35 |
