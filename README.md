@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月11日 UTC 11:05
+上次仪表盘更新：2026年8月11日 UTC 11:22
 
 ### 当前运行
 
@@ -17,9 +17,9 @@
 
 更新时间：2026年8月11日 UTC 11:22
 
-状态：正在规划审查
+状态：热点审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划热点 0 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31486296951](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31486296951)
 <!-- loongsweeper-status:end -->
 
@@ -28,11 +28,11 @@
 | 指标 | 数量 |
 | --- | ---: |
 | [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 77 |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 83 |
-| 开放条目合计 | 160 |
-| 已审查文件 | 67 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 82 |
+| 开放条目合计 | 159 |
+| 已审查文件 | 66 |
 | 尚未审查的开放条目 | 93 |
-| 归档的 closed 文件 | 42 |
+| 归档的 closed 文件 | 43 |
 
 ### 审查结果
 
@@ -40,9 +40,9 @@
 | --- | ---: |
 | 近 7 天新审查 Issue | 26 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
-| 近 7 天新审查 PR | 41 |
+| 近 7 天新审查 PR | 40 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 67 |
+| 近 7 天已验证审查 | 66 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 30 |
 | 失败或陈旧审查 | 0 |
@@ -51,8 +51,8 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 4/4 当前（0 待办，100%） |
-| 热点每小时节奏（<7 天） | 4/4 当前（0 待办，100%） |
+| 每小时节奏 | 3/3 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 3/3 当前（0 待办，100%） |
 | 每日节奏 | 38/38 当前（0 待办，100%） |
 | 每日 PR 节奏 | 38/38 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
@@ -117,7 +117,6 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2674](https://github.com/alibaba/loongcollector/pull/2674) | fix(prometheus): use startup IP with fallback chain and skip interface binding for loopback endpoints | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2674.md) | complete | 2026年8月11日 UTC 10:30 |
 | [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月11日 UTC 10:30 |
 | [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月11日 UTC 10:30 |
 | [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月11日 UTC 10:30 |
@@ -127,6 +126,7 @@
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年8月11日 UTC 06:04 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年8月11日 UTC 06:04 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年8月11日 UTC 06:04 |
+| [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年8月11日 UTC 06:04 |
 
 </details>
 
