@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月11日 UTC 09:12
+上次仪表盘更新：2026年8月11日 UTC 09:14
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月11日 UTC 09:12
+更新时间：2026年8月11日 UTC 09:14
 
-状态：审查进行中
+状态：审查发布完成
 
-已规划 7 条，分片 7，容量 500。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 31476655694 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31476655694](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31476655694)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/4 当前（4 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/4 当前（4 待办，0%） |
-| 每日节奏 | 35/38 当前（3 待办，92.1%） |
-| 每日 PR 节奏 | 35/38 当前（3 待办，92.1%） |
+| 每小时节奏 | 4/4 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 4/4 当前（0 待办，100%） |
+| 每日节奏 | 38/38 当前（0 待办，100%） |
+| 每日 PR 节奏 | 38/38 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 100 |
+| 节奏维度待办合计 | 93 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月11日 UTC 07:35。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月11日 UTC 07:35。
+最近审查：2026年8月11日 UTC 09:14。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月11日 UTC 06:05。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 39 | 0 | 39 | 0 | 0 | 39 | 0 |
+| 最近 15 分钟 | 7 | 0 | 7 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 7 | 0 | 7 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 42 | 0 | 42 | 0 | 0 | 35 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月11日 UTC 07:35 |
-| [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月11日 UTC 07:35 |
-| [#2674](https://github.com/alibaba/loongcollector/pull/2674) | fix(prometheus): use startup IP with fallback chain and skip interface binding for loopback endpoints | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2674.md) | complete | 2026年8月11日 UTC 07:34 |
-| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月11日 UTC 07:34 |
+| [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月11日 UTC 09:14 |
+| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月11日 UTC 09:14 |
+| [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年8月11日 UTC 09:13 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月11日 UTC 09:13 |
+| [#2674](https://github.com/alibaba/loongcollector/pull/2674) | fix(prometheus): use startup IP with fallback chain and skip interface binding for loopback endpoints | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2674.md) | complete | 2026年8月11日 UTC 09:13 |
+| [#2673](https://github.com/alibaba/loongcollector/pull/2673) | feat: add MQTT flusher plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2673.md) | complete | 2026年8月11日 UTC 09:13 |
+| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月11日 UTC 09:13 |
 | [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年8月11日 UTC 06:04 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年8月11日 UTC 06:04 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年8月11日 UTC 06:04 |
-| [#2496](https://github.com/alibaba/loongcollector/pull/2496) | feat: selfmonitor metrics support dynamic labels and gc | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2496.md) | complete | 2026年8月11日 UTC 06:04 |
-| [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年8月11日 UTC 06:04 |
-| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年8月11日 UTC 06:04 |
 
 </details>
 
