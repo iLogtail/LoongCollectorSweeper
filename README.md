@@ -20,7 +20,7 @@
 状态：审查评论已检查
 
 已检查并同步持久化百炼审查评论。已同步: 5。条目: 2228,2359,2669,2675,2676。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31586857872](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31586857872)
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31586860773](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31586860773)
 <!-- loongsweeper-status:end -->
 
 ### 队列
