@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月12日 UTC 22:00
+上次仪表盘更新：2026年8月12日 UTC 22:01
 
 ### 当前运行
 
@@ -17,10 +17,10 @@
 
 更新时间：2026年8月12日 UTC 22:01
 
-状态：正在规划审查
+状态：热点发布完成
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31645121726](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31645121726)
+已合并 run 31645020802 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31645020802](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31645020802)
 <!-- loongsweeper-status:end -->
 
 ### 队列
