@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月13日 UTC 11:07
+上次仪表盘更新：2026年8月13日 UTC 11:09
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月13日 UTC 11:07
+更新时间：2026年8月13日 UTC 11:09
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 5 条，分片 5，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 31694112542 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31694112542](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/31694112542)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/2 当前（2 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
-| 每日节奏 | 36/39 当前（3 待办，92.3%） |
-| 每日 PR 节奏 | 36/39 当前（3 待办，92.3%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
+| 每日节奏 | 39/39 当前（0 待办，100%） |
+| 每日 PR 节奏 | 39/39 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 0/0 当前（0 待办，-） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 95 |
+| 节奏维度待办合计 | 90 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月13日 UTC 10:04。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月13日 UTC 10:04。
+最近审查：2026年8月13日 UTC 11:09。最近关闭：2026年7月15日 UTC 16:52。最近评论同步：2026年8月13日 UTC 06:46。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 40 | 0 | 40 | 0 | 0 | 40 | 0 |
+| 最近 15 分钟 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 43 | 0 | 43 | 0 | 0 | 38 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月13日 UTC 10:04 |
-| [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月13日 UTC 10:04 |
+| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月13日 UTC 11:09 |
+| [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年8月13日 UTC 11:09 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月13日 UTC 11:09 |
+| [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月13日 UTC 11:09 |
+| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月13日 UTC 11:08 |
 | [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年8月13日 UTC 06:45 |
 | [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年8月13日 UTC 06:45 |
 | [#2247](https://github.com/alibaba/loongcollector/pull/2247) | Add support to Process Collector | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2247.md) | complete | 2026年8月13日 UTC 06:45 |
 | [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年8月13日 UTC 06:45 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年8月13日 UTC 06:45 |
-| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年8月13日 UTC 06:45 |
-| [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年8月13日 UTC 06:45 |
-| [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年8月13日 UTC 06:45 |
 
 </details>
 
