@@ -17,10 +17,10 @@
 
 更新时间：2026年8月18日 UTC 11:39
 
-状态：热点审查进行中
+状态：审查进行中
 
-已规划热点 0 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32132789670](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32132789670)
+已规划 0 条，分片 1，容量 500。审查分片将启动，完成后由 publish 合并产物。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32132788265](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32132788265)
 <!-- loongsweeper-status:end -->
 
 ### 队列
