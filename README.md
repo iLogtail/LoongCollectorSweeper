@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月20日 UTC 07:57
+上次仪表盘更新：2026年8月20日 UTC 07:58
 
 ### 当前运行
 
@@ -17,10 +17,10 @@
 
 更新时间：2026年8月20日 UTC 07:57
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 850,2687,2688。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32346293329](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32346293329)
+已合并 run 32346313848 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32346313848](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32346313848)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -117,9 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / skipped_changed_since_review](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月20日 UTC 07:57 |
-| [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月20日 UTC 07:57 |
 | [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月20日 UTC 07:57 |
+| [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月20日 UTC 07:57 |
+| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月20日 UTC 07:57 |
 | [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月20日 UTC 07:06 |
 | [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月20日 UTC 07:06 |
 | [#1947](https://github.com/alibaba/loongcollector/pull/1947) | feat: prom textparser with simd | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1947.md) | complete | 2026年8月20日 UTC 06:22 |
