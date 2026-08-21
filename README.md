@@ -17,9 +17,9 @@
 
 更新时间：2026年8月21日 UTC 21:00
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 0 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 32526339355 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32526339355](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32526339355)
 <!-- loongsweeper-status:end -->
 
