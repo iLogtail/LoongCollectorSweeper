@@ -7,7 +7,7 @@
   {
     "number": 1323,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   },
   {
     "number": 1549,
@@ -17,7 +17,7 @@
   {
     "number": 1798,
     "action": "review_comment_synced",
-    "reason": "已更新持久化百炼审查评论"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 1819,
@@ -27,12 +27,12 @@
   {
     "number": 1854,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   },
   {
     "number": 1872,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   },
   {
     "number": 1885,
@@ -57,7 +57,7 @@
   {
     "number": 2054,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   },
   {
     "number": 2081,
@@ -67,7 +67,7 @@
   {
     "number": 2151,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   },
   {
     "number": 2208,
@@ -92,6 +92,6 @@
   {
     "number": 2688,
     "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "reason": "已更新持久化百炼审查评论"
   }
 ]
