@@ -17,10 +17,10 @@
 
 更新时间：2026年8月23日 UTC 13:46
 
-状态：审查评论已检查
+状态：审查发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 3。条目: 2669,2687,2688。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643257540](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643257540)
+已合并 run 32643267378 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643267378](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643267378)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -117,9 +117,9 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月23日 UTC 13:46 |
+| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月23日 UTC 13:46 |
 | [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月23日 UTC 13:46 |
-| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月23日 UTC 13:45 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年8月23日 UTC 13:45 |
 | [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年8月23日 UTC 09:45 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年8月23日 UTC 09:45 |
 | [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年8月23日 UTC 09:45 |
