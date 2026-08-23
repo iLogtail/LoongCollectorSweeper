@@ -17,9 +17,9 @@
 
 更新时间：2026年8月23日 UTC 13:46
 
-状态：审查发布完成
+状态：审查评论已检查
 
-已合并 run 32643267378 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+已检查并同步持久化百炼审查评论。已同步: 0。条目: 2669,2687,2688。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643267378](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32643267378)
 <!-- loongsweeper-status:end -->
 
