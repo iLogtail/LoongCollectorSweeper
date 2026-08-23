@@ -17,10 +17,10 @@
 
 更新时间：2026年8月23日 UTC 18:49
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 2。条目: 2687,2688。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32659137477](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32659137477)
+已合并 run 32659138693 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32659138693](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32659138693)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月23日 UTC 18:48。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月23日 UTC 18:49。
+最近审查：2026年8月23日 UTC 18:49。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月23日 UTC 17:35。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 24 小时 | 44 | 0 | 44 | 0 | 0 | 44 | 0 |
+| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 44 | 0 | 44 | 0 | 0 | 42 | 0 |
 
 ### 最近关闭
 
@@ -117,8 +117,8 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月23日 UTC 18:48 |
-| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月23日 UTC 18:48 |
+| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月23日 UTC 18:49 |
+| [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月23日 UTC 18:49 |
 | [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年8月23日 UTC 17:35 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年8月23日 UTC 15:58 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月23日 UTC 14:04 |
