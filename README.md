@@ -20,7 +20,7 @@
 状态：正在规划审查
 
 规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32695047268](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32695047268)
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32695048349](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32695048349)
 <!-- loongsweeper-status:end -->
 
 ### 队列
