@@ -17,10 +17,10 @@
 
 更新时间：2026年8月25日 UTC 21:44
 
-状态：审查发布完成
+状态：热点发布完成
 
-已合并 run 32902462960 的 审查 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32902462960](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32902462960)
+已合并 run 32902467404 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32902467404](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32902467404)
 <!-- loongsweeper-status:end -->
 
 ### 队列
