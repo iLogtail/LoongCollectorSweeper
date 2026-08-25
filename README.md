@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月25日 UTC 09:06
+上次仪表盘更新：2026年8月25日 UTC 09:08
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月25日 UTC 09:06
+更新时间：2026年8月25日 UTC 09:08
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 32830135144 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32830135144](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/32830135144)
 <!-- loongsweeper-status:end -->
 
@@ -53,11 +53,11 @@
 | --- | ---: |
 | 每小时节奏 | 2/2 当前（0 待办，100%） |
 | 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
-| 每日节奏 | 40/41 当前（1 待办，97.6%） |
-| 每日 PR 节奏 | 39/40 当前（1 待办，97.5%） |
+| 每日节奏 | 41/41 当前（0 待办，100%） |
+| 每日 PR 节奏 | 40/40 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 1/1 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 95 |
+| 节奏维度待办合计 | 94 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月25日 UTC 09:01。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月25日 UTC 09:01。
+最近审查：2026年8月25日 UTC 09:08。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月25日 UTC 09:01。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 2 | 0 | 2 | 0 | 0 | 2 | 0 |
-| 最近 1 小时 | 4 | 0 | 4 | 0 | 0 | 4 | 0 |
-| 最近 24 小时 | 42 | 0 | 42 | 0 | 0 | 42 | 0 |
+| 最近 15 分钟 | 3 | 0 | 3 | 0 | 0 | 2 | 0 |
+| 最近 1 小时 | 5 | 0 | 5 | 0 | 0 | 4 | 0 |
+| 最近 24 小时 | 43 | 0 | 43 | 0 | 0 | 42 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年8月25日 UTC 09:08 |
 | [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年8月25日 UTC 09:01 |
 | [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年8月25日 UTC 09:00 |
 | [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月25日 UTC 08:27 |
@@ -126,7 +127,6 @@
 | [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年8月25日 UTC 07:54 |
 | [#1166](https://github.com/alibaba/loongcollector/pull/1166) | Feat oss flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1166.md) | complete | 2026年8月25日 UTC 07:54 |
 | [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年8月25日 UTC 07:53 |
-| [#2151](https://github.com/alibaba/loongcollector/pull/2151) | add flusher plugin for datahub & odps. (#2144) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2151.md) | complete | 2026年8月25日 UTC 07:53 |
 
 </details>
 
