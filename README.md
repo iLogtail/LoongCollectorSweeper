@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年8月30日 UTC 10:31
+上次仪表盘更新：2026年8月30日 UTC 10:32
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年8月30日 UTC 10:31
+更新时间：2026年8月30日 UTC 10:32
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 1 条，分片 1，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 33306661900 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33306661900](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33306661900)
 <!-- loongsweeper-status:end -->
 
@@ -38,11 +38,11 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 27 |
+| 近 7 天新审查 Issue | 28 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 40 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 67 |
+| 近 7 天已验证审查 | 68 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 31 |
 | 失败或陈旧审查 | 0 |
@@ -56,8 +56,8 @@
 | 每日节奏 | 43/43 当前（0 待办，100%） |
 | 每日 PR 节奏 | 40/40 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 3/3 当前（0 待办，100%） |
-| 每周陈旧 Issue 节奏 | 24/25 当前（1 待办，96%） |
-| 节奏维度待办合计 | 95 |
+| 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
+| 节奏维度待办合计 | 94 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年8月30日 UTC 05:20。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月30日 UTC 05:21。
+最近审查：2026年8月30日 UTC 10:32。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年8月30日 UTC 05:21。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 43 | 0 | 43 | 0 | 0 | 43 | 0 |
+| 最近 15 分钟 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 44 | 0 | 44 | 0 | 0 | 43 | 0 |
 
 ### 最近关闭
 
@@ -117,6 +117,7 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
+| [#2575](https://github.com/alibaba/loongcollector/issues/2575) | [社区分享] 基于 Agent V2 协议的全功能 ConfigServer 实现 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2575.md) | complete | 2026年8月30日 UTC 10:32 |
 | [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年8月30日 UTC 05:20 |
 | [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年8月30日 UTC 05:20 |
 | [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年8月30日 UTC 05:19 |
@@ -126,7 +127,6 @@
 | [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年8月29日 UTC 19:47 |
 | [#1772](https://github.com/alibaba/loongcollector/pull/1772) | feat: upgrade go kafka client sarama version v1.42.2 to v1.43.3 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1772.md) | complete | 2026年8月29日 UTC 19:47 |
 | [#2249](https://github.com/alibaba/loongcollector/pull/2249) | add flush elasticsearch bulk action option | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2249.md) | complete | 2026年8月29日 UTC 19:47 |
-| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年8月29日 UTC 19:47 |
 
 </details>
 
