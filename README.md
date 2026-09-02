@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年9月2日 UTC 05:43
+上次仪表盘更新：2026年9月2日 UTC 09:36
 
 ### 当前运行
 
@@ -17,9 +17,9 @@
 
 更新时间：2026年9月2日 UTC 09:36
 
-状态：正在规划审查
+状态：审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划 7 条，分片 7，容量 500。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33615018895](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33615018895)
 <!-- loongsweeper-status:end -->
 
@@ -27,8 +27,8 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 80 |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 84 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 81 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 83 |
 | 开放条目合计 | 164 |
 | 已审查文件 | 68 |
 | 尚未审查的开放条目 | 96 |
@@ -38,11 +38,11 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 近 7 天新审查 Issue | 28 |
+| 近 7 天新审查 Issue | 21 |
 | 提议关闭 Issue | 0（占已审查 Issue 的 0%） |
 | 近 7 天新审查 PR | 40 |
 | 提议关闭 PR | 0（占已审查 PR 的 0%） |
-| 近 7 天已验证审查 | 68 |
+| 近 7 天已验证审查 | 61 |
 | 待 apply 的提议关闭 | 0（占新审查的 0%） |
 | 已由 apply 关闭 | 31 |
 | 失败或陈旧审查 | 0 |
@@ -56,8 +56,8 @@
 | 每日节奏 | 43/43 当前（0 待办，100%） |
 | 每日 PR 节奏 | 40/40 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 3/3 当前（0 待办，100%） |
-| 每周陈旧 Issue 节奏 | 25/25 当前（0 待办，100%） |
-| 节奏维度待办合计 | 96 |
+| 每周陈旧 Issue 节奏 | 18/25 当前（7 待办，72%） |
+| 节奏维度待办合计 | 103 |
 
 ### 审计健康
 
