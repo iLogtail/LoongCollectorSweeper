@@ -8,19 +8,19 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年9月4日 UTC 04:39
+上次仪表盘更新：2026年9月4日 UTC 04:47
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年9月4日 UTC 04:39
+更新时间：2026年9月4日 UTC 04:47
 
-状态：审查评论已检查
+状态：热点发布完成
 
-已检查并同步持久化百炼审查评论。已同步: 17。条目: 850,1772,1864,2214,2222,2247,2249,2294,2321,2322,2325,2382,2487,2496,2522,2675,2688。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837105609](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837105609)
+已合并 run 33837263267 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837263267](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837263267)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年9月4日 UTC 04:38。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年9月4日 UTC 04:39。
+最近审查：2026年9月4日 UTC 04:41。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年9月3日 UTC 22:40。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 17 | 0 | 17 | 0 | 0 | 17 | 0 |
-| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 17 | 0 |
-| 最近 24 小时 | 44 | 0 | 44 | 0 | 0 | 44 | 0 |
+| 最近 15 分钟 | 17 | 0 | 17 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 17 | 0 | 17 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 44 | 0 | 44 | 0 | 0 | 27 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年9月4日 UTC 04:38 |
-| [#2321](https://github.com/alibaba/loongcollector/pull/2321) | Process test | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2321.md) | complete | 2026年9月4日 UTC 04:38 |
-| [#2322](https://github.com/alibaba/loongcollector/pull/2322) | [for testing AI review] unified epoll for ebpf  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2322.md) | complete | 2026年9月4日 UTC 04:38 |
-| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年9月4日 UTC 04:38 |
-| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年9月4日 UTC 04:37 |
-| [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年9月4日 UTC 04:36 |
-| [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年9月4日 UTC 04:36 |
-| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年9月4日 UTC 04:36 |
-| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年9月4日 UTC 04:36 |
-| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年9月4日 UTC 04:35 |
+| [#2325](https://github.com/alibaba/loongcollector/pull/2325) | feat: add two new tags implementation based on slice | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2325.md) | complete | 2026年9月4日 UTC 04:41 |
+| [#2675](https://github.com/alibaba/loongcollector/issues/2675) | [BUG]: flusher_kafka_v2 reports unsupported protocol for otlp_log_v1 with protobuf encoding | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2675.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2688](https://github.com/alibaba/loongcollector/issues/2688) | [BUG]:[WRN] [plugin_runner_v1.go:285] [runProcessorInternal]  AlarmType:AGGREGATOR_ADD_ALARM   error:loggroup queue is full | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2688.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2294](https://github.com/alibaba/loongcollector/pull/2294) | test: add mem and cpu chaos injection in e2e engine | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2294.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2487](https://github.com/alibaba/loongcollector/pull/2487) | fix(plugins/metric_system_v2): report fd metrics as string to avoid float64 precision loss | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2487.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#850](https://github.com/alibaba/loongcollector/pull/850) | add rocketmq flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/850.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2382](https://github.com/alibaba/loongcollector/pull/2382) | feat: rerun metric & aggregator if panic | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2382.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2522](https://github.com/alibaba/loongcollector/pull/2522) | add nano seconds support in LogFileReader and protocol converter | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2522.md) | complete | 2026年9月4日 UTC 04:40 |
+| [#2214](https://github.com/alibaba/loongcollector/pull/2214) | Add processor_add_fields_v2 plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2214.md) | complete | 2026年9月4日 UTC 04:39 |
+| [#2222](https://github.com/alibaba/loongcollector/pull/2222) | Optimize the auth config of the kafka input plugin (#2221) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2222.md) | complete | 2026年9月4日 UTC 04:38 |
 
 </details>
 
