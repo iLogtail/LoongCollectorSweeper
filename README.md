@@ -8,7 +8,7 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年9月4日 UTC 00:25
+上次仪表盘更新：2026年9月4日 UTC 04:31
 
 ### 当前运行
 
@@ -17,9 +17,9 @@
 
 更新时间：2026年9月4日 UTC 04:31
 
-状态：正在规划审查
+状态：审查进行中
 
-规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
+已规划 17 条，分片 17，容量 500。审查分片将启动，完成后由 publish 合并产物。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837105609](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/33837105609)
 <!-- loongsweeper-status:end -->
 
@@ -27,8 +27,8 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 81 |
-| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 82 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 Issue | 82 |
+| [alibaba/loongcollector](https://github.com/alibaba/loongcollector) 开放 PR | 81 |
 | 开放条目合计 | 163 |
 | 已审查文件 | 68 |
 | 尚未审查的开放条目 | 95 |
