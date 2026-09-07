@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年9月7日 UTC 04:22
+更新时间：2026年9月7日 UTC 04:24
 
-状态：热点审查进行中
+状态：审计完成
 
-已规划热点 20 条，分片 20，容量 20。审查分片将启动，完成后由 publish 合并产物。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34082802943](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34082802943)
+已基于当前 GitHub 上 LoongCollector 开放条目全量刷新 README「审计健康」。日常审查/apply 心跳不会重复执行该扫描。
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34082920075](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34082920075)
 <!-- loongsweeper-status:end -->
 
 ### 队列
@@ -62,7 +62,7 @@
 ### 审计健康
 
 <!-- loongsweeper-audit:start -->
-上次审计：2026年9月6日 UTC 20:19
+上次审计：2026年9月7日 UTC 04:24
 
 状态：**正常**
 
