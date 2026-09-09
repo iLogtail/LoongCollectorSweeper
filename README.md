@@ -17,9 +17,9 @@
 
 更新时间：2026年9月9日 UTC 13:56
 
-状态：热点发布完成
+状态：审查评论已检查
 
-已合并 run 34360053096 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
+已检查并同步持久化百炼审查评论。已同步: 0。条目: 2698,2699,2701。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34360053096](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34360053096)
 <!-- loongsweeper-status:end -->
 
