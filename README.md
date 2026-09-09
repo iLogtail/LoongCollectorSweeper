@@ -8,18 +8,18 @@
 
 ## 仪表盘
 
-上次仪表盘更新：2026年9月9日 UTC 05:05
+上次仪表盘更新：2026年9月9日 UTC 05:07
 
 ### 当前运行
 
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年9月9日 UTC 05:05
+更新时间：2026年9月9日 UTC 05:07
 
-状态：热点审查进行中
+状态：热点发布完成
 
-已规划热点 20 条，分片 20，容量 20。审查分片将启动，完成后由 publish 合并产物。
+已合并 run 34313445244 的 热点 产物；reconcile 已与 GitHub 开放/关闭状态对齐，仪表盘已更新。
 运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34313445244](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/34313445244)
 <!-- loongsweeper-status:end -->
 
@@ -51,13 +51,13 @@
 
 | 指标 | 覆盖 |
 | --- | ---: |
-| 每小时节奏 | 0/2 当前（2 待办，0%） |
-| 热点每小时节奏（<7 天） | 0/2 当前（2 待办，0%） |
-| 每日节奏 | 25/43 当前（18 待办，58.1%） |
-| 每日 PR 节奏 | 22/40 当前（18 待办，55%） |
+| 每小时节奏 | 2/2 当前（0 待办，100%） |
+| 热点每小时节奏（<7 天） | 2/2 当前（0 待办，100%） |
+| 每日节奏 | 43/43 当前（0 待办，100%） |
+| 每日 PR 节奏 | 40/40 当前（0 待办，100%） |
 | 每日新 Issue 节奏（<30 天） | 3/3 当前（0 待办，100%） |
 | 每周陈旧 Issue 节奏 | 14/25 当前（11 待办，56%） |
-| 节奏维度待办合计 | 127 |
+| 节奏维度待办合计 | 107 |
 
 ### 审计健康
 
@@ -87,13 +87,13 @@
 
 ### 最近运行动态
 
-最近审查：2026年9月9日 UTC 00:31。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年9月9日 UTC 00:32。
+最近审查：2026年9月9日 UTC 05:06。最近关闭：2026年8月15日 UTC 11:01。最近评论同步：2026年9月9日 UTC 00:32。
 
 | 时间窗口 | 审查 | 关闭决策 | 保持开启 | 失败/陈旧 | 已关闭 | 评论已同步 | Apply 跳过 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 最近 15 分钟 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 1 小时 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 最近 24 小时 | 30 | 0 | 30 | 0 | 0 | 30 | 0 |
+| 最近 15 分钟 | 20 | 0 | 20 | 0 | 0 | 0 | 0 |
+| 最近 1 小时 | 20 | 0 | 20 | 0 | 0 | 0 | 0 |
+| 最近 24 小时 | 48 | 0 | 48 | 0 | 0 | 28 | 0 |
 
 ### 最近关闭
 
@@ -117,16 +117,16 @@
 
 | 条目 | 标题 | 结果 | 状态 | 审查时间 |
 | --- | --- | --- | --- | --- |
-| [#1805](https://github.com/alibaba/loongcollector/issues/1805) | [FEATURE]:Update container the base image | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1805.md) | complete | 2026年9月9日 UTC 00:31 |
-| [#1603](https://github.com/alibaba/loongcollector/issues/1603) | [FEATURE]: iLogtail support ODPS Flusher  | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1603.md) | complete | 2026年9月9日 UTC 00:31 |
-| [#2699](https://github.com/alibaba/loongcollector/pull/2699) | fix(file): accept cached rotated subdirs | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2699.md) | complete | 2026年9月9日 UTC 00:31 |
-| [#2698](https://github.com/alibaba/loongcollector/pull/2698) | fix: use /proc/stat btime for Linux system boot time | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2698.md) | complete | 2026年9月9日 UTC 00:31 |
-| [#2221](https://github.com/alibaba/loongcollector/issues/2221) | [ENHANCEMENT]: Optimize the authentication configuration of the kafka input plugin | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2221.md) | complete | 2026年9月9日 UTC 00:31 |
-| [#2359](https://github.com/alibaba/loongcollector/pull/2359) | Process optimize | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2359.md) | complete | 2026年9月8日 UTC 19:55 |
-| [#2687](https://github.com/alibaba/loongcollector/issues/2687) | v3.3.5 v2: input_file + flusher_http(Convert raw) 报 unsupported event type 3，日志全部丢弃 | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2687.md) | complete | 2026年9月8日 UTC 19:55 |
-| [#2261](https://github.com/alibaba/loongcollector/pull/2261) | feat: allow developers to register external cpp plugins | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2261.md) | complete | 2026年9月8日 UTC 19:55 |
-| [#2228](https://github.com/alibaba/loongcollector/pull/2228) | fix: improve the judgment of the legitimacy of prometheus metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2228.md) | complete | 2026年9月8日 UTC 19:55 |
-| [#2666](https://github.com/alibaba/loongcollector/pull/2666) | docs(etw): add SessionName parameter to service-etw configuration table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2666.md) | complete | 2026年9月8日 UTC 19:55 |
+| [#1854](https://github.com/alibaba/loongcollector/pull/1854) | flusher_stdout: print typed-value metric with type int and uint | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1854.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#1885](https://github.com/alibaba/loongcollector/pull/1885) | feat: provider add GetReadMetrics API | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1885.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#1939](https://github.com/alibaba/loongcollector/pull/1939) | fix plugin_id for anonymous extentsion and invalid input type | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1939.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#1872](https://github.com/alibaba/loongcollector/pull/1872) | Multi-line parsing supports SIMD optimization | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1872.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#2585](https://github.com/alibaba/loongcollector/pull/2585) | add dentry, cgroup,fsstat,tcp mem metrics | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2585.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#2208](https://github.com/alibaba/loongcollector/pull/2208) | Support json encoding when converter protocol is raw (#2207) | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2208.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#2676](https://github.com/alibaba/loongcollector/pull/2676) | fix: support otlp_log_v1 protobuf output in kafka flusher | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2676.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#1798](https://github.com/alibaba/loongcollector/pull/1798) | chore: update cri-api package v1alpha2 to v1 since there is no diff | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/1798.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#2081](https://github.com/alibaba/loongcollector/pull/2081) | Strips binary keep a static symbol table | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2081.md) | complete | 2026年9月9日 UTC 05:06 |
+| [#2669](https://github.com/alibaba/loongcollector/pull/2669) | feat(flusher): add flusher_otlp_http for OTLP/HTTP export | [keep_open / kept_open](https://github.com/iLogtail/LoongCollectorSweeper/blob/main/items/2669.md) | complete | 2026年9月9日 UTC 05:06 |
 
 </details>
 
