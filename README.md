@@ -15,12 +15,12 @@
 <!-- loongsweeper-status:start -->
 **工作流状态**
 
-更新时间：2026年9月17日 UTC 21:21
+更新时间：2026年9月17日 UTC 22:04
 
 状态：正在规划审查
 
 规划器正在扫描 GitHub 上的下一批审查候选；完成后将更新候选数量与分片信息。
-运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/35276181431](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/35276181431)
+运行链接：[https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/35280077451](https://github.com/iLogtail/LoongCollectorSweeper/actions/runs/35280077451)
 <!-- loongsweeper-status:end -->
 
 ### 队列
